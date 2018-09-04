@@ -1,0 +1,51 @@
+﻿<html>
+	<head>
+		<title>Riepilogo conto OneStop</title>
+		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+		<center><h2>EnvisionWare</h2>
+		</center>
+		<center><h3>Biblioteca</h3>
+		</center>
+		<hr>
+		<h4>Data: %%Date.LocalText%%</h4>
+		<h4>Ora: %%Time.LocalText%%</h4>
+		<h4>Nome: %%User.FullName%%</h4>
+		<h4>Ammende/tasse da versare: $%%User.FeeAmount%%</h4>
+		<hr>
+
+		<h4><b>Materiali presi in prestito</b></h4>
+		$$MyAccount.ChargedItems{
+		<h4>
+			Titolo: %%Item.Title#35#%%<br>
+			Codice a barre: %%Item.Id%%<br>
+			Scadenza: %%Item.DueDate%%<br>
+		</h4>
+		<p>
+		}$$
+
+		<h4><b>Materiali morosi</b></h4>
+		$$MyAccount.OverdueItems{
+		<h4>
+			Titolo: %%Item.Title#35#%%<br>
+			Codice a barre: %%Item.Id%%<br>
+			Scadenza: %%Item.DueDate%%<br>
+		</h4>
+		<p>
+		}$$
+
+		<h4><b>Materiali prenotati</b></h4>
+		$$MyAccount.HoldItems{
+		<h4>
+			Titolo: %%Item.Title%%<br>
+			Codice a barre: %%Item.Id%%<br>
+		</h4>
+		<p>
+		}$$
+	</body>
+</html>

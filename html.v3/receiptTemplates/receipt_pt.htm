@@ -1,0 +1,79 @@
+﻿<html>
+	<head>
+		<title>Recibo Checkout OneStop</title>
+		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+^^Header{
+		<center><h2>EnvisionWare</h2></center>
+		<center><h3>Biblioteca</h3></center>
+		<hr>
+		<h4>Data: %%Date.LocalText%%</h4>
+		<h4>Hora: %%Time.LocalText%%</h4>
+		<h4>Nome: %%User.FullName%%</h4>
+		<h4>Multas/Taxas devidas: $%%User.FeeAmount%%</h4>
+		<br>
+		<h4><b>Total verificado: %%Session.TotalItemsCirculated%%</b></h4>
+		<hr>
+}^^
+^^List{
+		<h4><b>Verificado</b></h4>
+		$$Session.CheckedOutItems{
+		<h4>
+			Título: %%Checkout.ItemTitle%%<br>
+			Código de barras: %%Checkout.ItemId%%<br>
+			Data de vencimento: %%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^List{
+		<h4><b>Verificado - Segurança ainda ativada</b></h4>
+		$$Session.ItemsPendingSecurityAdjustment{
+		<h4>
+			Título: %%Checkout.ItemTitle%%<br>
+			Código de barras: %%Checkout.ItemId%%<br>
+			Data de vencimento: %%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+		<hr>
+}^^
+
+^^List{
+		<h4><b>Não verificado</b></h4>
+		<h4><i>Nota: Algumas informações podem não estar disponíveis para todos os artigos indicados.</i></h4>
+		$$Session.ErrorItems{
+		<h4>
+			Nota: Algumas informações podem não estar disponíveis para todos os artigos indicados. %%Checkout.ItemTitle%%<br>
+			Código de barras: %%Checkout.ItemId%%<br>
+			Motivo: %%Checkout.ScreenMessage%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^List{
+		<h4><b>Recommendations</b></h4>
+		$$Session.SavedRecommendations{
+		<h4>
+			Title: %%Recommendation.Title%%<br>
+			Author: %%Recommendation.Author%%<br>
+			ISBN: %%Recommendation.PrimaryIsbn%%<br>
+			Rating: %%Recommendation.Rating%%<br>
+			Description: %%Recommendation.Description%%<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^Footer{
+		<center><h4>Página %%Receipt.Page%% de %%Receipt.Pages%%</h4></center>
+}^^
+	</body>
+</html>

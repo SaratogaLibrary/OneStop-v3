@@ -1,0 +1,62 @@
+.header-wrapper {
+	position: fixed;
+	height:120px;
+	width:100%;
+	/*background:rgba(255,255,255,0.6);*/
+	
+	z-index:1000;
+}
+
+img#logo {
+	/*width:150px;
+	padding:1.6rem;
+	display: block;
+	background:#fff;*/
+	margin:0 0 0 30px;
+}
+
+#pagetitleheader {
+	text-align: right;
+	font-weight:300;
+}
+
+#pagetitleheader h2 {
+	line-height: 4rem;
+	margin-right:14px;
+	margin-top:0;
+	text-transform: uppercase;
+	font-size:1.9rem;
+	/*background:linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.4));*/
+	background:#fff;
+	color:#fff;
+	display: inline-block;
+	padding:0.2rem 0.8rem;
+}
+
+.themechooser {
+	background:#efefef;
+	padding:0.29rem 0.44rem;
+	border-radius: 3px;
+	position: absolute;
+	right:29px;
+	bottom:0;
+	text-transform: uppercase;
+	font-size:0.9rem;
+}
+
+.themechooser span {
+	display:none;
+	padding-left:0.5rem;
+}
+
+.themechooser:hover span {
+	display:inline;
+}
+
+.themechooser a.activeTheme {
+	border-bottom:1px solid #396789;
+}
+
+.themechooser a:hover {
+	border-bottom:1px solid #396789;
+}

@@ -1,0 +1,81 @@
+.footerelements {
+	position: absolute;
+	bottom:20px;
+	left:0;
+	width:17%;
+	text-align: left;
+}
+
+.brand-logo {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  max-height: 23px;
+  margin-left:20px;
+}
+
+.footerlogo {
+	text-align: left;
+}
+
+.languageswitcher {
+	text-align: right;
+}
+
+.footerelements .btn {
+	font-size:1.35rem;
+	margin:0 20px 1.0rem;
+	border:1px solid #999;
+	padding:4px 9px;
+	background: #fff;
+	color:#666;
+	min-width: 150px;
+}
+
+#languagebuttongraph {
+	display: inline-block;
+}
+
+#languagebutton {
+	position: relative;
+	height:3.8rem;
+	width:10rem;
+}
+
+#languagebutton span {
+	position: absolute;
+	opacity: 0;
+	left:0;
+	top:0.4rem;
+	/*overflow: hidden;*/
+	width: 100%;
+	white-space: nowrap;
+	height:3.7rem;
+	font-size:2.05rem;
+}
+
+#languagebutton span {
+	animation: rotateLabels 9s linear infinite 0s;
+}
+
+#languagebutton span:nth-child(2) { 
+	animation-delay: 3s;
+}
+#languagebutton span:nth-child(3) { 
+	animation-delay: 6s; 
+}
+@keyframes rotateLabels {
+    0% { opacity: 1; animation-timing-function: ease-in; height: 0px; }
+    8% { opacity: 1; height: 14px; }
+    19% { opacity: 1; height: 14px; }
+	25% { opacity: 0; height: 14px; }
+    100% { opacity: 0; }
+}
+
+.languageswitcher .chooseLanguage {
+	display: none;
+	padding:0 1rem 0 0;
+}
+
+.languageswitcher:hover .chooseLanguage {
+	display: inline;
+}

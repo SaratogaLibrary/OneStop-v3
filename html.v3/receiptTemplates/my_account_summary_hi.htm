@@ -1,0 +1,51 @@
+﻿<html>
+	<head>
+		<title>वनस्टॉप माय अकाउंट सार</title>
+		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+		<center><h2>EnvisionWare</h2>
+		</center>
+		<center><h3>पुस्तकालय</h3>
+		</center>
+		<hr>
+		<h4>तिथि: %%Date.LocalText%%</h4>
+		<h4>समय: %%Time.LocalText%%</h4>
+		<h4>नाम: %%User.FullName%%</h4>
+		<h4>जुर्माना / शुल्क देय: $%%User.FeeAmount%%</h4>
+		<hr>
+
+		<h4><b>चेक आउट किये गए आइटम</b></h4>
+		$$MyAccount.ChargedItems{
+		<h4>
+			शीर्षक: %%Item.Title#35#%%<br>
+			बारकोड: %%Item.Id%%<br>
+			लौटाने की तिथि: %%Item.DueDate%%<br>
+		</h4>
+		<p>
+		}$$
+
+		<h4><b>विलंबित आइटम</b></h4>
+		$$MyAccount.OverdueItems{
+		<h4>
+			शीर्षक: %%Item.Title#35#%%<br>
+			बारकोड: %%Item.Id%%<br>
+			लौटाने की तिथि: %%Item.DueDate%%<br>
+		</h4>
+		<p>
+		}$$
+
+		<h4><b>होल्ड पर रखे आइटम</b></h4>
+		$$MyAccount.HoldItems{
+		<h4>
+			शीर्षक: %%Item.Title%%<br>
+			बारकोड: %%Item.Id%%<br>
+		</h4>
+		<p>
+		}$$
+	</body>
+</html>

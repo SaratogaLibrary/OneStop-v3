@@ -1,0 +1,47 @@
+﻿<html>
+	<head>
+		<title>還書箱 - 出錯回條</title>
+		<style type="text/css">
+	h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	h5 { font-size:8pt;font-family:"Verdana";height:10pt}
+	</style>
+	</head>
+	<body>
+		<center><h1>EnvisionWare Library</h1>
+		</center>
+		<center><h2>還書箱</h2>
+		</center>
+		<center><h2>出錯回條</h2></center>
+		<center><h2>%%Date.LocalText%%</h2></center>
+		<table width="400px">
+			<tr>
+				<th align="left">
+					<h3>條碼號</h3>
+				</th>
+				<th align="left">
+					<h3>還書信息</h3>
+				</th>
+			</tr>
+			$$Session.ErrorItems{
+			<tr>
+				<td width="30%" align="left"><h5>%%Checkin.ItemId%%</h5>
+				</td>
+				<td width="70%" align="left"><h5>%%Checkin.ScreenMessage%%</h5>
+				</td>
+			</tr>
+			}$$
+		</table>
+		<hr>
+		<table>
+			<tr>
+				<td><h3>本批出錯</h3>
+				</td>
+				<td><h3>%%Session.NumberOfErrors%%</h3>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

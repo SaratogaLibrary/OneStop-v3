@@ -1,0 +1,45 @@
+﻿<html>
+	<head>
+		<title>Biên nhận Thanh toán OneStop</title>
+		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+		<center><h2>EnvisionWare</h2>
+		</center>
+		<center><h3>Thư viện</h3>
+		</center>
+		<hr>	
+			<table>
+				<tr>
+					<td colspan="2"><h4>Ngày: %%Date.LocalText%% Thời gian: %%Time.LocalText%%</h4></td>
+				</tr>
+				<tr>
+					<td colspan="2"><h4>Tên: %%User.FullName%%</h4></td>
+				</tr>
+				<tr>
+					<td colspan="2"><h4>Tiền phạt/Lệ phí đã trả: $%%Session.AmountPaid%%</h4></td>
+				</tr>
+				
+				<tr>
+					<th align="right"><b>Thông tin mô tả</b></th>
+					<td><b>Khoản</b></td>
+				</tr>
+				$$Session.UserFines{<tr>
+					<th align=right>%%UserFine.Description%%</th>
+					<td>$%%UserFine.AmountPaid%%</td>
+				</tr>
+				}$$				
+				
+				<tr>
+					<td colspan="2"><h4>Số tham chiếu: %%Session.AuthCode%%</h4></td>
+				</tr>
+				<tr>
+					<td colspan="2"><h4>ID Giao dịch: %%Session.TransactionId%%</h4></td>
+				</tr>
+			</table>				
+	</body>
+</html>

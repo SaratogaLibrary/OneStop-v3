@@ -1,0 +1,97 @@
+﻿<html>
+	<head>
+		<title>Risiidka Lacag Bixinta ee OneStop</title>
+		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+^^Header{
+		<center><h2>EnvisionWare</h2>
+		</center>
+		<center><h3>Maktabad</h3>
+		</center>
+		<hr>
+		<h4>Taariikhda: %%Date.LocalText%%</h4>
+		<h4>Waqtiga: %%Time.LocalText%%</h4>
+		<h4>Magaca: %%User.FullName%%</h4>
+		<h4>Lacagaha Ganaaxa/Qarashaadka Lagugu leeyahay: $%%User.FeeAmount%%</h4>
+		<br>
+		<h4><b>Cadadka Guud ee Wareegaan Labixiyay: %%Session.TotalItemsCirculated%%</b></h4>
+		<h4><b>Cadadka guud ee Alaabta Laguu Bixiyay: %%Session.TotalItemsOut%%</b></h4>
+		<hr>
+}^^
+^^List{
+		<h4><b>Cadadka Wareegaan Labixiyay</b></h4>
+		$$Session.CheckedOutItems{
+		<h4>
+			Magaca: %%Checkout.ItemTitle#35#%%<br>
+			Barcode: %%Checkout.ItemId%%<br>
+			Xiliga Kamadanbaysta ah: %%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^List{
+		<h4><b>Cadadka Wareegaan Labixiyay - Amaanka Wali waa Suganyahay</b></h4>
+		$$Session.ItemsPendingSecurityAdjustment{
+		<h4>
+			Magaca: %%Checkout.ItemTitle%%<br>
+			Barcode: %%Checkout.ItemId%%<br>
+			Xiliga Kamadanbaysta ah: %%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+		<hr>
+}^^
+
+^^List{
+		<h4><b>Aan Labixin</b></h4>
+		<h4><i>Ogsoonow: Macluumaadka qaar ee alaabta meesha kuqoran ayaa maqnaan kara.</i></h4>
+		$$Session.ErrorItems{
+		<h4>
+			Magaca: %%Checkout.ItemTitle%%<br>
+			Barcode: %%Checkout.ItemId%%<br>
+			Sababta: %%Checkout.ScreenMessage%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^List{
+		<h4><b>Alaabta Kale ee Laguu Bixiyay</b></h4>
+		$$Session.ExistingItemsOut{
+		<h4>
+			Magaca: %%Item.Title%%<br>
+			Barcode: %%Item.Id%%<br>
+			Xiliga Kamadanbaysta ah: %%Item.DueDate%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+		<hr>
+}^^
+
+^^List{
+		<h4><b>Recommendations</b></h4>
+		$$Session.SavedRecommendations{
+		<h4>
+			Title: %%Recommendation.Title%%<br>
+			Author: %%Recommendation.Author%%<br>
+			ISBN: %%Recommendation.PrimaryIsbn%%<br>
+			Rating: %%Recommendation.Rating%%<br>
+			Description: %%Recommendation.Description%%<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^Footer{
+			<hr>
+			<center><h4>Bogga %%Receipt.Page%% ee %%Receipt.Pages%%</h4>
+			</center>
+}^^
+	</body>
+</html>

@@ -1,0 +1,50 @@
+#enterUserId .actionbuttonrow {
+	margin-top:38px
+}
+
+#enterPin .actionbuttonrow {
+	position: absolute;
+	bottom:10px;
+	right:15%;
+}
+
+@media screen and (orientation: landscape) and (max-width: 1450px ) {
+	#enterPin .actionbuttonrow {
+		right:10%;
+	}
+}
+
+/*@media screen and (orientation: portrait) {
+	#enterPin .actionbuttonrow {
+		position: absolute;
+		top:405px;
+		right:10px;
+	}
+}*/
+
+.actionbuttonrow .btn {
+	font-size:1.65rem;
+	margin:0 1.1rem;
+	border:1px solid #000;
+	padding:5px 12px;
+	background: #dedede;
+    background: linear-gradient(#fefefe, #efefef);
+}
+
+#checkoutTempl .actionbuttonrow {
+	position: absolute;
+	bottom:10px;
+	left:40%;
+}
+
+#checkinTempl .actionbuttonrow {
+	position: absolute;
+	bottom:10px;
+	left:40%;
+}
+
+#myAccountTempl .actionbuttonrow {
+	position: absolute;
+	bottom:10px;
+	left:43%;
+}

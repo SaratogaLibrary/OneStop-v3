@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F02F613A-D39E-448F-9084-A543B5525C25}</ProjectGuid>
+    <RootNamespace>ewSelfCheck_UI</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(RENAISSANCE_BIN)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\obj\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(RENAISSANCE_BIN)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\obj\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)ewSelfCheck_UI.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)ewSelfCheck_UI.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="afterPrintPaymentReceipt.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\payment_receipt_en_us.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\payment_receipt_es.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\payment_receipt_fr.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\payment_receipt_pl.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\payment_receipt_zh_cn.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\payment_receipt_zh_hk.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\payment_receipt_zh_tw.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\printSlipHoldSingle_es.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\printSlipHoldSingle_fr.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\printSlipHoldSingle_pl.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\printSlipHoldSingle_zh_cn.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\printSlipHoldSingle_zh_hk.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\printSlipHoldSingle_zh_tw.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="scripts\ajaxRequest.js" />
+    <None Include="scripts\formUtilities.js" />
+    <None Include="scripts\itemDetails.js" />
+    <None Include="scripts\keypad.js" />
+    <None Include="scripts\languageUtilities.js" />
+    <None Include="scripts\menu.js" />
+    <None Include="scripts\myAccount.js" />
+    <None Include="scripts\novelistPage.js" />
+    <None Include="scripts\page_text_en_us.js" />
+    <None Include="scripts\page_text_es.js" />
+    <None Include="scripts\page_text_fr.js" />
+    <None Include="scripts\page_text_zh_cn.js" />
+    <None Include="scripts\page_text_zh_hk.js" />
+    <None Include="scripts\page_text_zh_tw.js" />
+    <None Include="scripts\pendAlert.js" />
+    <None Include="scripts\receiptUtilities.js" />
+    <None Include="scripts\scanItems.js" />
+    <None Include="scripts\scanItemsNext.js" />
+    <None Include="scripts\staffMenu.js" />
+    <None Include="scripts\utilities.js" />
+    <None Include="scripts\thirdparty\epoch\epoch_classes_ew.js" />
+    <None Include="scripts\thirdparty\epoch\epoch_styles_ew.css" />
+    <None Include="images\bottomborder.jpg" />
+    <None Include="images\CheckOutIcon.jpg" />
+    <None Include="images\closeBtn.jpg" />
+    <None Include="images\depositIcon.jpg" />
+    <None Include="images\keypad0.jpg" />
+    <None Include="images\keypad1.jpg" />
+    <None Include="images\keypad2.jpg" />
+    <None Include="images\keypad3.jpg" />
+    <None Include="images\keypad4.jpg" />
+    <None Include="images\keypad5.jpg" />
+    <None Include="images\keypad6.jpg" />
+    <None Include="images\keypad7.jpg" />
+    <None Include="images\keypad8.jpg" />
+    <None Include="images\keypad9.jpg" />
+    <None Include="images\keypadBackspace.jpg" />
+    <None Include="images\keypadClear.jpg" />
+    <None Include="images\leftborder.jpg" />
+    <None Include="images\llcorner.jpg" />
+    <None Include="images\OneStop.gif" />
+    <None Include="images\Password.jpg" />
+    <None Include="images\PayFineIcon.jpg" />
+    <None Include="images\printerIcon.jpg" />
+    <None Include="images\ReserveIcon.jpg" />
+    <None Include="images\SirsiDynix_LeftBanner.jpg" />
+    <None Include="images\flags\france.JPG" />
+    <None Include="images\flags\spain.JPG" />
+    <None Include="images\flags\usa.JPG" />
+    <None Include="media\notify.wav" />
+    <None Include="styles\layout_1024.css" />
+    <None Include="styles\layout_1280.css" />
+    <None Include="styles\onestop_style.css" />
+    <None Include="styles\print.css" />
+    <None Include="receipts\checkin_receipt_en_us.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\printReportCKI_en_us.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\printReportError_en_us.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\printReportHold_en_us.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\printReportTransit_en_us.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\printSlipCKI_en_us.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\printSlipError_en_us.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\printSlipHold_en_us.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\printSlipHoldSingle_en_us.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\printSlipTransit_en_us.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\receipt_detail_en_us.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\receipt_en_us.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\receipt_es.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\receipt_fr.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\receipt_zh_cn.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\receipt_zh_hk.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="receipts\receipt_zh_tw.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="badPassword.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="badStatisticsParameter.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="checkin.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="checkinError.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="checkinList.xml" />
+    <None Include="checkinNext.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="checkinStart.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="checkinStartPrecheck.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="checkinSummary.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="checkoutError.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="checkoutList.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="checkoutStart.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="checkoutSummary.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="enterStaffPin.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="enterUserId.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="enterUserPin.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="enterViewStatisticsParameters.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="error.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="helpRequest.xml" />
+    <None Include="ilsUnavailable.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="inputString.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="IntReturn.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="intReturnError.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="intReturnSessionError.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="IntReturnSwap.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="invalidUserError.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="loadEscrow.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="lostCardError.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="menu.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="myAccount.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="pendAlert.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="printerErrorNoCheckin.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="printerErrorNoCheckout.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="printError.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="printErrorPrompt.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="printerStatus.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="printReceiptOptions.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="reconcileCash.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="refreshUserInformation.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="resetSession.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="scanItems.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="scanItemsNext.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="scanItemsStart.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="staffMenu.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="undoCheckoutError.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="ViewStatistics.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="itemizedFeeInfo.htm" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

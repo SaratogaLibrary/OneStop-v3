@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EnvisionWare OneStop - Menu</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="EXPIRES" content="Wed, 19 Mar 2008 00:00:01 GMT">
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/onestop_style.css" type="text/css" media="screen" />
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/jquery.modal.css" type="text/css" media="screen" />
+    <link id="layout_stylesheet" rel="STYLESHEET" href="./styles/layout_1024.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.min.js"></script>
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.modal.js"></script>
+    <script type="text/javascript" src="./scripts/utilities.js"></script>
+    <script type="text/javascript" src="./scripts/languageUtilities.js"></script>
+    <script type="text/javascript" src="./scripts/formUtilities.js"></script>
+    <script type="text/javascript" src="./scripts/menu.js"></script>
+  </head>
+    <body onload="initialize()" onmousedown="resetAndShowTimer()" onkeypress="resetAndShowTimer()"  onselectstart="return false" oncontextmenu="return isContextMenuAllowed()">
+    <div id="main">
+      <div id="page_header_group"></div>
+      <div id="content">
+        <div id="main_menu_shim">
+        </div>
+        <div id="main_menu_content_group">
+          <div id="main_menu_buttons_group_background">
+            <div id="main_menu_buttons_group">
+              <div class="main_menu_button_container" id="main_menu_checkout_button_container">
+                <div class="main_menu_nav_button_border">
+                  <button class="main_menu_nav_button" id="check_out_button" onclick="goToEnterUserId();">
+                    <div class="main_menu_nav_button_icon_container">
+                      <img class="main_menu_nav_button_icon" src="./images/CheckOutIcon.png" alt="Checkout Icon">
+                    </div>
+                    <div class="main_menu_nav_button_text">%%Text.txtMenuPage_Checkout%%</div>
+                  </button>
+                </div>
+              </div>
+              <div class="main_menu_button_container" id="main_menu_checkin_button_container">
+                <div class="main_menu_nav_button_border">
+                  <button class="main_menu_nav_button" id="check_in_button" onclick="goToCheckinPrecheck();">
+                    <div class="main_menu_nav_button_icon_container">
+                      <img class="main_menu_nav_button_icon" src="./images/CheckInIcon.png" alt="Checkin Icon">
+                    </div>
+                    <div class="main_menu_nav_button_text">%%Text.txtMenuPage_Checkin%%</div>
+                  </button>
+                </div>
+              </div>
+              <div class="main_menu_button_container" id="main_menu_print_jobs_button_container">
+                <div class="main_menu_nav_button_border">
+                  <a href="launch://%%Preferences.PrtPath%% -runmode:prompt -host:%%Preferences.JqeHostAddress%% -port:%%Preferences.JqeHostPort%% -parent:%ParentWindow%?showKeyboard=1">
+                    <button class="main_menu_nav_button" id="print_jobs_button">
+                      <div class="main_menu_nav_button_icon_container">
+                        <img class="main_menu_nav_button_icon" src="./images/printerIcon.png" alt="Print Icon">
+                      </div>
+                      <div class="main_menu_nav_button_text">%%Text.txtMenuPage_PrintRelease%%</div>
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div class="main_menu_button_container" id="main_menu_reserve_pc_button_container">
+                <div class="main_menu_nav_button_border">
+                  <a href="launch://%%Preferences.ReservationStationPath%% -makeresv -parent=%ParentWindow%?showKeyboard=1">
+                    <button class="main_menu_nav_button" id="reserve_pc_button">
+                      <div class="main_menu_nav_button_icon_container">
+                        <img class="main_menu_nav_button_icon" src="./images/reserveIcon.png" alt="Reserve Icon">
+                      </div>
+                      <div class="main_menu_nav_button_text">%%Text.txtMenuPage_ReservePC%%</div>
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div class="main_menu_button_container" id="main_menu_pay_fines_button_container">
+                <div class="main_menu_nav_button_border">
+                  <a href="launch://%%Preferences.eCommerceClientPath%% -host:%%Preferences.eCommerceServerAddress%% -port:%%Preferences.eCommerceServerPort%% -parent:%ParentWindow%?showKeyboard=2">
+                    <button class="main_menu_nav_button" id="pay_fines_button">
+                      <div class="main_menu_nav_button_icon_container">
+                        <img class="main_menu_nav_button_icon" src="./images/payfineicon.png" alt="Pay Fines Icon">
+                      </div>
+                      <div class="main_menu_nav_button_text">%%Text.txtMenuPage_PayFines%%</div>
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div class="main_menu_button_container" id="main_menu_manage_account_button_container">
+                <div class="main_menu_nav_button_border">
+                  <a href="launch://%%Preferences.AccountManagerPath%% -selfserv -parent=%ParentWindow%?showKeyboard=1">
+                    <button class="main_menu_nav_button" id="manage_account_button">
+                      <div class="main_menu_nav_button_icon_container">
+                        <img class="main_menu_nav_button_icon" src="./images/depositIcon.png" alt="Deposit Icon">
+                      </div>
+                      <div class="main_menu_nav_button_text">%%Text.txtMenuPage_MakeDeposit%%</div>
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div class="main_menu_button_container" id="main_menu_staff_functions_button_container">
+                <div class="main_menu_nav_button_border">
+                  <button class="main_menu_nav_button" id="staff_functions_button" onclick="goToEnterStaffPin();">
+                    <div class="main_menu_nav_button_icon_container">
+                      <img class="main_menu_nav_button_icon" src="./images/staffFunctionsIcon.png" alt="Staff Functions Icon">
+                    </div>
+                    <div class="main_menu_nav_button_text">%%Text.txtMenuPage_StaffFunctions%%</div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="entry_field_container">
+            <form action="/selfCheck" id="enterUserIdForm" name="enterUserIdForm" method="GET" onsubmit="return preprocessEnterUserIdForm()">
+              <input type="hidden" id="action" name="action" value="getUserRecord"> <input type="hidden" id="pinEntryPage" name="pinEntryPage" value="/enterUserPin.htm">
+              <input type="hidden" id="feeOwedPage" name="feeOwedPage" value="/myAccount.htm">
+              <input type="hidden" id="nextPage" name="nextPage" value="/scanItemsStart.htm"> <input type="hidden" id="errorPage" name="errorPage" value="/invalidUserError.htm">
+              <input type="hidden" id="userId" name="userId" value="">
+              <input type="hidden" id="requestDetail" name="requestDetail" value="1">
+              <input type="text" class="entry_field" id="userIdField" name="userIdField" size="23" onbeforedeactivate="return false" oninput="checkMaxFieldLength();">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="nav_buttons_group_container">
+        <div id="nav_buttons_group_background">
+          <div id="nav_buttons_group">
+            <div id="help_button_border" class="nav_button_border">
+              <button class="nav_button" id="help_button" onclick="requestHelpWithPatronName('menu.htm');">
+                <div>%%Text.txtCommon_Help%%</div>
+              </button>
+            </div>
+            <div id="cancel_help_button_border" class="nav_button_border">
+              <button class="nav_button" id="cancel_help_button" onclick="cancelHelpRequestWithPatronName('menu.htm');">
+                <div>%%Text.txtCommon_CancelHelp%%</div>
+              </button>
+            </div>
+            <div id="change_language_button_border" class="nav_button_border">
+              <button class="nav_button" id="change_language_button" onclick="displayLanguageOptionsDialog();">
+                <div>%%Text.txtCommon_ChangeLanguage%%</div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="nav_buttons_footer">
+        </div>
+      </div>
+    </div>
+    <div id="language_buttons_group" class="modal fade">
+      <div id="language_buttons">
+      </div>
+    </div>
+    <div class="modal fade" id="please_wait_div">
+      <table class="please_wait_table" cellpadding="5" ID="Table1">
+        <tr>
+          <td><img class="please_wait_icon" src="./images/please_wait.png"></td>
+          <td><span id="please_wait_text">%%Text.txtEnterUserPinPage_PleaseWaitProcessing%%</span></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

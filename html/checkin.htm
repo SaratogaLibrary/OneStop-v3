@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Check In Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="EXPIRES" content="Thu, 20 Mar 2008 00:00:01 GMT">
+    <link rel="STYLESHEET" href="./styles/onestop_style.css" type="text/css" />
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/jquery.modal.css" type="text/css" media="screen" />
+    <link id="layout_stylesheet" rel="STYLESHEET" href="./styles/layout_1024.css" type="text/css" />
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.min.js"></script>
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.modal.js"></script>
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="./scripts/thirdparty/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./scripts/keypad.js"></script>
+    <script type="text/javascript" src="./scripts/formutilities.js"></script>
+    <script type="text/javascript" src="./scripts/utilities.js"></script>
+    <script type="text/javascript" src="./scripts/receiptUtilities.js"></script>
+    <script type="text/javascript" src="./scripts/languageUtilities.js"></script>
+    <script type="text/javascript" src="/scripts/circulationItems.js"></script>
+    <script type="text/javascript" src="/scripts/checkInItems.js"></script>
+  </head>
+
+  <body onload="initializeCheckIn()" onmousedown="resetTimerInBody()" onkeypress="resetTimerInBody()" onselectstart="return false" oncontextmenu="return isContextMenuAllowed()">
+    <div id="main">
+      <div id="page_header_group"></div>
+      <div id="content">
+        <div id="circulation_instructions_container"><div class="h1" id="circulation_instructions_text">%%Text.txtCheckInPage_Instructions%%</div>
+        </div>
+        <div id="entry_field_container">
+          <form name="scanItemForm" id="scanItemForm" onsubmit="scanEnteredItem(this.itemIdField);return false;">
+            <input class="entry_field" id="itemIdField" type="text" name="itemIdField" disabled="true" size="23" value="" onbeforedeactivate="return false">
+          </form>
+        </div>
+        <div id="circulation_content_group" class="circulation_content_group">
+          <div id="circulation_group" class="circulation_group">
+            <div id="circulation_list_group" class="circulation_list_group">
+              <div id="circulation_list_header_container">
+                <table id="circulation_list_header" class="circulation_list_header">				  
+				  <tr id="circulation_list_header_row">
+                  </tr>
+                </table>
+              </div>
+              <div id="circulation_list_container" class="circulation_list_container">
+                <table id="circulation_list" class="circulation_list">
+                </table>
+              </div>
+              <div id="circulation_badges_group">
+                <div id="circulation_badges_table_container">
+                  <table class="circulation_badges_table">
+                    <tr>
+                      <td class="circulation_badge_cell">
+                        <div id="circulated_badge" class="base_badge">
+                          <div class="badge_icon_container">
+                            <img class="circulation_status_icon" src="/images/checked_in_status.png" />
+                          </div>
+                          <div class="badge_text">
+                            %%Text.txtCheckInPage_CheckedInBadgeLabel%%: <span id="numCheckedIn">0</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="circulation_badge_cell_separator"></td>
+                      <td class="circulation_badge_cell">
+                        <div id="not_circulated_badge" class="base_badge">
+                          <div class="badge_icon_container">
+                            <img class="circulation_status_icon" src="/images/not_checked_in_status.png" />
+                          </div>
+                          <div class="badge_text">
+                            %%Text.txtCheckInPage_NotCheckedInBadgeLabel%%: <span id="numNotCheckedIn">0</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="circulation_badge_cell_separator"></td>
+                      <td class="circulation_badge_cell">
+                        <div id="circulation_reposition_badge" class="base_badge">
+                          <div class="badge_icon_container">
+                            <img class="circulation_status_icon" src="/images/reposition_status.png" />
+                          </div>
+                          <div class="badge_text">
+                            %%Text.txtCheckInPage_RepositionBadgeLabel%%: <span id="numReposition">0</span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="circulation_splash_group" class="circulation_splash_group">
+           <div id="circulation_rfid_splash_animation_container">
+             <div id="circulation_rfid_splash_animation">
+              <video id="circulation_rfid_splash_animation_video"
+                     autoplay
+                     loop
+                     preload='auto'>
+                <source src="media/rfid_scan_item_animation.mp4" type='video/mp4'>
+              </video>
+            </div>
+           </div>
+           <div id="circulation_barcode_splash_animation_container">
+             <div id="circulation_barcode_splash_animation">
+              <video id="circulation_barcode_splash_animation_video"
+                     autoplay
+                     loop
+                     preload='auto'>
+                <source src="media/barcode_scan_item_animation.mp4" type='video/mp4'>
+              </video>
+            </div>
+           </div>
+        </div>
+      </div>
+      <div id="nav_buttons_group_container">
+        <div id="nav_buttons_group_background">
+          <div id="nav_buttons_group">
+            <div id="start_over_button_border" class="nav_button_border">
+              <button class="nav_button" id="start_over_button" onclick="goToStartOver();">
+                <div class="arrow_nav_button_icon_container">
+                  <img class="arrow_nav_button_icon" src="./images/left-arrow.png">
+                </div>
+                <div class="arrow_nav_button_text_container">
+                  <span class="arrow_nav_button_text">%%Text.txtCheckInPage_StartOver%%</span>
+                </div>
+              </button>
+            </div>
+            <div id="help_button_border" class="nav_button_border">
+              <button class="nav_button" id="help_button" onclick="requestHelp('checkin.htm');">
+                %%Text.txtCommon_Help%%
+              </button>
+            </div>
+            <div id="cancel_help_button_border" class="nav_button_border">
+              <button class="nav_button" id="cancel_help_button" onclick="cancelHelpRequest('checkin.htm');">
+                %%Text.txtCommon_CancelHelp%%
+              </button>
+            </div>
+            <div id="change_language_button_border" class="nav_button_border">
+              <button class="nav_button" id="change_language_button" onclick="displayLanguageOptionsDialog();">
+                %%Text.txtCommon_ChangeLanguage%%
+              </button>
+            </div>
+            <div id="finished_button_border" class="nav_button_border">
+              <button class="nav_button" id="finished_button" onclick="completeCirculation()">
+                <div class="arrow_nav_button_text_container">
+                  <span id="finished_button_text" class="arrow_nav_button_text">%%Text.txtCheckInPage_Finished%%</span>
+                </div>
+                <div class="arrow_nav_button_icon_container">
+                  <img class="arrow_nav_button_icon" src="./images/right-arrow.png">
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="nav_buttons_footer">
+        </div>
+      </div>
+    </div>
+    <div id="language_buttons_group" class="modal fade">
+      <div id="language_buttons">
+      </div>
+    </div>
+    <div class="modal fade" id="please_wait_div">
+      <table class="please_wait_table" cellpadding="5" ID="Table1">
+        <tr>
+          <td><img class="please_wait_icon" src="./images/please_wait.png"></td>
+          <td><span id="please_wait_text">%%Text.txtCheckInPage_PleaseWaitProcessing%%</span></td>
+        </tr>
+      </table>
+    </div>
+    <div id="scroll_buttons_group" class="scroll_buttons_group">
+      <div id="scroll_up_button_container">
+        <div id="scroll_up_button_border" class="scroll_button_border">
+          <button class="base_scroll_button" id="scroll_up_button" onMouseDown="scrollUpCirculationList();" onMouseUp="scrollUpCirculationList();"><img class="scroll_button_image" src="./images/up-arrow.png" /></button>
+        </div>
+      </div>
+      <div id="scroll_down_button_container">
+        <div id="scroll_down_button_border"  class="scroll_button_border">
+          <button class="base_scroll_button" id="scroll_down_button" onMouseDown="scrollDownCirculationList();" onMouseUp="scrollDownCirculationList();"><img class="scroll_button_image" src="./images/up-arrow.png" /></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

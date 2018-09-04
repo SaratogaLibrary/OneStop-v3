@@ -1,0 +1,51 @@
+﻿<html>
+	<head>
+		<title>OneStop Tóm Tắt Tài khoản của tôi </title>
+		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+		<center><h2>EnvisionWare</h2>
+		</center>
+		<center><h3>Thư viện</h3>
+		</center>
+		<hr>
+		<h4>Ngày: %%Date.LocalText%%</h4>
+		<h4>Thời gian: %%Time.LocalText%%</h4>
+		<h4>Tên: %%User.FullName%%</h4>
+		<h4>Tiền phạt/Tiền phí còn nợ: $%%User.FeeAmount%%</h4>
+		<hr>
+
+		<h4><b>Những mục đã cho mượn</b></h4>
+		$$MyAccount.ChargedItems{
+		<h4>
+			Tiêu đề: %%Item.Title#35#%%<br>
+			Mã vạch: %%Item.Id%%<br>
+			Ngày hẹn trả: %%Item.DueDate%%<br>
+		</h4>
+		<p>
+		}$$
+
+		<h4><b>Những mục đã quá hạn trả</b></h4>
+		$$MyAccount.OverdueItems{
+		<h4>
+			Tiêu đề: %%Item.Title#35#%%<br>
+			Mã vạch: %%Item.Id%%<br>
+			Ngày hẹn trả: %%Item.DueDate%%<br>
+		</h4>
+		<p>
+		}$$
+
+		<h4><b>Những mục đang giữ:</b></h4>
+		$$MyAccount.HoldItems{
+		<h4>
+			Tiêu đề: %%Item.Title%%<br>
+			Mã vạch: %%Item.Id%%<br>
+		</h4>
+		<p>
+		}$$
+	</body>
+</html>

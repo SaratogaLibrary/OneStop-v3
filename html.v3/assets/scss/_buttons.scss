@@ -1,0 +1,10 @@
+.btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+	color: #fff;
+	background-color: $secondarycolor;
+	border-color: $secondarycolor;
+}
+
+.btn-primary:active:hover, .btn-primary.active:hover, .open > .dropdown-toggle.btn-primary:hover, .btn-primary:active:focus, .btn-primary.active:focus, .open > .dropdown-toggle.btn-primary:focus, .btn-primary.focus:active, .btn-primary.active.focus, .open > .dropdown-toggle.btn-primary.focus {
+	background-color: darken($secondarycolor, 10%);
+	border-color: darken($secondarycolor, 10%);
+}

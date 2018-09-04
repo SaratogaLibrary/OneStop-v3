@@ -1,0 +1,236 @@
+#main
+{
+	/*margin: 0 0 0 0;*/
+	/*width: 560px;*/
+}
+
+#novelist_container
+{
+  width: 210px;
+  height: 632px;
+  background-color: #e9e7e7;
+  position: absolute;
+  top: 35px;
+  right: 0px;
+  border-radius: 10px;
+  display: none;
+}
+
+.n_title
+{
+	font-weight: bold;
+	text-align: center;
+	position: relative;
+	top: 5px;
+}
+
+.n_inner_container
+{
+	width: 200px;
+	height: 598px;
+	background-color: white;
+	border-radius: 10px;
+	position: relative;
+	left: 5px;
+	top: 10px;
+}
+
+.n_inner_container_footer
+{
+	vertical-align: bottom;
+	font-size: 8px;
+	position: absolute;	
+	top: 578px;
+	left: 60px;
+
+}
+
+.n_books_container
+{
+	width: 190px;
+	height: 503px;
+	background-color: white;
+	position: relative;
+	left: 5px;
+	top: 10px;
+	text-align: center;
+}
+
+.novelist_overlay
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/*background-color: black;*/
+	/*opacity: .85;*/
+	z-index: 50;
+	background-color: rgba(0, 0, 0, 0.4);
+	display: none;
+}
+
+.n_text, .n_book_title
+{
+	font-size: 12px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+
+.n_text
+{
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.n_books_container a
+{
+	text-decoration: none;
+	color: #000000;
+}
+
+.n_book_image img
+{
+	height: 130px;
+	width: auto;
+}
+
+.n_pod_button_text
+{
+	font-size: 20px;
+	position: relative;
+	top: 14px;
+}
+
+.n_data_pod
+{
+	height: 350px;
+	width: 720px;
+	background-color: white;
+	border-radius: 20px;
+	position: relative;
+	left: 250px;
+	top: 220px;
+	opacity: 1;
+	text-align: center;
+	display: inline-block;
+}
+
+.n_data_pod_nav_bg
+{
+	width: 100%;
+	background-color: #e9e7e8;
+	height: 72px;
+	position: relative;
+	top: 10px;
+	text-align: center;
+	padding-top: 15px;
+}
+
+.n_data_pod_nav_bg .nav_button
+{
+	width: 30%;
+	margin-top: -10px;
+}
+
+.n_data_pod_content_title
+{
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.n_data_pod_content_subtitle
+{
+	font-size: 24px;
+}
+
+.n_data_pod_content_text
+{
+	font-size: 14px;
+}
+
+.n_data_pod_content_image img
+{
+	height: 200px;
+	width: auto;
+	position: absolute;
+	left: 15px;
+}
+
+.n_data_pod_text_content
+{
+	width: 75%;
+	position: absolute;
+	left: 170px;
+}
+
+.n_data_pod_content
+{
+	display: inline-block;
+	background-color: white;
+	width: 97%;
+	height: 225px;
+	position: relative;
+	top: 20px;
+	text-align: left;
+}
+
+/* Overrides for checked out items table */
+#page_title {
+  position: fixed;
+  right: 225;
+}
+
+.circulation_content_group {
+  position: relative;
+  left: -110px;
+}
+
+.circulation_list_group {
+  width: 1140px;
+}
+
+#circulation_instructions_container {
+  width: 1200px;
+  position: relative;
+  left: -120px;
+}
+
+.circulation_list_container {
+  height: 310px;
+}
+
+TD.checkout_list_title_cell {
+  width: 540px;
+}
+
+.checkout_list_title_cell_text {
+  width: 540px;
+}
+
+TD.checkout_list_item_id_cell {
+  width: 200px;
+}
+
+.checkout_list_item_id_cell_text {
+  width: 200px;
+}
+
+TABLE.circulation_badges_table {
+  margin-left: 30px;
+  width: 1105px;
+}
+
+TD.circulation_badge_cell_separator {
+  width: 130px;
+}
+
+#circulation_barcode_splash_animation {
+  left: 180px;
+}
+
+#circulation_rfid_splash_animation {
+  left: 180px;
+}
+
+.scroll_buttons_group {
+  left: 1085px;
+}

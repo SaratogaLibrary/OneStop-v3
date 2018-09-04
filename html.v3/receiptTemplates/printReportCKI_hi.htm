@@ -1,0 +1,44 @@
+﻿<html>
+	<head>
+	<title>बुद्धिमानी भरी वापसी - सभी आइटम लौटाए गए रिपोर्ट</title>
+	<style type="text/css">
+	h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+		<center><h1>EnvisionWare पुस्तकालय</h1>
+		</center>
+		<center><h2>बुद्धिमानी भरी वापसी: सभी आइटम लौटाए गए रिपोर्ट</h2>
+		</center>
+		<center><h2>%%Date.LocalText%%</h2></center>
+		<table>
+		<tr>
+			<th align=left><h3>शीर्षक</h3></th>
+			<th align=left><h3>बारकोड</h3></th>
+			<th align=left<h3>चेक इन अलर्ट</h3></th>
+			<th align=left<h3>गंतव्य स्थान</h3></th>			
+		</tr>
+		$$Session.CheckedInItems{
+			<tr>
+				<td align=left><h4>%%Checkin.ItemTitle%%</h4></td>
+				<td align=left><h4>%%Checkin.ItemId%%</h4></td>
+				<td align=left><h4>%%Checkin.ItemAlertType%%</h4></td>
+				<td aligh=left><h4>%%Checkin.ItemDestinationLocation%%</h4></td>
+			</tr>
+		}$$
+		</table>
+		<hr>
+		<table>
+			<tr>
+				<td><h3>इस सत्र में लौटाए गए आइटम</h3></td>
+				<td><h3>%%Session.NumberOfItemsCheckedIn%%</h3></td>
+			</tr>
+		</table>
+		
+		<center><h4>पृष्ठ %%Receipt.Page%% का%%Receipt.Pages%%</h4>
+		</center>
+	</body>
+</html>

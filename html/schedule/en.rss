@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+   <channel>
+      <title>Library Schedule</title>
+      <language>en</language>
+      <item>
+         <date>Event Date</date>
+         <time>Event Time</time>
+         <location>Location</location>
+         <description>Event Description</description>
+      </item>
+      <item>
+         <date></date>
+         <time></time>
+         <location></location>
+         <description></description>
+      </item>
+      <item>
+         <date></date>
+         <time></time>
+         <location></location>
+         <description></description>
+      </item>
+      <item>
+         <date></date>
+         <time></time>
+         <location></location>
+         <description></description>
+      </item>
+      <item>
+         <date></date>
+         <time></time>
+         <location></location>
+         <description></description>
+      </item>
+      <item>
+         <date></date>
+         <time></time>
+         <location></location>
+         <description></description>
+      </item>
+      <item>
+         <date></date>
+         <time></time>
+         <location></location>
+         <description></description>
+      </item>
+      <item>
+         <date></date>
+         <time></time>
+         <location></location>
+         <description></description>
+      </item>
+      <item>
+         <date></date>
+         <time></time>
+         <location></location>
+         <description></description>
+      </item>
+      <item>
+         <date></date>
+         <time></time>
+         <location></location>
+         <description></description>
+      </item>
+      <item>
+         <date></date>
+         <time></time>
+         <location></location>
+         <description></description>
+      </item>
+      <item>
+         <date></date>
+         <time></time>
+         <location></location>
+         <description></description>
+      </item>
+   </channel>
+</rss>
+
+
+
+
+
+

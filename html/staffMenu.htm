@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EnvisionWare OneStop - Staff Menu</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="EXPIRES" content="Thu, 20 Mar 2008 00:00:01 GMT">
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/onestop_style.css" type="text/css" />
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/jquery.modal.css" type="text/css" media="screen" />
+    <link id="layout_stylesheet" rel="STYLESHEET" href="./styles/layout_1024.css" type="text/css" />
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.min.js"></script>
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.modal.js"></script>
+    <script type="text/javascript" src="/scripts/utilities.js"></script>
+    <script type="text/javascript" src="/scripts/languageUtilities.js"></script>
+    <script type="text/javascript" src="/scripts/staffMenu.js"></script>
+  </head>
+  <body onload="initialize()" onselectstart="return false" oncontextmenu="return isContextMenuAllowed()">
+    <div id="main">
+      <div id="page_header_group"></div>
+      <div id="content">
+        <div id="staff_menu_shim">
+        </div>
+        <div id="staff_menu_content_group">
+          <div id="staff_menu_buttons_group_background">
+            <div id="staff_menu_buttons_group">
+              <div class="staff_menu_button_container" id="staff_menu_load_escrow_button_container">
+                <div class="staff_menu_nav_button_border">
+                  <button class="staff_menu_nav_button" id="load_escrow_button" onclick="goToLoadEscrow();">
+                    <div class="staff_menu_nav_button_icon_container">
+                      <img class="staff_menu_nav_button_icon" src="./images/coinBillIcon.jpg" alt="Load Escrow">
+                    </div>
+                    <div class="staff_menu_nav_button_text">%%Text.txtStaffMenuPage_LoadEscrow%%</div>
+                  </button>
+                </div>
+              </div>
+              <div class="staff_menu_button_container" id="staff_menu_reconcile_cash_button_container">
+                <div class="staff_menu_nav_button_border">
+                  <button class="staff_menu_nav_button" id="reconcile_cash_button" onclick="goToReconcileCash();">
+                    <div class="staff_menu_nav_button_icon_container">
+                      <img class="staff_menu_nav_button_icon" src="./images/depositIcon.png" alt="Reconcile Cash">
+                    </div>
+                    <div class="staff_menu_nav_button_text">%%Text.txtStaffMenuPage_ReconcileCash%%</div>
+                  </button>
+                </div>
+              </div>
+              <div class="staff_menu_button_container" id="staff_menu_view_stats_button_container">
+                <div class="staff_menu_nav_button_border">
+                  <button class="staff_menu_nav_button" id="view_stats_button" onclick="goToViewStats();">
+                    <div class="staff_menu_nav_button_icon_container">
+                      <img class="staff_menu_nav_button_icon" src="./images/viewStatisticsIcon.png" alt="View Statistics">
+                    </div>
+                    <div class="staff_menu_nav_button_text">%%Text.txtStaffMenuPage_ViewStats%%</div>
+                  </button>
+                </div>
+              </div>
+              <div class="staff_menu_button_container" id="staff_menu_show_desktop_button_container">
+                <div class="staff_menu_nav_button_border">
+                  <button class="staff_menu_nav_button" id="show_desktop_button" onclick="goToShowDesktop();">
+                    <div class="staff_menu_nav_button_icon_container">
+                      <img class="staff_menu_nav_button_icon" src="./images/showDesktopIcon.png" alt="Show Desktop">
+                    </div>
+                    <div class="staff_menu_nav_button_text">%%Text.txtStaffMenuPage_ShowDesktop%%</div>
+                  </button>
+                </div>
+              </div>
+              <div class="staff_menu_button_container" id="staff_menu_pending_alerts_button_container">
+                <div class="staff_menu_nav_button_border">
+                  <button class="staff_menu_nav_button" id="pending_alerts_button" onclick="goToPendingAlerts();">
+                    <div class="staff_menu_nav_button_icon_container">
+                      <img class="staff_menu_nav_button_icon" src="./images/pendingAlertsIcon.png" alt="Pending Alert">
+                    </div>
+                    <div class="staff_menu_nav_button_text">%%Text.txtStaffMenuPage_PendingAlert%%</div>
+                  </button>
+                </div>
+              </div>
+              <div class="staff_menu_button_container" id="staff_menu_main_menu_button_container">
+                <div class="staff_menu_nav_button_border">
+                  <button class="staff_menu_nav_button" id="main_menu_button" onclick="goToStartOver();">
+                    <div class="staff_menu_nav_button_icon_container">
+                      <img class="staff_menu_nav_button_icon" src="./images/returnToMainMenuIcon.png" alt="Return to the Self Service Menu Icon">
+                    </div>
+                    <div class="staff_menu_nav_button_text">%%Text.txtStaffMenuPage_ReturnToMainPage%%</div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="printer_status_container">
+            <span class="warning" id="printerStatus">
+          </div>
+        </div>
+      </div>
+      <div id="nav_buttons_group_container">
+        <div id="nav_buttons_group_background">
+          <div id="nav_buttons_group">
+            <div id="help_button_border" class="nav_button_border"><button class="nav_button" id="help_button" onclick="requestHelp('staffMenu.htm');">%%Text.txtCommon_Help%%</button></div>
+            <div id="cancel_help_button_border" class="nav_button_border"><button class="nav_button" id="cancel_help_button" onclick="cancelHelpRequest('staffMenu.htm');">%%Text.txtCommon_CancelHelp%%</button></div>
+            <div id="change_language_button_border" class="nav_button_border"><button class="nav_button" id="change_language_button" onclick="displayLanguageOptionsDialog();">%%Text.txtCommon_ChangeLanguage%%</button></div>
+          </div>
+        </div>
+        <div id="nav_buttons_footer">
+        </div>
+      </div>
+    </div>
+    <div id="language_buttons_group" class="modal fade">
+      <div id="language_buttons">
+      </div>
+    </div>
+  </body>
+</html>

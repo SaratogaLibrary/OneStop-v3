@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EnvisionWare OneStop - Load Escrow</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="EXPIRES" content="Thu, 29 Nov 2007 00:00:01 GMT">
+    <link rel="STYLESHEET" href="./styles/onestop_style.css" type="text/css" />
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/jquery.modal.css" type="text/css" media="screen" />
+    <link id="layout_stylesheet" rel="STYLESHEET" href="./styles/layout_1024.css" type="text/css" />
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.min.js"></script>
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.modal.js"></script>
+    <script type="text/javascript" src="/scripts/utilities.js"></script>
+    <script type="text/javascript" src="./scripts/languageUtilities.js"></script>
+    <script type="text/javascript" src="./scripts/loadEscrow.js"></script>
+  </head>
+  <body onload="initialize()" onselectstart="return false" oncontextmenu="return isContextMenuAllowed()">
+    <div id="main">
+      <div id="page_header_group"></div>
+      <div id="content">
+        <div id="load_escrow_shim">
+        </div>
+        <div id="load_escrow_content_group">
+          <div id="load_escrow_instructions_title_container">
+            %%Text.txtLoadEscrowPage_InstructionsTitle%%
+          </div>
+          <div id="load_escrow_instructions_group">
+            <div id="load_escrow_instructions_icon_container">
+              <img id="load_escrow_instructions_icon" src="./images/PayFineIcon.png" alt="Icon">
+            </div>
+            <div id="load_escrow_instructions_text_container">
+              %%Text.txtLoadEscrowPage_Instructions%%
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="nav_buttons_group_container">
+        <div id="nav_buttons_group_background">
+          <div id="nav_buttons_group">
+            <div id="help_button_border" class="nav_button_border"><button class="nav_button" id="help_button" onclick="requestHelp('staffMenu.htm');">%%Text.txtCommon_Help%%</button></div>
+            <div id="cancel_help_button_border" class="nav_button_border"><button class="nav_button" id="cancel_help_button" onclick="cancelHelpRequest('staffMenu.htm');">%%Text.txtCommon_CancelHelp%%</button></div>
+            <div id="change_language_button_border" class="nav_button_border"><button class="nav_button" id="change_language_button" onclick="displayLanguageOptionsDialog();">%%Text.txtCommon_ChangeLanguage%%</button></div>
+            <div class="nav_button_border"><button class="nav_button" id="done_button" onclick="loadEscrow();">%%Text.txtLoadEscrowPage_Done%%</button></div>
+          </div>
+        </div>
+        <div id="nav_buttons_footer">
+        </div>
+      </div>
+    </div>
+    <div id="language_buttons_group" class="modal fade">
+      <div id="language_buttons">
+      </div>
+    </div>
+  </body>
+</html>

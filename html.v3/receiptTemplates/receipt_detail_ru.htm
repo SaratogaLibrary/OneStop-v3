@@ -1,0 +1,97 @@
+﻿<html>
+	<head>
+		<title>Квитанция о взятии OneStop</title>
+		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+^^Header{
+		<center><h2>EnvisionWare</h2>
+		</center>
+		<center><h3>Библиотека</h3>
+		</center>
+		<hr>
+		<h4>Дата: %%Date.LocalText%%</h4>
+		<h4>Время: %%Time.LocalText%%</h4>
+		<h4>Имя: %%User.FullName%%</h4>
+		<h4>Штрафы/сборы для оплаты: $%%User.FeeAmount%%</h4>
+		<br>
+		<h4><b>Всего получено в этом сеансе: %%Session.TotalItemsCirculated%%</b></h4>
+		<h4><b>Всего выданных вам единиц библиотечного фонда: %%Session.TotalItemsOut%%</b></h4>
+		<hr>
+}^^
+^^List{
+		<h4><b>Выдано в этом сеансе:</b></h4>
+		$$Session.CheckedOutItems{
+		<h4>
+			Название: %%Checkout.ItemTitle#35#%%<br>
+			Штрихкод: %%Checkout.ItemId%%<br>
+			Срок: %%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^List{
+		<h4><b>Выдано в том сеансе - защита еще включена</b></h4>
+		$$Session.ItemsPendingSecurityAdjustment{
+		<h4>
+			Название: %%Checkout.ItemTitle%%<br>
+			Штрихкод: %%Checkout.ItemId%%<br>
+			Срок: %%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+		<hr>
+}^^
+
+^^List{
+		<h4><b>Не получено</b></h4>
+		<h4><i>Примечание. Некоторая информация может быть доступна не для всех указанных элементов.</i></h4>
+		$$Session.ErrorItems{
+		<h4>
+			Название: %%Checkout.ItemTitle%%<br>
+			Штрихкод: %%Checkout.ItemId%%<br>
+			Причина: %%Checkout.ScreenMessage%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^List{
+		<h4><b>Прочие выданные вам единицы библиотечного фонда</b></h4>
+		$$Session.ExistingItemsOut{
+		<h4>
+			Название: %%Item.Title%%<br>
+			Штрихкод: %%Item.Id%%<br>
+			Срок: %%Item.DueDate%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+		<hr>
+}^^
+
+^^List{
+		<h4><b>Recommendations</b></h4>
+		$$Session.SavedRecommendations{
+		<h4>
+			Title: %%Recommendation.Title%%<br>
+			Author: %%Recommendation.Author%%<br>
+			ISBN: %%Recommendation.PrimaryIsbn%%<br>
+			Rating: %%Recommendation.Rating%%<br>
+			Description: %%Recommendation.Description%%<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^Footer{
+			<hr>
+			<center><h4>Страница %%Receipt.Page%% из%%Receipt.Pages%%</h4>
+			</center>
+}^^
+	</body>
+</html>

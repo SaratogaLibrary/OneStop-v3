@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EnvisionWare OneStop - Receipt Options</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="EXPIRES" content="Mon, 17 Dec 2007 00:00:01 GMT">
+    <link rel="STYLESHEET" href="./styles/onestop_style.css" type="text/css">
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/jquery.modal.css" type="text/css" media="screen" />
+    <link id="layout_stylesheet" rel="STYLESHEET" href="./styles/layout_1024.css" type="text/css">
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.min.js"></script>
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.modal.js"></script>
+    <script type="text/javascript" src="./scripts/utilities.js"></script>
+    <script type="text/javascript" src="./scripts/keypad.js"></script>
+    <script type="text/javascript" src="./scripts/languageUtilities.js"></script>
+    <script type="text/javascript" src="./scripts/receiptutilities.js"></script>
+    <script type="text/javascript" src="./scripts/scanItemsNext.js"></script>
+  </head>
+  <body onload="initialize()" onmousedown="resetTimerInBody()" onkeypress="resetTimerInBody()" onselectstart="return false" oncontextmenu="return isContextMenuAllowed()">
+    <div id="main">
+      <div id="page_header_group"></div>
+      <div id="content">
+        <div id="scan_items_next_shim">
+        </div>
+        <div id="scan_items_next_content_group">
+          <div id="print_receipt_option_group">
+          </div>
+        </div>
+        <div class="modal fade" id="input_email_address_group">
+        </div>
+      </div>
+      <div id="nav_buttons_group_container">
+        <div id="nav_buttons_group_background">
+          <div id="nav_buttons_group">
+            <div id="help_button_border" class="nav_button_border"><button class="nav_button" id="help_button" onclick="requestHelpWithPatronName('scanItems.htm');">%%Text.txtCommon_Help%%</button></div>
+            <div id="cancel_help_button_border" class="nav_button_border"><button class="nav_button" id="cancel_help_button" onclick="cancelHelpRequestWithPatronName('scanItems.htm');">%%Text.txtCommon_CancelHelp%%</button></div>
+            <div id="change_language_button_border" class="nav_button_border"><button class="nav_button" id="change_language_button" onclick="displayLanguageOptionsDialog();">%%Text.txtCommon_ChangeLanguage%%</button></div>
+          </div>
+        </div>
+        <div id="nav_buttons_footer">
+        </div>
+      </div>
+    </div>
+    <div id="language_buttons_group" class="modal fade">
+      <div id="language_buttons">
+      </div>
+    </div>
+    <div class="modal fade" id="please_wait_div">
+      <table class="please_wait_table" cellpadding="5" ID="Table1">
+        <tr>
+          <td><img class="please_wait_icon" src="./images/please_wait.png"></td>
+          <td><span id="please_wait_text">%%Text.txtScanItemsPage_PleaseWaitProcessing%%</span></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

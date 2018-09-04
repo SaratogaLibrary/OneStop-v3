@@ -1,0 +1,39 @@
+<!-- Copyright(c)2017 EnvisionWare, Inc. - All Rights Reserved -->
+
+<div class="modal-header">
+  <h3 class="modal-title" ng-bind-html="pageText.header">Enter Email Address</h3>
+</div>
+
+<div class="modal-body">
+  <p ng-bind-html="pageText.instructions">Please enter the email address to which the receipt should be sent.</p>
+  <form name="emailAddressForm">
+    <div class="form-group">
+      <!-- <label for="emailAddress">Email Address</label> -->
+      <input  type="text"
+              class="form-control"
+              id="email-address-field"
+              name="emailAddress"
+              ng-attr-placeholder="{{pageText.placeholder}}"
+              ng-model="email.address"
+              ng-blur="emailAddressField.lostFocus($event)"
+              ng-keydown="emailAddressField.keydown($event)"
+              autofocus
+              autocomplete="off"
+              required>
+      <alpha-keyboard style="{z-index: 999;}" options="keyboard"></alpha-keyboard>
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <div class="col-sm-2 text-center">
+    <button class="btn btn-default" ng-mousedown="clear()" ng-bind-html="pageText.clearButton">Clear</button>
+  </div>
+  <div class="col-sm-6"></div>
+  <div class="col-sm-2 text-right">
+    <button class="btn btn-default" ng-mousedown="accept()" ng-disabled="!canAccept()" ng-bind-html="pageText.okButton">OK</button>
+  </div>
+  <div class="col-sm-2 text-left">
+    <button class="btn btn-default" ng-mousedown="cancel()" ng-bind-html="pageText.cancelButton">Cancel</button>
+  </div>
+</div>

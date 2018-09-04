@@ -1,0 +1,40 @@
+<!-- Copyright(c)2017 EnvisionWare, Inc. - All Rights Reserved - All Rights Reserved -->
+
+<div class="modal-header">
+  <h3 class="modal-title">{{pageHeader}}</h3>
+</div>
+
+<div class="modal-body">
+  <div class="row" ng-if="layout == 'SIDE_BY_SIDE'">
+    <div class="col-sm-4 text-center">
+      <img draggable="false" ng-src="{{image.path}}" height="{{image.height}}" width="{{image.width}}" ng-if="image.path" alt="Icon">
+    </div>
+    <div class="col-sm-8">
+      <p><span ng-bind-html="text"></span></p>
+    </div>
+  </div>
+
+  <div class="row" ng-if="layout == 'TEXT_TOP'">
+    <div class="col-sm-12 text-center">
+      <p><span ng-bind-html="text"></span></p>
+    </div>
+    <div class="col-sm-12 text-center">
+      <img draggable="false" ng-src="{{image.path}}" height="{{image.height}}" width="{{image.width}}" ng-if="image.path" alt="Icon">
+    </div>
+  </div>
+
+  <div class="row" ng-if="layout == 'TEXT_BOTTOM'">
+    <div class="col-sm-12 text-center">
+      <img draggable="false" ng-src="{{image.path}}" height="{{image.height}}" width="{{image.width}}" ng-if="image.path" alt="Icon">
+    </div>
+    <div class="col-sm-12 text-center">
+      <p><span ng-bind-html="text"></span></p>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <div class="col-sm-12 text-center footerbuttons">
+    <button class="btn btn-default" ng-repeat="button in buttons" ng-mousedown="close(button.id)">{{button.text}}</button>
+  </div>
+</div>

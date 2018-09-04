@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>OneStop RF Security Receipt</title>
+		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+		<center><h2>EnvisionWare</h2></center>
+		<center><h3>Library</h3></center>
+		<br>
+		<center><h3>Security Receipt for</h3></center>
+		<center><h4>%%Checkout.ItemTitle%%</h4></center>
+		<hr>
+		<h4>Date: %%Date.LocalText%%</h4>
+		<h4>Time: %%Time.LocalText%%</h4>
+		<br>
+		<h4>Item Id: %%Checkout.ItemId%%</h4>
+    <h4>Title: %%Checkout.ItemTitle%%</h4>
+    <h4>Due Date: %%Checkout.ItemDueDate%%</h4>
+    <h4>Media Type: %%Checkout.ItemMediaType%%</h4>
+    <br>
+    <h4>%%Checkout.PrintLine%%</h4>
+    <br>
+    <p>Please place this receipt in the pocket<br>
+       in the back of the book<br>
+       before exiting the library</p>
+	</body>
+</html>

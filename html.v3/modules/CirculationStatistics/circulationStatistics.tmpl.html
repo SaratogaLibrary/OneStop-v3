@@ -1,0 +1,70 @@
+<!-- Copyright(c)2017 EnvisionWare, Inc. - All Rights Reserved -->
+
+<div class="row">
+  <div class="col-sm-12 text-center"><h3 class="circulation-title" ng-bind-html="pageText.header">Circulation Statistics</h3></div>
+</div>
+<div class="row">
+	<div class="col-sm-3 col-sm-offset-2">
+    <div class="text-center"><h4 ng-bind-html="pageText.criteriaHeader">Criteria for Circulation Statistics</h4></div>
+    <form class="form-horizontal" id="circulation-options">
+      <div class="form-group">
+        <label for="from-date-field" class="col-sm-3" ng-bind-html="pageText.fromDate">From</label>
+        <div class="col-sm-9">
+          <p class="input-group">
+            <input id="from-date-field" type="text" class="form-control" uib-datepicker-popup="shortDate" ng-model="filters.fromDate" is-open="datePickers.from.isOpen" show-button-bar="false" datepicker-options="datePickers.from.options" />
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="openFromDatePicker()"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+          </p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="to-date-field" class="col-sm-3" ng-bind-html="pageText.toDate">To</label>
+        <div class="col-sm-9">
+          <p class="input-group">
+            <input id="to-date-field" type="text" class="form-control" uib-datepicker-popup="shortDate" ng-model="filters.toDate" is-open="datePickers.to.isOpen" show-button-bar="false" datepicker-options="datePickers.to.options" />
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="openToDatePicker()"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+          </p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="trans-status-field" class="col-sm-3" ng-bind-html="pageText.transactionStatus">Transaction Status</label>
+        <div class="col-sm-9">
+          <select id="trans-status-field" class="form-control" ng-model="filters.transactionStatus" ng-options="transStatus.label for transStatus in transactionStatuses"></select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="trans-type-field" class="col-sm-3" ng-bind-html="pageText.transactionType">Transaction Type</label>
+        <div class="col-sm-9">
+          <select id="trans-type-field" class="form-control" ng-model="filters.transactionType" ng-options="transType.label for transType in transactionTypes"></select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="media-type-field" class="col-sm-3" ng-bind-html="pageText.mediaType">Media Type</label>
+        <div class="col-sm-9">
+          <select id="media-type-field" class="form-control" ng-model="filters.mediaType" ng-options="mediaType.label for mediaType in mediaTypes"></select>
+        </div>
+      </div>
+    </form>
+	</div>
+  <div class="col-sm-7">
+    <div ng-show="stats.resultsTable" ng-bind-html="stats.resultsTable"></div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="actionbuttonrow" ng-controller="ButtonRowController" ng-cloak>
+      <p>
+        <button
+            class="btn btn-secondary active"
+            ng-repeat="button in buttonRow.buttons"
+            ng-click="button.action()"
+            ng-show="button.text && button.visible"
+            ng-disabled="!button.enabled">{{button.text}}
+        </button>
+      </p>
+    </div>
+  </div>
+</div>

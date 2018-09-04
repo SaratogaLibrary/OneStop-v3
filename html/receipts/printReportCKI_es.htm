@@ -1,0 +1,44 @@
+﻿<html>
+	<head>
+	<title>Intelligent Returns - Reporte de todos los artículos devueltos</title>
+	<style type="text/css">
+	h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+		<center><h1>Biblioteca EnvisionWare</h1>
+		</center>
+		<center><h2>Intelligent Returns: Reporte de todos los atículos devueltos</h2>
+		</center>
+		<center><h2>%%Date.LocalText%%</h2></center>
+		<table>
+		<tr>
+			<th align=left><h3>Title</h3></th>
+			<th align=left><h3>Código de Barras</h3></th>
+			<th align=left<h3>Alerta de retorno</h3></th>
+			<th align=left<h3>Lugar de destino</h3></th>			
+		</tr>
+		$$Session.CheckedInItems{
+			<tr>
+				<td align=left><h4>%%Checkin.ItemTitle%%</h4></td>
+				<td align=left><h4>%%Checkin.ItemId%%</h4></td>
+				<td align=left><h4>%%Checkin.ItemAlertType%%</h4></td>
+				<td aligh=left><h4>%%Checkin.ItemDestinationLocation%%</h4></td>
+			</tr>
+		}$$
+		</table>
+		<hr>
+		<table>
+			<tr>
+				<td><h3>Artículos devueltos en esta transacción</h3></td>
+				<td><h3>%%Session.NumberOfItemsCheckedIn%%</h3></td>
+			</tr>
+		</table>
+		
+		<center><h4>Página %%Receipt.Page%% de %%Receipt.Pages%%</h4>
+		</center>
+	</body>
+</html>

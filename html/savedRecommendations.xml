@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<savedRecommendations>
+	$$Session.SavedRecommendations{
+	<recommendation>
+		<title>%%Recommendation.Title%%</title>
+		<fullTitle>%%Recommendation.FullTitle%%</fullTitle>
+		<author>%%Recommendation.Author%%</author>
+		<fullAuthor>%%Recommendation.FullAuthor%%</fullAuthor>
+		<primaryIsbn>%%Recommendation.PrimaryIsbn%%</primaryIsbn>
+		<rating>%%Recommendation.Rating%%</rating>
+		<description>%%Recommendation.Description%%</description>
+	</recommendation>
+	}$$
+</savedRecommendations>

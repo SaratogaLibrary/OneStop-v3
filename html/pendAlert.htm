@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EnvisionWare OneStop - Process Pending Alert(s) </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="EXPIRES" content="Tue, 04 Dec 2007 00:00:01 GMT">
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/onestop_style.css" type="text/css" media="screen" />
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/jquery.modal.css" type="text/css" media="screen" />
+    <link id="layout_stylesheet" rel="STYLESHEET" href="./styles/layout_1024.css" type="text/css" media="screen" />
+    <link id="print_stylesheet" rel="STYLESHEET" href="./styles/print.css" type="text/css" media="print" />
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.min.js"></script>
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.modal.js"></script>
+    <script type="text/javascript" src="./scripts/languageUtilities.js"></script>
+    <script type="text/javascript" src="./scripts/utilities.js"></script>
+    <script type="text/javascript" src="./scripts/pendAlert.js"></script>
+  </head>
+  <body onload="initialize()" onselectstart="return false" oncontextmenu="return isContextMenuAllowed()">
+    <div id="main">
+      <div id="page_header_group"></div>
+      <div id="content">
+        <div id="pend_alerts_shim">
+        </div>
+        <div id="pend_alerts_content_group">
+          <div id="pend_alerts_instructions_container">
+            %%Text.txtPendAlertPage_Instruction%%
+          </div>
+          <div id="pend_alerts_buttons_group">
+            <table class="body_content" id="tableHeader" cellspacing="0px" cellpadding="2px">
+              <tr>
+                <td colspan="2"></td>
+              </tr>
+              <tr>
+                <td align="center" colspan="2" width="100%">
+                  <div id="offline_button_border" class="pend_alerts_button_border">
+                    <button class="pend_alerts_button" id="btnIlsOffline" name="btnIlsOffline" onclick='doButtonPress("btnIlsOffline")'>%%Text.txtPendAlertPage_AlertIlsOffline%%</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" colspan="2" width="100%">
+                  <div id="printer_down_button_border" class="pend_alerts_button_border">
+                    <button class="pend_alerts_button" id="btnPrinterDown" name="btnPrinterDown" onclick='doButtonPress("btnPrinterDown")'>%%Text.txtPendAlertPage_AlertPrinterDown%%</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" colspan="2" width="100%">
+                  <div id="request_help_button_border" class="pend_alerts_button_border">
+                    <button class="pend_alerts_button" id="btnRequestHelp" name="btnRequestHelp=" onclick='doButtonPress("btnRequestHelp")'>%%Text.txtPendAlertPage_AlertRequestHelp%%</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" colspan="2">
+                  <div id="noAlertsLabel">%%Text.txtPendAlertPage_noPendingAlerts%%</div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">&nbsp;</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div id="nav_buttons_group_container">
+        <div id="nav_buttons_group_background">
+          <div id="nav_buttons_group">
+            <div class="nav_button_border">
+              <button class="nav_button" id="start_over_button" onclick="goToStaffMenu();">
+                <div class="arrow_nav_button_icon_container">
+                  <img class="arrow_nav_button_icon" src="./images/left-arrow.png">
+                </div>
+                <div class="arrow_nav_button_text_container">
+                  <span class="arrow_nav_button_text">%%Text.txtPendAlertPage_ButtonStartOver%%</span>
+                </div>
+              </button>
+            </div>
+            <div id="help_button_border" class="nav_button_border">
+              <button class="nav_button" id="help_button" onclick="requestHelp('pendAlert.htm');">
+                %%Text.txtCommon_Help%%
+              </button>
+            </div>
+            <div id="cancel_help_button_border" class="nav_button_border">
+              <button class="nav_button" id="cancel_help_button" onclick="cancelHelpRequest('pendAlert.htm');">
+                %%Text.txtCommon_CancelHelp%%
+              </button>
+            </div>
+            <div id="change_language_button_border" class="nav_button_border">
+              <button class="nav_button" id="change_language_button" onclick="displayLanguageOptionsDialog();">
+                %%Text.txtCommon_ChangeLanguage%%</button>
+            </div>
+          </div>
+        </div>
+        <div id="nav_buttons_footer">
+        </div>
+      </div>
+    </div>
+    <div id="language_buttons_group" class="modal fade">
+      <div id="language_buttons">
+      </div>
+    </div>
+  </body>
+</html>

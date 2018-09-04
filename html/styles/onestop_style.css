@@ -1,0 +1,1226 @@
+BODY {
+  overflow-y: auto;
+  color: %%Preferences.GUI2.0:FontColor%%;
+  font-family: %%Preferences.GUI2.0:FontFace%%;
+  background-color: %%Preferences.GUI2.0:BackgroundColor%%;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.h1 {
+  font-weight: 700;
+  line-height: normal;
+}
+
+.h2 {
+  font-weight: 700;
+  line-height: normal;
+}
+
+.h3 {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: normal;
+}
+
+p {
+  margin: 0px;
+}
+
+#main {
+  text-align: center;
+  line-height: normal;
+  position: relative;
+}
+
+/*Header*/
+
+#library_logo {
+  position: relative;
+  display: inline-block;
+  background-image: url("%%Preferences.PageLogoFile%%");
+  background-repeat: no-repeat;
+  float: left;
+}
+
+#header_title_group {
+  position: relative;
+  display: inline-block;
+}
+
+.header_tab_background {
+  background-color: %%Preferences.GUI2.0:AccentColor%%;
+  position: relative;
+}
+
+.header_tab_text {
+  display: inline-block;
+  position: relative;
+}
+
+#patron_name_tab_group {
+  float: right;
+  display: inline-block;
+  text-align: left;
+}
+
+#patron_name_text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#timer_tab_group {
+  float: right;
+  display: inline-block;
+}
+
+#page_title {
+  position: relative;
+  text-align: center;
+  font-weight: 700;
+  color: %%Preferences.GUI2.0:PageHeaderColor%%;
+  line-height: normal;
+}
+
+#portal_section_group {
+  position: relative;
+  text-align: left;
+}
+
+#program_schedule_header_text {
+  font-weight: 700;
+  text-align: left;
+  line-height: normal;
+}
+
+TABLE.program_schedule_table td {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#program_schedule_items {
+  white-space: nowrap;
+  text-align: left;
+  line-height: normal;
+  font-weight: 400;
+}
+
+#enter_pin_group {
+  display: inline-block;
+}
+
+#enter_pin_instructions_group {
+  float: left;
+  text-align: right;
+}
+
+#enter_card_number_header {
+  position: relative;
+  text-align: right;
+}
+
+#enter_card_number_prompts {
+  float: bottom;
+}
+
+#barcode_scan_animation_container {
+  float: left;
+  text-align: center;
+}
+
+#barcode_scan_animation {
+  background-color: %%Preferences.GUI2.0:BackgroundColor%%;
+  background-image: './media/white.png';
+}
+
+#enter_pin_keypad {
+  float: left;
+  background-color: %%Preferences.GUI2.0:AccentColor%%;
+}
+
+#keypad_text_field_container {
+  position: relative;
+  display: inline-block;
+}
+
+.keypad_text_field {
+  text-align: center;
+  color: %%Preferences.GUI2.0:FontColor%%;
+  font-weight: normal;
+  text-decoration: none;
+  border: 1px solid %%Preferences.GUI2.0:ButtonBorderColor%%;
+}
+
+#nav_buttons_group_container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#nav_buttons_group_background {
+  background-color: %%Preferences.GUI2.0:AccentColor%%;
+}
+
+#nav_buttons_group {
+  position: relative;
+  text-align: center;
+}
+
+.nav_button_border {
+  position: relative;
+  border: solid 1px %%Preferences.GUI2.0:ButtonBorderColor%%;
+  box-shadow: 2px 2px 12px #A8A8A8;
+  display: inline-table;
+}
+
+.nav_button {
+  background-color: %%Preferences.GUI2.0:ButtonColor%%;
+  font-weight: 400;
+  color: %%Preferences.GUI2.0:FontColor%%;
+  border: 0;
+  vertical-align: middle;
+}
+
+.nav_button:active {
+  background: %%Preferences.GUI2.0:ActiveButtonColor%%;
+}
+
+.nav_button:disabled {
+  color: #E0E0E0;
+  background: %%Preferences.GUI2.0:ButtonColor%%;
+}
+
+.arrow_nav_button_text_container {
+  float: left;
+  display: table;
+  position: relative;
+}
+
+.arrow_nav_button_text {
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.arrow_nav_button_icon_container {
+  float: left;
+}
+
+.arrow_nav_button_icon {
+  vertical-align: middle;
+}
+
+.keypad_button_text {
+  line-height: normal;
+  text-align: center;
+  font-weight: 700;
+  color: %%Preferences.GUI2.0:FontColor%%;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.keypad_row {
+  position: relative;
+  display: inline-block;
+}
+
+.keypad_button_border {
+  border: 1px solid %%Preferences.GUI2.0:ButtonBorderColor%%;
+  vertical-align: middle;
+  position: relative;
+  float: left;
+  box-shadow: 2px 2px 12px #A8A8A8;
+}
+
+.keypad_button {
+  background-color: %%Preferences.GUI2.0:ButtonColor%%;
+  border: 0;
+}
+
+.keypad_button:active {
+  background: %%Preferences.GUI2.0:ActiveButtonColor%%;
+}
+
+#keyboard_button_separator {
+  float: left;
+}
+
+#alpha_keypad {
+  background-color: %%Preferences.GUI2.0:AccentColor%%;
+  position: absolute;
+}
+
+#language_buttons_group {
+  background-color: %%Preferences.GUI2.0:AccentColor%%;
+  position: absolute;
+  text-align: center;
+  margin: 0;
+}
+
+#language_buttons {
+  display: table-row;
+}
+
+.language_button_container {
+  display: inline-table;
+  position: relative;
+  float: left;
+}
+
+.language_button_border {
+  border: solid 1px %%Preferences.GUI2.0:ButtonBorderColor%%;
+}
+
+.language_button {
+  background-color: %%Preferences.GUI2.0:ButtonColor%%;
+  text-align: center;
+  color: %%Preferences.GUI2.0:FontColor%%;
+  border: 0;
+}
+
+.language_button:active {
+  background: %%Preferences.GUI2.0:ActiveButtonColor%%;
+}
+
+.language_button_icon_container {
+  position: relative;
+  float: left;
+}
+
+.language_button_text {
+  position: relative;
+  float: left;
+}
+
+#please_wait_div {
+  background-color: %%Preferences.GUI2.0:BackgroundColor%%;
+  border: 1px solid black;
+  margin: 0;
+}
+
+TABLE.please_wait_table {
+  font-weight: bold;
+}
+
+DIV.error_div {
+  position: absolute;
+  text-align: center;
+  visibility: hidden;
+  background-color: %%Preferences.GUI2.0:BackgroundColor%%;
+  border: 1px solid black;
+}
+
+/*Enter Pin Page*/
+
+#enter_pin_number_header {
+  position: relative;
+  text-align: right;
+}
+
+#enter_pin_number_prompts {
+  float: bottom;
+}
+
+#enter_pin_animation_container {
+  display: table;
+  margin: 0 auto;
+}
+
+#main_menu_content_group {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#main_menu_buttons_group_background {
+  background-color: %%Preferences.GUI2.0:AccentColor%%;
+  display: inline-block;
+}
+
+#main_menu_buttons_group {
+  position: relative;
+}
+
+.main_menu_nav_button_border {
+  border: 1px solid %%Preferences.GUI2.0:ButtonBorderColor%%;
+  position: relative;
+  box-shadow: 2px 2px 12px #A8A8A8;
+}
+
+.main_menu_nav_button {
+  background-color: %%Preferences.GUI2.0:ButtonColor%%;
+  text-align: center;
+  border: 0;
+}
+
+.main_menu_nav_button:active {
+  background: %%Preferences.GUI2.0:ActiveButtonColor%%;
+}
+
+.main_menu_nav_button_icon_container {
+  padding-bottom: 3px;
+}
+
+.main_menu_nav_button_icon {
+  border: 0;
+}
+
+.main_menu_nav_button_text {
+  color: %%Preferences.GUI2.0:FontColor%%;
+  position: relative;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.main_menu_button_container {
+  position: relative;
+  display: inline-table;
+  float:left;
+}
+
+/*Check Out Screen*/
+
+.circulation_group {
+  position: relative;
+  display: inline-block;
+}
+
+.circulation_list_group {
+  position: relative;
+  display: inline-block;
+}
+
+#circulation_instructions_container {
+  position: relative;
+  text-align: center;
+  float: top;
+  display: inline-block;
+}
+
+.circulation_list_container {
+  border-collapse: collapse;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  background-color: %%Preferences.GUI2.0:BackgroundColor%%;
+}
+
+#circulation_list {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.circulation_list tr, .circulation_list td {
+  border-collapse: collapse;
+}
+
+.circulation_list tr.even_row {
+  background-color: %%Preferences.GUI2.0:TableEvenRowColor%%;
+}
+
+.circulation_list tr.odd_row {
+  background-color: %%Preferences.GUI2.0:TableOddRowColor%%;
+}
+
+#circulation_list_header_container {
+  position: relative;
+  background-color: %%Preferences.GUI2.0:AccentColor%%;
+}
+
+TABLE.circulation_list_header {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.checkout_list_cell_text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: normal;
+  font-weight: 400;
+}
+
+TD.checkout_list_title_cell {
+  text-align: left;
+}
+
+.checkout_list_title_cell_text {
+  text-align: left;
+}
+
+TD.checkout_list_item_id_cell {
+  text-align: center;
+}
+
+.checkout_list_item_id_cell_text {
+  text-align: center;
+}
+
+TD.checkout_list_due_date_cell {
+  text-align: center;
+}
+
+.checkout_list_due_date_cell_text {
+  text-align: center;
+}
+
+#circulation_list_header_text {
+  line-height: normal;
+  font-weight: 400;
+}
+
+#circulation_badges_group {
+  position: relative;
+  background-color: %%Preferences.GUI2.0:AccentColor%%;
+}
+
+#circulation_badges_table_container {
+  position: relative;
+  display: inline-block;
+}
+
+TABLE.circulation_badges_table {
+  border: none;
+  border-spacing: 0;
+}
+
+TD.circulation_badge_cell {
+  padding: 0;
+}
+
+TD.circulation_badge_cell_separator {
+  padding: 0;
+}
+
+#not_circulated_badge {
+  display: none;
+}
+
+#circulation_reposition_badge {
+  display: none;
+}
+
+.circulation_splash_group {
+  position: relative;
+  float: top;
+  display: inline-block;
+}
+
+#circulation_rfid_splash_animation {
+  position: relative;
+}
+
+#circulation_barcode_splash_animation {
+  position: relative;
+}
+
+/*Common circulation screens items*/
+
+.entry_field {
+  margin-top: 0px;
+  border: 0;
+}
+
+.bordered_entry_field {
+  border: 1px solid %%Preferences.GUI2.0:ButtonBorderColor%%;
+}
+
+#entry_field_container {
+  position: relative;
+  text-align: center;
+}
+
+.base_status {
+  text-align: center;
+}
+
+.base_badge {
+  border: 1px solid %%Preferences.GUI2.0:ButtonBorderColor%%;
+  font-weight: bold;
+}
+
+.badge_icon_container {
+  position: relative;
+  float: left;
+}
+
+.badge_text {
+  position: relative;
+  float: right;
+  text-align: center;
+}
+
+.scroll_buttons_group {
+  position: absolute;
+}
+
+.scroll_button_border {
+  border: solid 1px %%Preferences.GUI2.0:ButtonBorderColor%%;
+  background-color: white;
+}
+
+.base_scroll_button {
+  background-color: %%Preferences.GUI2.0:ButtonColor%%;
+  text-align: center;
+  border: 0;
+}
+
+.base_scroll_button:active {
+  background: %%Preferences.GUI2.0:ActiveButtonColor%%;
+}
+
+/*Check In Screen*/
+
+.checkin_list_cell_text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: normal;
+  font-weight: 400;
+}
+
+TD.checkin_list_title_cell {
+  text-align: left;
+}
+
+.checkin_list_title_cell_text {
+  text-align: left;
+}
+
+TD.checkin_list_item_id_cell {
+  text-align: center;
+}
+
+.checkin_list_item_id_cell_text {
+  text-align: center;
+}
+
+/*all error pages*/
+
+.error_group {
+  position: relative;
+  display: inline-block;
+  background-color: %%Preferences.GUI2.0:AccentColor%%;
+}
+
+#error_icon_container {
+  position: relative;
+  float: left;
+}
+
+#error_description_group {
+  position: relative;
+  float: left;
+  text-align: left;
+}
+
+#error_description_header {
+  font-weight: 700;
+}
+
+#error_description_message {
+  position: relative;
+  word-wrap: break-word;
+}
+
+/*my account page*/
+
+#my_account_content_group {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#my_account_content_group_background {
+  background-color: %%Preferences.GUI2.0:AccentColor%%;
+}
+
+#my_account_content_details_group {
+  background-color: %%Preferences.GUI2.0:BackgroundColor%%;
+  position: relative;
+}
+
+.my_account_content_header_text {
+  font-weight: 700;
+  line-height: normal;
+}
+
+#my_account_patron_details {
+  position: relative;
+}
+
+#my_account_patron_details_table_container {
+  position: relative;
+  display: inline-block;
+}
+
+#my_account_patron_details_table {
+  position: relative;
+  display: inline-block;
+}
+
+.my_account_patron_details_table_header {
+  font-weight: 700;
+  text-align: right;
+  line-height: normal;
+}
+
+.my_account_patron_details_table_text {
+  text-align: left;
+  line-height: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#my_account_error_message_text {
+  font-size: large;
+  color: %%Preferences.GUI2.0:ImportantMessageColor%%;
+}
+
+.my_account_content_button_border {
+  position: relative;
+  border: solid 1px %%Preferences.GUI2.0:ButtonBorderColor%%;
+  vertical-align: bottom;
+  box-shadow: 2px 2px 12px #A8A8A8;
+}
+
+.disabled_my_account_content_button_border {
+  box-shadow: none;
+}
+
+.my_account_content_button {
+  background-color: %%Preferences.GUI2.0:ButtonColor%%;
+  text-align: center;
+  line-height: normal;
+  border: 0;
+  color: %%Preferences.GUI2.0:FontColor%%;
+}
+
+.my_account_content_button:active {
+  background: %%Preferences.GUI2.0:ActiveButtonColor%%;
+}
+
+.my_account_content_button:disabled {
+  background: %%Preferences.GUI2.0:ButtonColor%%;
+}
+
+#my_account_content_buttons_group {
+  position: relative;
+}
+
+.my_account_button_container {
+  position: relative;
+  float: left;
+}
+
+.my_account_content_button_header {
+  position: relative;
+  line-height: normal;
+}
+
+.my_account_content_button_value {
+  position: relative;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.my_account_content_button_text {
+  position: relative;
+  line-height: normal;
+}
+
+#all_items_detail_group {
+  position: absolute;
+  border: 1px solid black;
+  margin: 0;
+}
+
+.items_detail_group {
+  background-color: %%Preferences.GUI2.0:BackgroundColor%%;
+  text-align: center;
+}
+
+.items_detail_header_container {
+  background-color: %%Preferences.GUI2.0:AccentColor%%;
+  position: relative;
+  display: inline-block;
+}
+
+.items_detail_header_table {
+  table-layout: fixed;
+}
+
+.items_detail_column {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.items_detail_items_container {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+}
+
+.items_detail_items_table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+.items_detail_items_table tr.even_row {
+  background-color: %%Preferences.GUI2.0:TableEvenRowColor%%;
+}
+
+.items_detail_items_table tr.odd_row {
+  background-color: %%Preferences.GUI2.0:TableOddRowColor%%;
+}
+
+#items_detail_buttons_group_background {
+  background-color: %%Preferences.GUI2.0:AccentColor%%;
+}
+
+#items_detail_buttons_group {
+  position: relative;
+}
+
+#items_detail_previous_button_container {
+  float: left;
+}
+
+#items_detail_display_count_container {
+  text-align: center;
+  float: left;
+  display: table;
+}
+
+#items_detail_display_count {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#items_detail_next_button_container {
+  float: left;
+}
+
+#renew_all_items_button_container {
+  float: left;
+}
+
+#close_items_detail_button_container {
+  float: left;
+}
+
+.items_detail_renew_button_border {
+  border: solid 1px %%Preferences.GUI2.0:ButtonBorderColor%%;
+}
+
+.items_detail_renew_button {
+  background-color: %%Preferences.GUI2.0:ButtonColor%%;
+  font-weight: 400;
+  text-align: center;
+  line-height: normal;
+  color: %%Preferences.GUI2.0:FontColor%%;
+  border: 0;
+}
+
+.items_detail_renew_button:active {
+  background: %%Preferences.GUI2.0:ActiveButtonColor%%;
+}
+
+.items_detail_nav_button_border {
+  border: solid 1px %%Preferences.GUI2.0:ButtonBorderColor%%;
+}
+
+.items_detail_nav_button {
+  background-color: %%Preferences.GUI2.0:ButtonColor%%;
+  font-weight: 400;
+  text-align: center;
+  line-height: normal;
+  color: %%Preferences.GUI2.0:FontColor%%;
+  border: 0;
+}
+
+.items_detail_nav_button:active {
+  background: %%Preferences.GUI2.0:ActiveButtonColor%%;
+}
+
+/*Enter Staff Pin Page*/
+
+#enter_staff_pin_instructions_container {
+  position: relative;
+  text-align: center;
+  float: top;
+  display: inline-block;
+}
+
+#enter_staff_pin_form_container {
+  text-align: center;
+}
+
+/*Staff Menu Page*/
+
+#staff_menu_content_group {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#staff_menu_buttons_group_background {
+  background-color: %%Preferences.GUI2.0:AccentColor%%;
+  display: inline-block;
+}
+
+#staff_menu_buttons_group {
+  position: relative;
+}
+
+#printer_status_container {
+  position: relative;
+}
+
+.staff_menu_nav_button_border {
+  position: relative;
+  border: solid 1px %%Preferences.GUI2.0:ButtonBorderColor%%;
+  box-shadow: 2px 2px 12px #A8A8A8;
+}
+
+.staff_menu_nav_button {
+  background-color: %%Preferences.GUI2.0:ButtonColor%%;
+  text-align: center;
+  border: 0;
+}
+
+.staff_menu_nav_button:active {
+  background: %%Preferences.GUI2.0:ActiveButtonColor%%;
+}
+
+.staff_menu_nav_button_text {
+  color: %%Preferences.GUI2.0:FontColor%%;
+  position: relative;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.staff_menu_button_container {
+  position: relative;
+  display: inline-table;
+  float:left;
+}
+
+.warning {
+  font-size: large;
+  color: %%Preferences.GUI2.0:ImportantMessageColor%%;
+}
+
+/*Load Escrow Page*/
+
+#load_escrow_content_group {
+  display: inline-block;
+}
+
+#load_escrow_instructions_title_container {
+  position: relative;
+  text-align: center;
+  float: top;
+  font-weight: bold;
+}
+
+#load_escrow_instructions_group {
+  text-align: left;
+  position: relative;
+}
+
+#load_escrow_instructions_icon_container {
+  position: relative;
+  float: left;
+}
+
+#load_escrow_instructions_text_container {
+  position: relative;
+  float: left;
+}
+
+/*Reconcile Cash Page*/
+
+#reconcile_cash_content_group {
+  display: inline-block;
+}
+
+#reconcile_cash_content_box {
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+#reconcile_cash_instructions_title_container {
+  text-align: center;
+  font-weight: bold;
+}
+
+#reconcile_cash_instructions_text_container {
+  text-align: left;
+}
+
+#reconcile_cash_form_container {
+  text-align: left;
+}
+
+/*View Statistics Search Page*/
+
+#enter_view_stats_instructions_container {
+  text-align: center;
+  font-weight: bold;
+}
+
+#enter_view_stats_entry_group {
+  position: relative;
+  border: 1px solid black;
+}
+
+#enter_view_stats_entry_group_table {
+  display: inline-block;
+}
+
+.enter_view_stats_entry_label {
+  text-align: right;
+}
+
+.enter_view_stats_entry_field {
+  text-align: left;
+}
+
+/*View Statistics Result Page*/
+
+#view_stats_title_container {
+  text-align: center;
+  font-weight: bold;
+}
+
+#view_stats_summary_group {
+  font-weight: bold;
+  text-align: left;
+  position: relative;
+}
+
+#view_stats_report_content {
+  text-align: left;
+  display: inline;
+}
+
+#view_stats_report_content table {
+  display: inline;
+}
+
+/*Process Pending Alerts Page*/
+
+#pend_alerts_content_group {
+  display: inline-block;
+}
+
+#pend_alerts_instructions_container {
+  text-align: center;
+  font-weight: bold;
+}
+
+#pend_alerts_buttons_group {
+  position: relative;
+  display: inline-block;
+}
+
+.pend_alerts_button_border {
+  border: solid 1px %%Preferences.GUI2.0:ButtonBorderColor%%;
+}
+
+.pend_alerts_button {
+  background-color: %%Preferences.GUI2.0:ButtonColor%%;
+  font-weight: 400;
+  text-align: center;
+  line-height: normal;
+  color: %%Preferences.GUI2.0:FontColor%%;
+  border: 0;
+}
+
+.pend_alerts_button:active {
+  background: %%Preferences.GUI2.0:ActiveButtonColor%%;
+}
+
+/*Intelligent Returns Page*/
+
+#irs_summary_and_list_group {
+  background-color: %%Preferences.GUI2.0:AccentColor%%;
+  position: relative;
+}
+
+#irs_summary_table_container {
+  position: relative;
+}
+
+.irs_summary_item {
+  font-weight: bold;
+}
+
+/*Intelligent Returns Swap Bin Page*/
+
+#irs_swap_buttons_group {
+  background-color: %%Preferences.GUI2.0:AccentColor%%;
+  position: relative;
+}
+
+.irs_swap_header {
+  text-align: center;
+  font-weight: bold;
+}
+
+.irs_swap_button_border {
+  border: solid 1px %%Preferences.GUI2.0:ButtonBorderColor%%;
+}
+
+.irs_swap_button {
+  background-color: %%Preferences.GUI2.0:ButtonColor%%;
+  font-weight: 400;
+  text-align: center;
+  line-height: normal;
+  color: %%Preferences.GUI2.0:FontColor%%;
+  border: 0;
+}
+
+.irs_swap_button:active {
+  background: %%Preferences.GUI2.0:ActiveButtonColor%%;
+}
+
+/*Receipt Options*/
+
+#receipt_options_content_group {
+  background-color: %%Preferences.GUI2.0:AccentColor%%;
+  display: inline-block;
+}
+
+#receipt_options_icon_container_group {
+  position: relative;
+  display: inline-block;
+  float: left;
+}
+
+#receipt_options_icon_container {
+  position: relative;
+}
+
+#receipt_options_menu_group {
+  position: relative;
+  display: inline-block;
+  float: left;
+}
+
+#receipt_options_menu_header {
+  font-weight: bold;
+  text-align: center;
+}
+
+.receipt_options_button_border {
+  border: solid 1px %%Preferences.GUI2.0:ButtonBorderColor%%;
+}
+
+.receipt_options_button {
+  background-color: %%Preferences.GUI2.0:ButtonColor%%;
+  font-weight: bold;
+  text-align: center;
+  line-height: normal;
+  color: %%Preferences.GUI2.0:FontColor%%;
+  border: 0;
+}
+
+.receipt_options_button:active {
+  background: %%Preferences.GUI2.0:ActiveButtonColor%%;
+}
+
+/*Input String dialog*/
+
+#input_email_address_group {
+  background-color: %%Preferences.GUI2.0:BackgroundColor%%;
+  border: solid 1px %%Preferences.GUI2.0:ButtonBorderColor%%;
+  position: absolute;
+  margin: 0;
+}
+
+#input_string_title_container {
+  text-align: left;
+}
+
+#input_string_title {
+  font-weight: 700px;
+}
+
+#input_string_form_container {
+  text-align: left;
+}
+
+#input_string_keyboard_container {
+  text-align: center;
+}
+
+#input_string_keyboard_container_background {
+  background-color: %%Preferences.GUI2.0:AccentColor%%;
+  display: inline-block;
+}
+
+/* Checkout Fees */
+#confirm_checkout_fee_div {
+  background-color: %%Preferences.GUI2.0:BackgroundColor%%;
+  color: %%Preferences.GUI2.0:FontColor%%;
+  border: solid 2px black;
+  border-radius:9px;
+}
+
+#confirm_checkout_fee_dialog_title {
+	margin-left:25px;
+	font-weight:700;
+}
+
+#checkout_fee_item_title {
+	font-weight:700;
+}
+
+.accept_checkout_fee_button_border {
+  border:1px solid %%Preferences.GUI2.0:ButtonBorderColor%%; 
+  background-color: %%Preferences.GUI2.0:ButtonColor%%;
+  box-shadow: 2px 2px 12px #A8A8A8;
+  border-radius:3px;
+}
+
+.accept_checkout_fee_button {
+  background-color: %%Preferences.GUI2.0:ButtonColor%%;
+  color: %%Preferences.GUI2.0:FontColor%%;
+  width:98%;
+  border: 0;
+}
+
+.accept_checkout_fee_button:active {
+  background: %%Preferences.GUI2.0:ActiveButtonColor%%;
+}
+
+.item_with_fee_title {
+  color: %%Preferences.GUI2.0:ImportantMessageColor%%;
+  font-weight: 700;
+}
+
+.confirm_checkout_fee_highlighted_row {
+	background-color:%%Preferences.GUI2.0:AccentColor%%;
+}
+
+.confirm_checkout_fee_button_border {
+  position: relative;
+  border: solid 1px %%Preferences.GUI2.0:ButtonBorderColor%%;
+  box-shadow: 2px 2px 12px #A8A8A8;
+  display: inline-table;
+}
+
+.confirm_checkout_fee_button {
+  background-color: %%Preferences.GUI2.0:ButtonColor%%;
+  font-weight: 400;
+  color: %%Preferences.GUI2.0:FontColor%%;
+  border: 0;
+  vertical-align: middle;
+}

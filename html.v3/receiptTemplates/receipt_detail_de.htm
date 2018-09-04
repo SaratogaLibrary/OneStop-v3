@@ -1,0 +1,97 @@
+﻿<html>
+	<head>
+		<title>OneStop-Ausleihbeleg</title>
+		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+^^Header{
+		<center><h2>EnvisionWare</h2>
+		</center>
+		<center><h3>Bibliothek</h3>
+		</center>
+		<hr>
+		<h4>Datum: %%Date.LocalText%%</h4>
+		<h4>Zeit: %%Time.LocalText%%</h4>
+		<h4>Name: %%User.FullName%%</h4>
+		<h4>Geschuldete Überschreitungsgebühren/Entgelte: $%%User.FeeAmount%%</h4>
+		<br>
+		<h4><b>Gesamtanzahl der dieses Semester/Schuljahr ausgeliehenen Artikel: %%Session.TotalItemsCirculated%%</b></h4>
+		<h4><b>Gesamtanzahl der an Sie ausgeliehenen Artikel: %%Session.TotalItemsOut%%</b></h4>
+		<hr>
+}^^
+^^List{
+		<h4><b>In diesem Semester/Schuljahr ausgeliehen</b></h4>
+		$$Session.CheckedOutItems{
+		<h4>
+			Titel: %%Checkout.ItemTitle#35#%%<br>
+			Strichcode: %%Checkout.ItemId%%<br>
+			Rückgabedatum: %%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^List{
+		<h4><b>In diesem Semester/Schuljahr ausgeliehen - Sicherheitselement noch aktiviert</b></h4>
+		$$Session.ItemsPendingSecurityAdjustment{
+		<h4>
+			Titel: %%Checkout.ItemTitle%%<br>
+			Strichcode: %%Checkout.ItemId%%<br>
+			Rückgabedatum: %%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+		<hr>
+}^^
+
+^^List{
+		<h4><b>Nicht ausgeliehen</b></h4>
+		<h4><i>Hinweis: Möglicherweise sind nicht für alle aufgelisteten Artikel vollständige Informationen verfügbar.</i></h4>
+		$$Session.ErrorItems{
+		<h4>
+			Titel: %%Checkout.ItemTitle%%<br>
+			Strichcode: %%Checkout.ItemId%%<br>
+			Grund: %%Checkout.ScreenMessage%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^List{
+		<h4><b>Andere an Sie ausgeliehene Artikel</b></h4>
+		$$Session.ExistingItemsOut{
+		<h4>
+			Titel: %%Item.Title%%<br>
+			Strichcode: %%Item.Id%%<br>
+			Rückgabedatum: %%Item.DueDate%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+		<hr>
+}^^
+
+^^List{
+		<h4><b>Recommendations</b></h4>
+		$$Session.SavedRecommendations{
+		<h4>
+			Title: %%Recommendation.Title%%<br>
+			Author: %%Recommendation.Author%%<br>
+			ISBN: %%Recommendation.PrimaryIsbn%%<br>
+			Rating: %%Recommendation.Rating%%<br>
+			Description: %%Recommendation.Description%%<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^Footer{
+			<hr>
+			<center><h4>Seite %%Receipt.Page%% von %%Receipt.Pages%%</h4>
+			</center>
+}^^
+	</body>
+</html>

@@ -1,0 +1,32 @@
+﻿<html>
+	<head>
+		<title>自助服务工作站还书回条</title>
+		<style type="text/css">
+	h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+</style>
+	</head>
+	<body>
+		<center><h2>EnvisionWare</h2>
+		</center>
+		<center><h3>图书馆</h3>
+		</center>
+		<hr>
+		<h4>日期: %%Date.LocalText%% 时间: %%Time.LocalText%%</h4>
+		<h4>今次还书清单:</h4>
+		<hr>
+		$$Session.CheckedInItems{
+		<h4>
+			题名: %%Checkin.ItemTitle%%<br />
+			条码: %%Checkin.ItemId%%<br />
+			&nbsp;<br />
+		</h4>
+		<p></p>
+		}$$
+		<hr>
+		<center><h4>第 %%Receipt.Page%% 之 %%Receipt.Pages%%页</h4>
+		</center>
+	</body>
+</html>

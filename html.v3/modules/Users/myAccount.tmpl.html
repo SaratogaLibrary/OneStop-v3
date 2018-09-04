@@ -1,0 +1,78 @@
+<!-- Copyright(c)2017 EnvisionWare, Inc. - All Rights Reserved -->
+
+<div class="row" id="myAccountTempl">
+	<div class="col-md-12 menumain">
+		<div id="myaccount">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="accountgeneralinfo">
+						<h3 ng-bind-html="pageText.header">Library Account Status</h3>
+						<p ng-bind-html="pageText.overview">The following is a summary of your current library account:</p>
+						<p><strong>{{pageText.name}}:</strong> {{user.fullName}}
+						<span ng-if="should.showAddress"><br><strong>{{pageText.address}}:</strong> {{user.homeAddress}}</span>
+						<span ng-if="should.showIlsStatus"><br><strong>{{pageText.status}}:</strong> {{user.screenMessage}}</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="panel panel-default"
+								ng-class="{clickable: user.chargedItemsCount && should.showChargedItems}"
+								ng-mousedown="user.chargedItemsCount && should.showChargedItems && showChargedItems()">
+						<h4 ng-bind-html="pageText.chargedItemsButton">Items Checked Out</h4>
+						<p class="myaccountnumber">{{user.chargedItemsCount}}</p>
+						<p>
+							<span ng-show="user.chargedItemsCount && should.showChargedItems">
+								<span ng-if="!should.allowRenew" ng-bind-html="pageText.pressToView">Press to View</span>
+								<span ng-if="should.allowRenew" ng-bind-html="pageText.pressToViewOrRenew">Press to View / Renew</span>
+							</span>
+						</p>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div 	class="panel panel-default"
+								ng-class="{clickable: user.overdueItemsCount && should.showOverdueItems}"
+								ng-mousedown="user.overdueItemsCount && should.showOverdueItems && showOverdueItems()">
+						<h4 ng-bind-html="pageText.overdueItemsButton">Overdue Items</h4>
+						<p class="myaccountnumber">{{user.overdueItemsCount}}</p>
+						<p>
+							<span ng-show="user.overdueItemsCount && should.showOverdueItems">
+								<span ng-if="!should.allowRenew" ng-bind-html="pageText.pressToView">Press to View</span>
+								<span ng-if="should.allowRenew" ng-bind-html="pageText.pressToViewOrRenew">Press to View / Renew</span>
+							</span>
+						</p>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div 	class="panel panel-default"
+								ng-class="{clickable: user.holdItemsCount && should.showHoldItems}"
+								ng-mousedown="user.holdItemsCount && should.showHoldItems && showHoldItems()">
+						<h4 ng-bind-html="pageText.holdItemsButton">Holds</h4>
+						<p class="myaccountnumber">{{user.holdItemsCount}}</p>
+						<p><span ng-show="user.holdItemsCount && should.showHoldItems" ng-bind-html="pageText.pressToView">Press to View</span></p>
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div 	class="panel panel-default"
+								ng-class="{clickable: (user.feeAmount > 0) && should.allowFinesPay}"
+								ng-mousedown="(user.feeAmount > 0) && should.allowFinesPay && payFines()">
+						<h4 ng-bind-html="pageText.fineItemsButton">Fines / Fees</h4>
+						<p class="myaccountnumber">{{ user.feeAmount | currency : currencySymbol}}</p>
+						<p><span  ng-show="(user.feeAmount > 0) && should.allowFinesPay">Press to Pay Fines</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="actionbuttonrow" ng-controller="ButtonRowController" ng-cloak>
+	  <p>
+	    <button
+	        class="btn btn-secondary active"
+	        ng-repeat="button in buttonRow.buttons"
+	        ng-mousedown="button.action()"
+	        ng-show="button.text && button.visible"
+	        ng-disabled="!button.enabled">{{button.text}}
+	    </button>
+	  </p>
+	</div>
+</div>

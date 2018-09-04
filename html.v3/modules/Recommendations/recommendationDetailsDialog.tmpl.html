@@ -1,0 +1,20 @@
+<!-- Copyright(c)2017 EnvisionWare, Inc. - All Rights Reserved -->
+
+<div class="novelist-wrapper novelist-detail-item">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+      <h4 class="modal-title" id="myModalLabel">{{recommendation.title}}</h4>
+    </div>
+    <div class="modal-body">
+      <img ng-src="{{recommendation.bookjacketUrl}}" draggable="false" alt="{{recommendation.title}}" class="img-responsive">
+      <p class="novelist-author"><span ng-bind-html="pageText.byLine">By</span> {{recommendation.author}}</p>
+      <p>{{recommendation.description}}</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" ng-if="should.allowHolds" ng-disabled="holdButtonDisabled" class="btn btn-primary" ng-mousedown="placeHold()" ng-bind-html="pageText.placeHoldButton">Place Hold</button>
+      <button type="button" ng-disabled="saveButtonDisabled" class="btn btn-primary" ng-mousedown="saveRecommendation()" ng-bind-html="pageText.saveButton">Save</button>
+      <button type="button" class="btn btn-default" ng-mousedown="close()" ng-bind-html="pageText.closeButton">Close</button>
+    </div>
+  </div>
+</div>

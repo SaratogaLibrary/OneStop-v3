@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>EnvisionWare OneStop - My Account</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="EXPIRES" content="Thu, 20 Mar 2008 00:00:01 GMT">
+    <link rel="STYLESHEET" href="./styles/onestop_style.css" type="text/css">
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/jquery.modal.css" type="text/css" media="screen" />
+    <link id="layout_stylesheet" rel="STYLESHEET" href="./styles/layout_1024.css" type="text/css">
+    <script type="text/javascript" src="/scripts/thirdparty/jquery.min.js"></script>
+    <script type="text/javascript" src="/scripts/thirdparty/jquery.modal.js"></script>
+    <script type="text/javascript" src="/scripts/utilities.js"></script>
+    <script type="text/javascript" src="/scripts/ajaxRequest.js"></script>
+    <script type="text/javascript" src="/scripts/languageUtilities.js"></script>
+    <script type="text/javascript" src="/scripts/itemDetails.js"></script>
+    <script type="text/javascript" src="/scripts/myAccount.js"></script>
+  </head>
+  <body onload="initialize()" onmousedown="resetTimerInBody()" onkeypress="resetTimerInBody()" onselectstart="return false" oncontextmenu="return isContextMenuAllowed()">
+    <div id="main">
+      <div id="page_header_group"></div>
+      <div id="content">
+        <div id="my_account_shim">
+        </div>
+        <div id="my_account_content_group">
+          <div id="my_account_content_group_background">
+            <div id="my_account_content_details_group">
+              <div id="my_account_content_header">
+                <div class="my_account_content_header_text">%%Text.txtMyAccountPage_AccountSummaryHeader%%</div>
+              </div>
+              <div id="my_account_content_subheader">
+                <div class="h3">%%Text.txtMyAccountPage_AccountSummaryTitle%%</div>
+              </div>
+              <div id="my_account_patron_details">
+                <div id="my_account_patron_details_table_container">
+                  <table id="my_account_patron_details_table">
+                    <tr>
+                      <td class="my_account_patron_details_table_header">%%Text.txtMyAccountPage_Name%%</td>
+                      <td class="my_account_patron_details_table_text">%%User.FullName%%</td>
+                    </tr>
+                    <tr id="home_address">
+                      <td class="my_account_patron_details_table_header">%%Text.txtMyAccountPage_Address%%</td>
+                      <td class="my_account_patron_details_table_text">%%User.HomeAddress%%</td>
+                    </tr>
+                    <tr id="ils_status">
+                      <td class="my_account_patron_details_table_header">%%Text.txtMyAccountPage_Status%%</td>
+                      <td class="my_account_patron_details_table_text">%%User.ScreenMessage%%</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div id="my_account_error_message">
+                <div id="my_account_error_message_text"></div>
+              </div>
+            </div>
+            <div id="my_account_content_buttons_group">
+              <div id="items_checked_out_button_container" class="my_account_button_container">
+                <div id="charged_items_button_border" class="my_account_content_button_border">
+                  <button id="charged_items_button" class="my_account_content_button charged_items_button" onclick="getChargedItemsDetail();">
+                    <div class="my_account_content_button_header">
+                      %%Text.txtMyAccountPage_ChargedItems%%
+                    </div>
+                    <div id="charged_items_count" class="my_account_content_button_value">
+                      %%User.ChargedItemsCount%%
+                    </div>
+                    <div id="charged_items_button_text" class="my_account_content_button_text">
+                    </div>
+                  </button>
+                </div>
+              </div>
+              <div id="overdue_items_button_container" class="my_account_button_container">
+                <div id="overdue_items_button_border" class="my_account_content_button_border">
+                  <button id="overdue_items_button" class="my_account_content_button overdue_items_button" onclick="getOverdueItemsDetail();">
+                    <div class="my_account_content_button_header">
+                      %%Text.txtMyAccountPage_OverdueItems%%
+                    </div>
+                    <div id="overdue_items_count" class="my_account_content_button_value">
+                      %%User.OverdueItemsCount%%
+                    </div>
+                    <div id="overdue_items_button_text" class="my_account_content_button_text">
+                    </div>
+                  </button>
+                </div>
+              </div>
+              <div id="hold_items_button_container" class="my_account_button_container">
+                <div id="hold_items_button_border" class="my_account_content_button_border">
+                  <button id="hold_items_button" class="my_account_content_button hold_items_button" onclick="getHoldItemsDetail();">
+                    <div class="my_account_content_button_header">
+                      %%Text.txtMyAccountPage_Holds%%
+                    </div>
+                    <div id="hold_items_count" class="my_account_content_button_value">
+                      %%User.HoldItemsCount%%
+                    </div>
+                    <div id="hold_items_button_text" class="my_account_content_button_text">
+                    </div>
+                  </button>
+                </div>
+              </div>
+              <div id="fees_button_container" class="my_account_button_container">
+                <div id="fees_button_border" class="my_account_content_button_border">
+                  <button id="fees_button" class="my_account_content_button fees_button" onclick="payFines();">
+                    <div class="my_account_content_button_header">
+                      %%Text.txtMyAccountPage_FeeOwed%%
+                    </div>
+                    <div id="fees_count" class="my_account_content_button_value">
+                      %%Text.txtMyAccountPage_CurrencySymbol%%%%User.FeeAmount%%
+                    </div>
+                    <div id="fees_button_text" class="my_account_content_button_text">
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="my_account_content_group_footer"></div>
+        </div>
+      </div>
+      <div id="nav_buttons_group_container">
+        <div id="nav_buttons_group_background">
+          <div id="nav_buttons_group">
+            <div class="nav_button_border">
+              <button class="nav_button" id="start_over_button" onclick="done();">
+                <div class="arrow_nav_button_icon_container">
+                  <img class="arrow_nav_button_icon" src="./images/left-arrow.png">
+                </div>
+                <div class="arrow_nav_button_text_container">
+                  <span class="arrow_nav_button_text">%%Text.txtMyAccountPage_StartOver%%</span>
+                </div>
+              </button>
+            </div>
+            <div id="help_button_border" class="nav_button_border">
+              <button class="nav_button" id="help_button" onclick="requestHelpWithPatronName('myAccount.htm');">
+                %%Text.txtCommon_Help%%
+              </button>
+            </div>
+            <div id="cancel_help_button_border" class="nav_button_border">
+              <button class="nav_button" id="cancel_help_button" onclick="cancelHelpRequestWithPatronName('myAccount.htm');">
+                %%Text.txtCommon_CancelHelp%%
+              </button>
+            </div>
+            <div id="change_language_button_border" class="nav_button_border">
+              <button class="nav_button" id="change_language_button" onclick="displayLanguageOptionsDialog();">
+                %%Text.txtCommon_ChangeLanguage%%
+              </button>
+            </div>
+            <div id="next_button_border" class="nav_button_border">
+              <button class="nav_button" id="next_button" onclick="goToCheckout();">
+                <div class="arrow_nav_button_text_container">
+                  <span class="arrow_nav_button_text">%%Text.txtMyAccountPage_ReturnToCheckOut%%</span>
+                </div>
+                <div class="arrow_nav_button_icon_container">
+                  <img class="arrow_nav_button_icon" src="./images/right-arrow.png">
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="nav_buttons_footer">
+        </div>
+      </div>
+    </div>
+    <div id="all_items_detail_group" class="modal fade">
+      <div id="items_detail_list_groups">
+        <div id="charged_items_detail_group" class="items_detail_group">
+          <div id="charged_items_detail_header_container" class="items_detail_header_container">
+            <table id="charged_items_detail_header_table" class="items_detail_header_table">
+              <thead>
+                <tr>
+                  <th class="items_detail_column charged_items_detail_first_column">&nbsp;</th>
+                  <th class="items_detail_column charged_items_detail_title_column">%%Text.txtMyAccountPage_ItemTitle%%</th>
+                  <th class="items_detail_column charged_items_detail_media_type_column">%%Text.txtMyAccountPage_ItemMediaType%%</th>
+                  <th class="items_detail_column charged_items_detail_due_date_column">%%Text.txtMyAccountPage_ItemDueDate%%</th>
+                  <th class="items_detail_column charged_items_detail_renew_column">&nbsp;</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div id="charged_items_detail_items_container" class="items_detail_items_container">
+            <table id="charged_items_detail_items_table" class="items_detail_items_table">
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="hold_items_detail_group" class="items_detail_group">
+          <div id="hold_items_detail_header_container" class="items_detail_header_container">
+            <table id="hold_items_detail_header_table" class="items_detail_header_table">
+              <thead>
+                <tr>
+                  <th class="items_detail_column hold_items_detail_first_column">&nbsp;</th>
+                  <th class="items_detail_column hold_items_detail_title_column">%%Text.txtMyAccountPage_ItemTitle%%</th>
+                  <th class="items_detail_column hold_items_detail_media_type_column">%%Text.txtMyAccountPage_ItemMediaType%%</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div id="hold_items_detail_items_container" class="items_detail_items_container">
+            <table id="hold_items_detail_items_table" class="items_detail_items_table">
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="overdue_items_detail_group" class="items_detail_group">
+          <div id="overdue_items_detail_header_container" class="items_detail_header_container">
+            <table id="overdue_items_detail_header_table" class="items_detail_header_table">
+              <thead>
+                <tr>
+                  <th class="items_detail_column overdue_items_detail_first_column">&nbsp;</th>
+                  <th class="items_detail_column overdue_items_detail_title_column">%%Text.txtMyAccountPage_ItemTitle%%</th>
+                  <th class="items_detail_column overdue_items_detail_media_type_column">%%Text.txtMyAccountPage_ItemMediaType%%</th>
+                  <th class="items_detail_column overdue_items_detail_due_date_column">%%Text.txtMyAccountPage_ItemDueDate%%</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div id="overdue_items_detail_items_container" class="items_detail_items_container">
+            <table id="overdue_items_detail_items_table" class="items_detail_items_table">
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="items_detail_buttons_group_background">
+          <div id="items_detail_buttons_group">
+            <div id="items_detail_previous_button_container">
+              <div id="items_detail_previous_button_border" class="items_detail_nav_button_border">
+                <button id="items_detail_previous_button" class="items_detail_nav_button" onclick="previousChargedItemsDetail();">&nbsp;&lt;&lt;&nbsp;</button>
+              </div>
+            </div>
+            <div id="items_detail_display_count_container">
+              <div id="items_detail_display_count">%%Text.txtMyAccountPage_Displaying%% x-y %%Text.txtMyAccountPage_Of%% z</div>
+            </div>
+            <div id="items_detail_next_button_container">
+              <div id="items_detail_next_button_border" class="items_detail_nav_button_border">
+                <button id="items_detail_next_button" class="items_detail_nav_button" onclick="nextChargedItemsDetail();">&nbsp;&gt;&gt;&nbsp;</button>
+              </div>
+            </div>
+            <div id="renew_all_items_button_container">
+              <div id="renew_all_items_button_border" class="items_detail_nav_button_border">
+                <button id="renew_all_items_button" class="items_detail_nav_button" onclick="renewAllItems();">%%Text.txtMyAccountPage_RenewAll%%</button>
+              </div>
+            </div>
+            <div id="close_items_detail_button_container">
+              <div id="close_items_detail_button_border" class="items_detail_nav_button_border">
+                <button id="close_items_detail_button" class="items_detail_nav_button" data-dismiss="modal" onclick="hideItemsDetail();">%%Text.txtMyAccountPage_Close%%</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="language_buttons_group" class="modal fade">
+      <div id="language_buttons">
+      </div>
+    </div>
+    <div class="modal fade" id="please_wait_div">
+      <table class="please_wait_table" cellpadding="5" ID="Table1">
+        <tr>
+          <td><img class="please_wait_icon" src="./images/please_wait.png"></td>
+          <td><span id="please_wait_text">%%Text.txtEnterUserPinPage_PleaseWaitProcessing%%</span></td>
+        </tr>
+      </table>
+    </div>
+    <div class="error_div" id="errorDiv">
+      <table class = "please_wait_table" cellpadding="5">
+        <tr>
+          <td><img class="error_icon" src="./images/error.png"></td>
+          <td><span id="errorMsg"></span></td>
+        </tr>
+        <tr>
+          <td colspan="2"><center><button class="nav_button" id="okButton" onclick="visibleElement('errorDiv', false);">%%Text.txtMyAccountPage_Ok%%</button></center>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+.recommendation-item h3 {
+	font-size:1.3rem !important;
+	line-height: 1.4rem !important;
+	text-align: left;
+	margin:0 0 0.5rem !important;
+}
+
+.recommendation-item h4 {
+	font-size:1.2rem !important;
+	line-height: 1.3rem !important;
+	text-align: left;
+	margin:0 0 0.25rem !important;
+}
+
+@media screen and (orientation: portrait) {
+	.recommendation-item h3 {
+		font-size:1.2rem !important;
+		line-height: 1.3rem !important;
+		text-align: left;
+		margin:0 0 0.5rem !important;
+	}
+
+	.recommendation-item h4 {
+		font-size:1.1rem !important;
+		line-height: 1.2rem !important;
+		text-align: left;
+		margin:0 0 0.75rem !important;
+	}
+
+	.recommendation-item {
+		border-bottom:1px solid #aaa;
+	}
+
+	.panel-body:last-of-type .recommendation-item {
+		border-bottom:none;
+	}
+}
+
+.novelist-detail-item h4 {
+	font-weight:bold;
+}
+
+.novelist-detail-item .modal-body > img {
+	float:left;
+	width: 25%;
+	height:auto;
+	margin-right:10px;
+	margin-bottom:5px;
+}
+
+.novelist-detail-item .modal-footer {
+	clear:both;
+}
+
+/*.novelist-wrapper {
+	text-align: center;
+}
+
+.novelist-wrapper:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.novelist-item {
+	width:19%;
+	margin:0 0.5%;
+	display: inline-block;
+	vertical-align: top;
+
+	h3 {
+		font-size:1.2rem !important;
+		color:#745489;
+		text-transform: none !important;
+		margin:0 0 0.4rem 0 !important;
+		cursor: pointer;
+	}
+
+	img {
+		margin-bottom:0.6rem !important;
+		cursor: pointer;
+	}
+
+	h4 {
+		font-size:1.1rem !important;
+		color:#745489;
+		font-style: italic;
+		text-transform: none !important;
+		margin:0 0 0 0 !important;
+		cursor: pointer;
+	}
+}
+
+.novelist-detail-item {
+	img {
+		width:200px;
+		float:left;
+		margin:0 15px 20px 0;
+	}
+
+	.modal-body {
+		text-align: left;
+
+		.novelist-author {
+			font-style:italic;
+		}
+	}
+
+	.modal-footer {
+		clear:both;
+	}
+}*/

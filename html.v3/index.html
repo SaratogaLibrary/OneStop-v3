@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="UserValidation" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="UserValidation" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="UserValidation" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="ewOneStop" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>EnvisionWare OneStop</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/onestop.css">
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+</head>
+<body ng-controller="ThemesController" onselectstart="return false" oncontextmenu="return (%%Preferences.AllowContextMenu%% == '1')">
+  <div class="header-wrapper">
+    <header class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6">
+          <img  class="img-responsive logo-image"
+                draggable="false"
+                id="logo"
+                ng-style="{ 'background-color': theme.logoImage.background == 'opaque' ? '#fff' : '' }"
+                ng-src="{{theme.logoImage.path}}"
+                alt="Library Logo">
+        </div>
+        <div class="col-sm-6" id="pagetitleheader">
+          <h2 ng-bind-html="pageText.title">Self-Service <strong>Checkout</strong></h2>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <style>
+    #logo {
+      display:{{theme.logoDisplayStyle}};
+    }
+
+    #pagetitleheader h2 {
+      display:{{theme.pageTitleHeaderDisplayStyle}};
+    }
+
+    a.menuitem {
+      background-color:{{theme.menuButtonStyle.background}};
+      color:{{theme.menuButtonStyle.color}};
+    }
+    #events h3 {
+      background-color: {{theme.primaryBrandingColor}};
+    }
+    #pagetitleheader h2 {
+      color: {{theme.pageTitleStyle.color}};
+      background: {{theme.pageTitleStyle.background}};
+    }
+    #startbutton {
+      background: {{theme.primaryBrandingColor}};
+      color:#fff;
+    }
+    #myaccount h3 {
+      color: {{theme.secondaryBrandingColor}};
+    }
+
+    #novelist-recommended-title {
+      background-color: {{theme.primaryBrandingColor}};
+      color:#fff;
+    }
+
+    #checkout {
+      background-image:url(/assets/images/icons/check-out{{theme.menuButtonStyle.char}}.png);
+    }
+    #checkin {
+      background-image:url(/assets/images/icons/check-in{{theme.menuButtonStyle.char}}.png);
+    }
+    #myaccounticon {
+      background-image:url(/assets/images/icons/my-account{{theme.menuButtonStyle.char}}.png);
+    }
+    #releaseprint {
+      background-image:url(/assets/images/icons/printer{{theme.menuButtonStyle.char}}.png);
+    }
+    #makecopies {
+      background-image:url(/assets/images/icons/copier{{theme.menuButtonStyle.char}}.png);
+    }
+    #reservecomputer {
+      background-image:url(/assets/images/icons/computer{{theme.menuButtonStyle.char}}.png);
+    }
+    #fines {
+      background-image:url(/assets/images/icons/fines{{theme.menuButtonStyle.char}}.png);
+    }
+    #depositmoney {
+      background-image:url(/assets/images/icons/deposit-money{{theme.menuButtonStyle.char}}.png);
+    }
+
+    .please-wait-modal {
+      /* see: https://stackoverflow.com/questions/1964839/how-can-i-create-a-please-wait-loading-animation-using-jquery */
+      /*display:    none;*/
+      position:   fixed;
+      z-index:    1000;
+      top:        0;
+      left:       0;
+      height:     100%;
+      width:      100%;
+      background: rgba( 255, 255, 255, .8 )
+                  url('/assets/images/ajax-loader.gif')
+                  50% 50%
+                  no-repeat;
+    }
+  </style>
+
+  <div class="container-fluid theme-image-wrapper">
+    <div class="row" ng-cloak>
+      <div class="{{newsEventsLandscapeCol}}">
+        <div uib-carousel active="active" interval="theme.headerImages.rotationInterval" no-wrap="noWrapSlides">
+          <div uib-slide ng-repeat="image in theme.headerImages.collection track by image.id" index="image.id">
+            <img ng-src="{{image.src}}" draggable="false" class="img-responsive" style="margin:auto;">
+          </div>
+        </div>
+      </div>
+
+      <div class="{{newsEventsLandscapeCol}}" id="rssAndImageCallout">
+        <div class="row rss-wrapper" ng-show="showRSSEventsOrCalloutImage">
+          <div class="col-sm-{{rss.columnWidth}} {{rss.offset}}" id="events" ng-if="rss.show && rss.feedSource">
+            <h3 ng-bind-html="pageText.eventsHeader">Events</h3>
+            <div style="padding-bottom:0">
+              <h4 class="fadeOS">{{rss.event.title}}</h4>
+              <p class="fadeOS">{{rss.event.description}}</p>
+            </div>
+          </div>
+          <div class="col-sm-{{calloutImage.columnWidth}}" ng-if="calloutImage.show && calloutImage.path">
+            <img ng-src="{{calloutImage.path}}" draggable="false" class="img-responsive img-rounded" alt="Callout Image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-view-wrapper">
+    <div class="main-view container-fluid" ng-view>
+    </div>
+  </div>
+
+  <span ng-controller="PageTimeoutController">
+    <div class="timeout" ng-show="getTimeRemaining()" ng-cloak>
+      <p><span ng-bind-html="pageText.timeRemainingHeader">Session will<br>expire:</span>
+      <br><span>{{getTimeRemaining()}}</span></p>
+    </div>
+  </span>
+
+  <div class="footerelements" ng-controller="LanguagesController">
+    <span ng-controller="HelpRequestsController" ng-cloak>
+      <span ng-if="canRequestHelp()">
+          <button class="btn btn-secondary active" ng-mousedown="requestHelp()" ng-hide="isHelpRequestPending()" ng-bind-html="pageText.requestHelpButton">Request Help</button>
+          <button class="btn btn-secondary active" ng-mousedown="cancelHelpRequest()" ng-show="isHelpRequestPending()" ng-bind-html="pageText.cancelHelpButton">Cancel Help</button>
+      </span>
+    </span>
+    <button class="btn btn-secondary active" ng-mousedown="showChooseLanguageDialog()" ng-show="canChangeLanguage" ng-bind-html="changeLanguageButtonText" ng-cloak></button>
+    <span class="footerlogo" ng-controller="StaffFunctionsController"><img src="assets/images/envisionwarelogo.png" draggable="false" class="brand-logo" alt="EnvisionWare" ng-mousedown="showStaffMenu()"></span>
+  </div>
+
+  <div ng-controller="PleaseWaitController" ng-cloak>
+    <div class="please-wait-modal" ng-if="context.waiting">
+      <div class="text-center">
+        <!--
+        <div><img class="media-object" src="/assets/images/ajax-loader.gif"></div>
+      -->
+        <p ng-if="context.message">{{context.message}}</p>
+      </div>
+    </div>
+  </div>
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/angular-viewport-size/viewport-size.js"></script>
+
+  <!-- OneStop Modules -->
+  <script src="modules/Utilities/utilities.js"></script>
+  <script src="modules/Defaults/defaults.js"></script>
+  <script src="modules/Languages/languages.js"></script>
+  <script src="modules/ButtonRow/buttonRow.js"></script>
+  <script src="modules/PageLayout/pageLayout.js"></script>
+  <script src="modules/Themes/themes.js"></script>
+  <script src="modules/Dialogs/dialogs.js"></script>
+  <script src="modules/Start/start.js"></script>
+  <script src="modules/PageTimeout/pageTimeout.js"></script>
+  <script src="modules/PrinterStatus/printerStatus.js"></script>
+  <script src="modules/Keyboard/keyboard.js"></script>
+  <script src="modules/Sounds/sounds.js"></script>
+  <script src="modules/HelpRequests/helpRequests.js"></script>
+  <script src="modules/PendingAlerts/pendingAlerts.js"></script>
+  <script src="modules/CirculationStatistics/circulationStatistics.js"></script>
+  <script src="modules/Rfid/rfid.js"></script>
+  <script src="modules/PleaseWait/pleaseWait.js"></script>
+
+  <!-- Users Module -->
+  <script src="modules/Users/users.js"></script>
+  <script src="modules/Users/users_myAccount.js"></script>
+  <script src="modules/Users/users_user_service.js"></script>
+  <script src="modules/Users/users_users_service.js"></script>
+  <script src="modules/Users/users_itemsListDialog.js"></script>
+
+  <script src="modules/Items/items.js"></script>
+  <script src="modules/Checkout/checkout.js"></script>
+  <script src="modules/Checkin/checkin.js"></script>
+  <script src="modules/Sessions/sessions.js"></script>
+  <script src="modules/Fines/fines.js"></script>
+  <script src="modules/Recommendations/recommendations.js"></script>
+  <script src="modules/Preferences/preferences.js"></script>
+  <script src="modules/Receipts/receipts.js"></script>
+  <script src="modules/ProcessedItems/processedItems.js"></script>
+  <script src="modules/Holds/holds.js"></script>
+
+  <script src="modules/Menu/menu.js"></script>
+  <script src="modules/Login/login.js"></script>
+  <script src="modules/StaffFunctions/staffFunctions.js"></script>
+
+  <!-- Main Application Module -->
+  <script src="app.js"></script>
+</body>
+</html>

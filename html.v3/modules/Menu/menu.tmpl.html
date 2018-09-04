@@ -1,0 +1,85 @@
+<!-- Copyright(c)2017 EnvisionWare, Inc. - All Rights Reserved -->
+
+<!-- Offscreen input field for when Activate Scanner On Main Menu preference is true -->
+<div style="position: relative; overflow: hidden;" ng-if="login.allowed">
+	<div style="position: absolute; right: -100px; width: 50px;">
+		<form name="loginForm">
+			<input  type="text"
+							id='user-id-field'
+							name="userId"
+							ng-model="login.userId"
+							ng-model-options="login.inputField.modelOptions"
+							ng-blur="login.inputField.lostFocus($event)"
+							ng-keyup="login.inputField.keypress($event)"
+							ng-disabled="login.submitted"
+							autofocus />
+		</form>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-12 menumain mainmenucontainercol">
+	<div class="mainmenuwrapper {{menuWrapperClass}}">
+			<div ng-mousedown="checkout()">
+				<a class="menuitem" id="checkout" href="" ng-bind-html="pageText.checkOutButton">
+					Check Out
+					<br>Materials
+				</a>
+			</div>
+			<div ng-if="isCheckinAllowed()" ng-mousedown="checkin()">
+				<a class="menuitem" id="checkin" href="" ng-bind-html="pageText.checkInButton">
+					Check In
+					<br>Materials
+				</a>
+			</div>
+			<div ng-if="isMyAccountAllowed()" ng-mousedown="myAccount()">
+				<a class="menuitem" id="myaccounticon" href="" ng-bind-html="pageText.viewMyAccountButton">
+					View
+					<br>My Account
+				</a>
+			</div>
+			<div ng-if="isCopyingAllowed()">
+				<a class="menuitem" id="makecopies" ng-href="{{copyPaymentManagerPath}}" ng-bind-html="pageText.makeCopiesButton">
+					Make
+					<br>Copies
+				</a>
+			</div>
+			<div ng-if="isPrintReleaseAllowed()">
+				<a 	class="menuitem"
+						id="releaseprint"
+						href="launch://%%Preferences.PrtPath%% -runmode:prompt -host:%%Preferences.JqeHostAddress%% -port:%%Preferences.JqeHostPort%% -parent:%ParentWindow%?showKeyboard=1"
+						ng-bind-html="pageText.releasePrintJobsButton">
+					Release My
+					<br>Print Jobs
+				</a>
+			</div>
+			<div ng-if="areReservationsAllowed()">
+				<a 	class="menuitem"
+						id="reservecomputer"
+						href="launch://%%Preferences.ReservationStationPath%% -makeresv -parent=%ParentWindow%?showKeyboard=1"
+						ng-bind-html="pageText.reserveComputerButton">
+					Reserve a
+					<br>Computer
+				</a>
+			</div>
+			<div ng-if="isFinesPaymentAllowed()">
+				<a 	class="menuitem"
+						id="fines"
+						href="launch://%%Preferences.eCommerceClientPath%% -host:%%Preferences.eCommerceServerAddress%% -port:%%Preferences.eCommerceServerPort%% -parent:%ParentWindow%?showKeyboard=2"
+						ng-bind-html="pageText.viewAndPayFinesButton">
+					View &amp; Pay
+					<br>Fines
+				</a>
+			</div>
+			<div ng-if="isAccountManagementAllowed()">
+				<a 	class="menuitem"
+						id="depositmoney"
+						href="launch://%%Preferences.AccountManagerPath%% -selfserv -parent=%ParentWindow%?showKeyboard=1"
+						ng-bind-html="pageText.depositMoneyButton">
+					Deposit Money
+					<br>Into Library Account
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

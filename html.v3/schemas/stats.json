@@ -1,0 +1,10 @@
+{
+  "resultsTable": "%%CirculationStats.Results%%",
+  "filters": {
+    "fromDate": "%%CirculationStats.FromDate%%",
+    "toDate":"%%CirculationStats.ToDate%%",
+    "transactionType":"%%CirculationStats.TransactionTypeFilter%%",
+    "transactionStatus":"%%CirculationStats.TransactionStatusFilter%%",
+    "mediaType":"%%CirculationStats.MediaTypeFilter%%"
+  }
+}

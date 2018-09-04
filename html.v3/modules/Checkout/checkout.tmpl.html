@@ -1,0 +1,115 @@
+<!-- Copyright(c)2017 EnvisionWare, Inc. - All Rights Reserved -->
+
+<div class="row" id="checkoutTempl">
+	<div class="col-md-12 menumain">
+		<div class="row">
+			<div class="col-sm-12" ng-if="showItemIdField">
+				<form name="itemIdForm">
+					<input 	type="text"
+									id="item-id-field"
+									ng-model="item.id"
+									ng-model-options="itemIdField.modelOptions"
+									ng-blur="itemIdField.lostFocus($event)"
+									ng-keyup="itemIdField.keypress($event)"
+									autofocus />
+				</form>
+			</div>
+		</div>
+		<div class="row" ng-if="!processedItems.length" ng-cloak>
+			<div class="col-sm-12">
+				<h3 ng-bind-html="pageText.title">Check Out Materials</h3>
+				<p class="instruction-text" ng-if="!caseControllerAttached">{{instructions}}</p>
+			</div>
+			<div class="col-sm-12">
+				<div class="media-case-controller-pad-instructions" ng-if="caseControllerAttached" ng-bind-html="pageText.instructionsForCheckOutWithCaseController">Check out books by<br>placing them on the pad</div>
+				<img ng-src="{{animationPath}}" draggable="false" width="300" id="checkout-animation" ng-class="checkoutAnimationClass">
+				<div class="media-case-controller-media-instructions" ng-if="caseControllerAttached" ng-bind-html="pageText.instructionsForUnlockWithCaseController">Check out and unlock<br>media by inserting into<br>the case controller</div>
+			</div>
+		</div>
+
+		<div class="row" ng-if="processedItems.length" ng-cloak>
+			<div ng-class="{ 'col-sm-12': !visibleRecommendations.length, 'col-sm-9': visibleRecommendations.length}">
+				<div class="table-responsive">
+				<div id="scrollUp" ng-show="scrollButtonsVisible()" ng-mousedown="scrollUp()"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></div>
+				<div id="scrollDown" ng-show="scrollButtonsVisible()" ng-mousedown="scrollDown()"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></div>
+				<table class="table" id="booklist">
+					<thead>
+						<tr ng-bind-html='processedItemsTable.generateHeaderRowContent()'>
+							<!--
+							<th>Item Title</th>
+							<th>Item ID</th>
+							<th>Due Date</th>
+							<th class="text-center">Status</th>
+						-->
+						</tr>
+					</thead>
+					<tbody id="scrollable-table-body">
+						<tr 	ng-repeat="entry in processedItems | orderBy:$index:true"
+									ng-class-odd="'odd'"
+									ng-class-even="'even'"
+									ng-bind-html="processedItemsTable.generateEntryRowContent(entry, 'confirmFee(entry.item)')" compile-template>
+									<!--
+							<td>
+								<span ng-if="entry.item.title">{{entry.item.title}}</span>
+								<span ng-if="!entry.item.title">Title Not Available</span>
+								<span ng-if="entry.item.screenMessage && entry.status=='Error'">: {{entry.item.screenMessage}}</span>
+							</td>
+							<td>{{entry.item.id}}</td>
+							<td><span ng-if="entry.status !== 'Error'">{{entry.item.dueDate}}</span></td>
+							<td class="checkedoutstatus">
+								<i class="fa fa-check" aria-hidden="true" ng-if="entry.status=='Success'"></i>
+								<i class="fa fa-times" aria-hidden="true" ng-if="(entry.status=='Error') && !(entry.item.feeAmount > 0)"></i>
+								<button class="btn btn-warning btn-small" ng-if="(entry.status=='Error') && (entry.item.feeAmount > 0)" ng-click="confirmFee(entry.item)">{{ entry.item.feeAmount | currency }} Fee<br/>Press to Accept</button>
+								<i class="fa fa-lock" aria-hidden="true" ng-if="entry.status=='Pending'"></i>
+							</td>
+						-->
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="3"></td>
+							<td id="checkout-summary">
+								<p ng-show="session.checkedOutItems.length"><i class="fa fa-check" aria-hidden="true" ng-if="entry.status=='Success'"></i> <span ng-bind-html="pageText.checkedOutLabel">Checked Out:</span> {{session.checkedOutItems.length}}</p>
+								<p ng-show="session.checkoutErrorItems.length"><i class="fa fa-times" aria-hidden="true" ng-if="entry.status=='Error'"></i> <span ng-bind-html="pageText.notCheckedOutLabel">Not Checked Out:</span> {{session.checkoutErrorItems.length}}</p>
+								<p ng-if="session.checkoutItemsPendingSecurityAdjustment.length"><i class="fa fa-lock" aria-hidden="true" ng-if="entry.status=='Pending'"></i> <span ng-bind-html="pageText.repositionLabel">Reposition:</span> {{session.checkoutItemsPendingSecurityAdjustment.length}}</p>
+							</td>
+						</tr>
+					</tfoot>
+				</table>
+				</div>
+			</div>
+			<div class="col-sm-3" ng-if="visibleRecommendations.length">
+				<div ng-show="visibleRecommendations.length">
+					<div class="panel panel-default">
+						<div class="panel-heading" id="novelist-recommended-title">
+							<div class="panel-title text-center" ng-bind-html="pageText.novelistHeader"><strong>Recommended for you</strong></div>
+						</div>
+						<div class="panel-body" ng-repeat="recommendation in visibleRecommendations" ng-mousedown="showRecommendationDetails(recommendation)">
+							<div class="row recommendation-item">
+								<div class="col-sm-3">
+									<img ng-src="{{recommendation.bookjacketUrl}}" draggable="false" alt="{{recommendation.title}}" class="img-responsive recommendation-thumbnail"> <!-- data-toggle="modal" data-target="#modal{{recommendation.uniqueId}}" -->
+								</div>
+								<div class="col-sm-9">
+									<h3>{{recommendation.title}}</h3> <!-- data-toggle="modal" data-target="#modal{{recommendation.uniqueId}}" -->
+									<h4><span ng-bind-html="pageText.novelistByLine">By</span> {{recommendation.author}}</h4> <!-- data-toggle="modal" data-target="#modal{{recommendation.uniqueId}}" -->
+								</div>
+							</div>
+						</div>
+						<div class="panel-footer" ng-bind-html="pageText.poweredByNovelist"><strong>Powered by NoveList</strong></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="actionbuttonrow" ng-controller="ButtonRowController" ng-cloak>
+	  <p>
+	    <button
+	        class="btn btn-secondary active"
+	        ng-repeat="button in buttonRow.buttons"
+	        ng-mousedown="button.action()"
+	        ng-show="button.text && button.visible"
+	        ng-disabled="!button.enabled">{{button.text}}
+	    </button>
+	  </p>
+	</div>
+</div>

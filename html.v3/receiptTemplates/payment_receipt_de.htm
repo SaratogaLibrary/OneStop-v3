@@ -1,0 +1,45 @@
+﻿<html>
+	<head>
+		<title>OneStop - Zahlungsbeleg</title>
+		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+		<center><h2>EnvisionWare</h2>
+		</center>
+		<center><h3>Bibliothek</h3>
+		</center>
+		<hr>	
+			<table>
+				<tr>
+					<td colspan="2"><h4>Datum: %%Date.LocalText%% Zeit: %%Time.LocalText%%</h4></td>
+				</tr>
+				<tr>
+					<td colspan="2"><h4>Name: %%User.FullName%%</h4></td>
+				</tr>
+				<tr>
+					<td colspan="2"><h4>Gezahlte Überschreitungsgebühren/Entgelte: $%%Session.AmountPaid%%</h4></td>
+				</tr>
+				
+				<tr>
+					<th align="right"><b>Beschreibung</b></th>
+					<td><b>Betrag</b></td>
+				</tr>
+				$$Session.UserFines{<tr>
+					<th align=right>%%UserFine.Description%%</th>
+					<td>$%%UserFine.AmountPaid%%</td>
+				</tr>
+				}$$				
+				
+				<tr>
+					<td colspan="2"><h4>Referenznummer: %%Session.AuthCode%%</h4></td>
+				</tr>
+				<tr>
+					<td colspan="2"><h4>Transaktions-ID: %%Session.TransactionId%%</h4></td>
+				</tr>
+			</table>				
+	</body>
+</html>

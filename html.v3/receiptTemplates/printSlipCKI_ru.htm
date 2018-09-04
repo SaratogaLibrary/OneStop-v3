@@ -1,0 +1,49 @@
+﻿<html>
+	<head>
+		<title>Интеллектуальные возвраты - отчет по всем возращенным элементам библиотечного фонда</title>
+		<style type="text/css">
+	h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	h5 { font-size:8pt;font-family:"Verdana";height:10pt;overflow:hidden;}
+	
+	</style>
+	</head>
+	<body>
+		<center><h1>Библиотека EnvisionWare</h1>
+		</center>
+		<center><h2>Интеллектуальные возвраты</h2>
+		</center>
+		<center><h2>Все элементы библиотечного фонда CKI</h2>
+		</center>
+		<center><h2>%%Date.LocalText%%</h2>
+		</center>
+		<table>
+			$$Session.CheckedInItems{
+			<tr>
+				<td width="20%" align="left"><h5>%%Checkin.ItemId%%</h5>
+				</td>
+				<td width="80%" align="left"><h5>%%Checkin.ItemTitle%%</h5>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" width="100%" align="left"><h5>%%Checkin.ItemAlertType%% 
+						%%Checkin.ItemDestinationLocation%%</h5>
+				</td>
+			</tr>
+			}$$
+		</table>
+		<hr>
+		<table>
+			<tr>
+				<td><h3>Элементы библиотечного фонда, возвращенные в этом сеансе </h3>
+				</td>
+				<td><h3>%%Session.NumberOfItemsCheckedIn%%</h3>
+				</td>
+			</tr>
+		</table>
+		<center><h4>Страница %%Receipt.Page%% из%%Receipt.Pages%%</h4>
+		</center>
+	</body>
+</html>

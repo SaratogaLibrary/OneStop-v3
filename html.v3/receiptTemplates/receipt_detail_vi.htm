@@ -1,0 +1,97 @@
+﻿<html>
+	<head>
+		<title>Biên nhận Cho Mượn OneStop</title>
+		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+^^Header{
+		<center><h2>EnvisionWare</h2>
+		</center>
+		<center><h3>Thư viện</h3>
+		</center>
+		<hr>
+		<h4>Ngày: %%Date.LocalText%%</h4>
+		<h4>Thời gian: %%Time.LocalText%%</h4>
+		<h4>Tên: %%User.FullName%%</h4>
+		<h4>Tiền phạt/Tiền phí còn nợ: $%%User.FeeAmount%%</h4>
+		<br>
+		<h4><b>Tổng đã cho mượn trong phiên này: %%Session.TotalItemsCirculated%%</b></h4>
+		<h4><b>Tổng mục đã cho bạn mượn: %%Session.TotalItemsOut%%</b></h4>
+		<hr>
+}^^
+^^List{
+		<h4><b>Đã cho mượn trong phiên này</b></h4>
+		$$Session.CheckedOutItems{
+		<h4>
+			Tiêu đề: %%Checkout.ItemTitle#35#%%<br>
+			Mã vạch: %%Checkout.ItemId%%<br>
+			Ngày hẹn trả: %%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^List{
+		<h4><b>Đã cho mượn trong phiên này - An ninh vẫn được kích hoạt</b></h4>
+		$$Session.ItemsPendingSecurityAdjustment{
+		<h4>
+			Tiêu đề: %%Checkout.ItemTitle%%<br>
+			Mã vạch: %%Checkout.ItemId%%<br>
+			Ngày hẹn trả: %%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+		<hr>
+}^^
+
+^^List{
+		<h4><b>Chưa được cho mượn</b></h4>
+		<h4><i>Lưu ý: Một số thông tin có thể không có sẵn cho tất cả các mục được liệt kê.</i></h4>
+		$$Session.ErrorItems{
+		<h4>
+			Tiêu đề: %%Checkout.ItemTitle%%<br>
+			Mã vạch: %%Checkout.ItemId%%<br>
+			Lý do: %%Checkout.ScreenMessage%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^List{
+		<h4><b>Các mục khác đã cho bạn mượn.</b></h4>
+		$$Session.ExistingItemsOut{
+		<h4>
+			Tiêu đề: %%Item.Title%%<br>
+			Mã vạch: %%Item.Id%%<br>
+			Ngày hẹn trả: %%Item.DueDate%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+		<hr>
+}^^
+
+^^List{
+		<h4><b>Recommendations</b></h4>
+		$$Session.SavedRecommendations{
+		<h4>
+			Title: %%Recommendation.Title%%<br>
+			Author: %%Recommendation.Author%%<br>
+			ISBN: %%Recommendation.PrimaryIsbn%%<br>
+			Rating: %%Recommendation.Rating%%<br>
+			Description: %%Recommendation.Description%%<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^Footer{
+			<hr>
+			<center><h4>Trang %%Receipt.Page%% / %%Receipt.Pages%%</h4>
+			</center>
+}^^
+	</body>
+</html>

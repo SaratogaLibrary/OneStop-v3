@@ -1,0 +1,30 @@
+<div id="input_string_group">
+  <div id="input_string_title_container">
+    <div id="input_string_title">
+      %%Text.txtInputStringPage_title%%
+    </div>
+  </div>
+  <div id="input_string_form_container">
+    <form id="enterForm">
+      <input type="text" class="entry_field bordered_entry_field" id="inputString" NAME="inputString" size="45" onFocus="checkStringInput()" onInput="checkStringInput()"></input>
+    </form>
+  </div>
+  <div id="input_string_keyboard_container">
+    <div id="input_string_keyboard_container_background">
+      <div id="keypad">
+      </div>
+    </div>
+  </div>
+  <div id="nav_buttons_group_container">
+    <div id="nav_buttons_group_background">
+      <div id="nav_buttons_group">
+        <div class="nav_button_border">
+          <button class="nav_button" id="cancel_button" data-dismiss='modal' onclick="inputCancelled()">%%Text.txtInputStringPage_buttonCancel%%</button>
+        </div>
+        <div class="nav_button_border">
+          <button class="nav_button" id="ok_button" onclick="inputDone()">%%Text.txtInputStringPage_buttonOk%%</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

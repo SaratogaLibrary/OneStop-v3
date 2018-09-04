@@ -1,0 +1,100 @@
+﻿<html>
+	<head>
+		<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=UTF-8">
+
+		<title>OneStop 簽出收據</title>
+		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+^^Header{
+		<center><h2>EnvisionWare</h2>
+		</center>
+		<center><h3>圖書館</h3>
+		</center>
+		<hr>
+		<h4>日期：%%Date.LocalText%%</h4>
+		<h4>時間：%%Time.LocalText%%</h4>
+		<h4>名稱：%%User.FullName%%</h4>
+		<h4>未付罰款/費用：$%%User.FeeAmount%%</h4>
+		<br>
+		<h4><b>此工作階段簽出次數總計：%%Session.TotalItemsCirculated%%</b></h4>
+		<h4><b>已簽出給您的項目總計：%%Session.TotalItemsOut%%</b></h4>
+		<hr>
+}^^
+
+^^List{
+		<h4><b>已簽出此工作階段</b></h4>
+		$$Session.CheckedOutItems{
+		<h4>
+			標題：%%Checkout.ItemTitle#35#%%<br>
+			條碼：%%Checkout.ItemId%%<br>
+			返還日期：%%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^List{
+		<h4><b>已簽出此工作階段 - 安全保護仍然啟用</b></h4>
+		$$Session.ItemsPendingSecurityAdjustment{
+		<h4>
+			標題：%%Checkout.ItemTitle%%<br>
+			條碼：%%Checkout.ItemId%%<br>
+			返還日期：%%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+		<hr>
+}^^
+
+^^List{
+		<h4><b>未簽出</b></h4>
+		<h4><i>注意：某些資訊可能無法用於列出的所有項目。</i></h4>
+		$$Session.ErrorItems{
+		<h4>
+			標題：%%Checkout.ItemTitle%%<br>
+			條碼：%%Checkout.ItemId%%<br>
+			原因：%%Checkout.ScreenMessage%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^List{
+		<h4><b>已簽出給您的其他項目</b></h4>
+		$$Session.ExistingItemsOut{
+		<h4>
+			標題：%%Item.Title%%<br>
+			條碼：%%Item.Id%%<br>
+			返還日期：%%Item.DueDate%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+		<hr>
+}^^
+
+^^List{
+		<h4><b>Recommendations</b></h4>
+		$$Session.SavedRecommendations{
+		<h4>
+			Title: %%Recommendation.Title%%<br>
+			Author: %%Recommendation.Author%%<br>
+			ISBN: %%Recommendation.PrimaryIsbn%%<br>
+			Rating: %%Recommendation.Rating%%<br>
+			Description: %%Recommendation.Description%%<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^Footer{
+			<hr>
+			<center><h4>第 %%Receipt.Page%% 頁，共 %%Receipt.Pages%% 頁</h4>
+			</center>
+}^^
+	</body>
+</html>

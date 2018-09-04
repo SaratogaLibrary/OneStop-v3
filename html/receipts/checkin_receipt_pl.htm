@@ -1,0 +1,32 @@
+﻿<html>
+	<head>
+		<title>Pokwitowanie zwrotu OneStop</title>
+		<style type="text/css">
+	h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+</style>
+	</head>
+	<body>
+		<center><h2>EnvisionWare</h2>
+		</center>
+		<center><h3>Biblioteka</h3>
+		</center>
+		<hr>
+		<h4>Data: %%Date.LocalText%% Godzina: %%Time.LocalText%%</h4>
+		<h4>Zwrócono następujące pozycje:</h4>
+		<hr>
+		$$Session.CheckedInItems{
+		<h4>
+			Tytuł: %%Checkin.ItemTitle%%<br />
+			Kod kreskowy: %%Checkin.ItemId%%<br />
+			&nbsp;<br />
+		</h4>
+		<p></p>
+		}$$
+		<hr>
+		<center><h4>Strona %%Receipt.Page%% z %%Receipt.Pages%%</h4>
+		</center>
+	</body>
+</html>

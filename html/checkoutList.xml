@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<checkoutList>
+  <itemCnt>%%Session.NumberOfItemsCheckedOut%%</itemCnt> <!-- required do not remove -->
+  <pendingCnt>%%Session.NumberOfItemsPendingSecurityAdjustment%%</pendingCnt> <!-- required do not remove -->
+  <errorCnt>%%Session.NumberOfErrors%%</errorCnt> <!-- required do not remove -->
+  <successful>
+    $$Session.CheckedOutItems{<itemRecord>
+      <title>%%Checkout.ItemTitle%%</title>
+      <barcode>%%Checkout.ItemId%%</barcode>
+	  <mediaType>%%Checkout.ItemMediaType%%</mediaType>
+	  <mediaTypeCode>%%Checkout.ItemMediaTypeCode%%</mediaTypeCode>
+      <dueDate>%%Checkout.ItemDueDate%%</dueDate>
+	  <feeType>%%Checkout.FeeType%%</feeType>
+	  <feeAmount>%%Checkout.FeeAmount%%</feeAmount>
+      <renewed>%%Checkout.RenewalText%%</renewed>
+      <message>%%Checkout.ScreenMessage%%</message>
+    </itemRecord>}$$
+  </successful>
+  <pending>
+    $$Session.ItemsPendingSecurityAdjustment{<itemRecord>
+      <title>%%Checkout.ItemTitle%%</title>
+      <barcode>%%Checkout.ItemId%%</barcode>
+	  <mediaType>%%Checkout.ItemMediaType%%</mediaType>
+	  <mediaTypeCode>%%Checkout.ItemMediaTypeCode%%</mediaTypeCode>
+      <dueDate>%%Checkout.ItemDueDate%%</dueDate>
+	  <feeType>%%Checkout.FeeType%%</feeType>
+	  <feeAmount>%%Checkout.FeeAmount%%</feeAmount>
+      <renewed>%%Checkout.RenewalText%%</renewed>
+      <message>%%Checkout.ScreenMessage%%</message>
+    </itemRecord>}$$
+  </pending>
+  <errors>
+    $$Session.ErrorItems{<itemRecord>
+      <title>%%Checkout.ItemTitle%%</title>
+      <barcode>%%Checkout.ItemId%%</barcode>
+	  <mediaType>%%Checkout.ItemMediaType%%</mediaType>
+	  <mediaTypeCode>%%Checkout.ItemMediaTypeCode%%</mediaTypeCode>
+      <dueDate>%%Checkout.ItemDueDate%%</dueDate>
+	  <feeType>%%Checkout.FeeType%%</feeType>
+	  <feeAmount>%%Checkout.FeeAmount%%</feeAmount>
+      <renewed>%%Checkout.RenewalText%%</renewed>
+      <message>%%Checkout.ScreenMessage%%</message>
+    </itemRecord>}$$
+  </errors>
+</checkoutList>

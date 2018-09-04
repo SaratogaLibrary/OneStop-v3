@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EnvisionWare OneStop - Statistics Report </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="EXPIRES" content="Tue, 04 Dec 2007 00:00:01 GMT">
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/onestop_style.css" type="text/css" media="screen" />
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/jquery.modal.css" type="text/css" media="screen" />
+    <link id="layout_stylesheet" rel="STYLESHEET" href="./styles/layout_1024.css" type="text/css" media="screen" />
+    <link id="print_stylesheet" rel="STYLESHEET" href="./styles/print.css" type="text/css" media="print" />
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.min.js"></script>
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.modal.js"></script>
+    <script type="text/javascript" src="./scripts/languageUtilities.js"></script>
+    <script type="text/javascript" src="./scripts/utilities.js"></script>
+    <script type="text/javascript" src="./scripts/ViewStatistics.js"></script>
+  </head>
+  <body onload="initialize()" onselectstart="return false" oncontextmenu="return isContextMenuAllowed()">
+    <div id="main">
+      <div id="page_header_group"></div>
+      <div id="content">
+        <div id="view_stats_shim">
+        </div>
+        <div id="view_stats_content_group">
+          <div id="view_stats_title_container">
+            %%Text.txtViewStatisticsPage_ReportTitle%%
+          </div>
+          <div id="view_stats_summary_group">
+            <nobr>%%Text.txtEnterViewStatisticsParamsPage_fromDateLabel%%: %%CirculationStats.FromDate%%</nobr>
+            <nobr>%%Text.txtEnterViewStatisticsParamsPage_toDateLabel%%: %%CirculationStats.ToDate%%</nobr><br />
+            %%Text.txtEnterViewStatisticsParamsPage_transTypeLabel%%:
+            %%CirculationStats.TransactionTypeFilter%%<br />
+            %%Text.txtEnterViewStatisticsParamsPage_statusLabel%%:
+            %%CirculationStats.TransactionStatusFilter%%<br />
+            %%Text.txtEnterViewStatisticsParamsPage_mediaTypeLabel%%:
+            %%CirculationStats.MediaTypeFilter%%<br />
+          </div>
+          <div id="view_stats_report_content">
+            %%CirculationStats.Results%%
+          </div>
+        </div>
+      </div>
+      <div id="nav_buttons_group_container">
+        <div id="nav_buttons_group_background">
+          <div id="nav_buttons_group">
+            <div class="nav_button_border">
+              <button class="nav_button" id="start_over_button" onclick="goToStaffMenu();">
+                <div class="arrow_nav_button_icon_container">
+                  <img class="arrow_nav_button_icon" src="./images/left-arrow.png">
+                </div>
+                <div class="arrow_nav_button_text_container">
+                  <span class="arrow_nav_button_text">%%Text.txtViewStatisticsPage_StartOver%%</span>
+                </div>
+              </button>
+            </div>
+            <div id="help_button_border" class="nav_button_border">
+              <button class="nav_button" id="help_button" onclick="requestHelp('ViewStatistics.htm');">
+                %%Text.txtCommon_Help%%
+              </button>
+            </div>
+            <div id="cancel_help_button_border" class="nav_button_border">
+              <button class="nav_button" id="cancel_help_button" onclick="cancelHelpRequest('ViewStatistics.htm');">
+                %%Text.txtCommon_CancelHelp%%
+              </button>
+            </div>
+            <div id="change_language_button_border" class="nav_button_border">
+              <button class="nav_button" id="change_language_button" onclick="displayLanguageOptionsDialog();">
+                %%Text.txtCommon_ChangeLanguage%%
+              </button>
+            </div>
+            <div class="nav_button_border">
+              <button class="nav_button" id="new_report_button" onclick="goToNewReport();">
+                %%Text.txtViewStatisticsPage_NewReport%%
+              </button>
+            </div>
+            <div class="nav_button_border">
+              <button class="nav_button" id="print_report_button" onclick="printReport();">
+                %%Text.txtViewStatisticsPage_PrintReport%%
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="nav_buttons_footer">
+        </div>
+      </div>
+    </div>
+    <div id="language_buttons_group" class="modal fade">
+      <div id="language_buttons">
+      </div>
+    </div>
+  </body>
+</html>

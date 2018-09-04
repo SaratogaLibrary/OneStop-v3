@@ -1,0 +1,27 @@
+{
+  "name": "angular-viewport-size",
+  "authors": [
+    "cozmy <cosmin@hyperion.co>"
+  ],
+  "description": "A simple and easy-to-use AngularJS service which gives access to the viewport's height and width.",
+  "main": "viewport-size.js",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "service",
+    "viewport",
+    "size"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/cozmy/angular-viewport-size",
+  "version": "0.0.1",
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.1",
+    "commit": "b07bc03f1c1d5361d304a6d8ae8a26c605d0f019"
+  },
+  "_source": "https://github.com/cozmy/angular-viewport-size.git",
+  "_target": "0.0.1",
+  "_originalSource": "angular-viewport-size"
+}

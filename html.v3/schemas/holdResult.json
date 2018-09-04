@@ -1,0 +1,17 @@
+{
+  "ok": "%%Hold.Ok%%",
+  "available": "%%Hold.Available%%",
+  "transactionDate": "%%Hold.TransactionDate%%",
+  "expirationDate": "%%Hold.ExpirationDate%%",
+  "queuePosition": "%%Hold.QueuePosition%%",
+  "pickupLocation": "%%Hold.PickupLocation%%",
+  "userId": "%%Hold.UserId%%",
+  "itemId": "%%Hold.ItemId%%",
+  "itemTitle": "%%Hold.ItemTitle%%",
+  "screenMessage": "%%Hold.ScreenMessage%%",
+  "printLine": "%%Hold.PrintLine%%",
+  "error": {
+    "code": "%%Error.Code%%",
+    "text": "%%Error.Text%%"
+  }
+}

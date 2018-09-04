@@ -1,0 +1,34 @@
+<!-- Copyright(c)2017 EnvisionWare, Inc. - All Rights Reserved -->
+
+<div class="row">
+	<div class="col-md-12 menumain">
+		<div class="row">
+			<div class="staffmenuitemswrapper {{menuWrapperClass}}">
+				<div ng-mousedown="minimizeOneStop()">
+					<a class="staffmenuitem" id="show-the-desktop" href="" ng-bind-html="pageText.minimizeOneStopButton">
+						Show the
+						<br>Desktop
+					</a>
+				</div>
+				<div ng-mousedown="managePendingAlerts()">
+					<a class="staffmenuitem" id="manage-pending-alerts" href="" ng-bind-html="pageText.managePendingAlertsButton">
+						Manage Pending
+						<br>Alerts
+					</a>
+				</div>
+				<div ng-mousedown="viewCirculationStatistics()">
+					<a class="staffmenuitem" id="view-circulation-statistics" href="" ng-bind-html="pageText.viewStatisticsButton">
+						View Circulation
+						<br>Statistics
+					</a>
+				</div>
+				<div ng-mousedown="exitStaffMenu()">
+					<a class="staffmenuitem" id="exit-staff-functions" href="" ng-bind-html="pageText.exitStaffMenuButton">
+						Exit Staff
+						<br>Menu
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

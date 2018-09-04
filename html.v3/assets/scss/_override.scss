@@ -1,0 +1,152 @@
+
+body {
+/*  margin-top: 10px;*/
+  background-color: #fff;
+}
+
+.modal-open .modal {
+    overflow-y: hidden;
+}
+
+
+@media screen and (orientation: portrait) {
+  .header-wrapper {
+    height: 8vh;
+  }
+
+  .theme-image-wrapper {
+    /*max-height: 60vh;*/
+    max-height: 51vh;
+    /*margin-top: 100px;
+    margin-bottom: 100px;*/
+  }
+
+  .rss-wrapper {
+    margin-top: 50px;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .main-view-wrapper {
+    max-height: 40vh;
+  }
+
+  .modal:before {
+    margin-bottom: -80%;
+  }
+}
+
+@media screen and (max-height: 1099px) {
+  /*.header-wrapper {
+    height: 15vh;
+  }*/
+
+  .theme-image-wrapper {
+    max-height: 46vh;
+  }
+
+  .main-view-wrapper {
+    
+  }
+
+  .modal:before {
+    margin-bottom: -54%;
+  }
+}
+
+@media screen and (max-height: 960px) {
+  .modal:before {
+    margin-bottom: -43%;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .modal:before {
+    margin-bottom: -38%;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .modal:before {
+    margin-bottom: -33%;
+  }
+}
+
+@media screen and (orientation: landscape) and (min-width: 1700px) {
+  .theme-image-wrapper {
+    max-height: 47.7vh;
+  }
+}
+
+
+
+.theme-image-wrapper {
+  width: 100%;
+  overflow-y: hidden;
+}
+
+.theme-image {
+  width: 100%;
+  height: auto;
+}
+
+.main-view-wrapper {
+  overflow-y: auto;
+}
+
+.modal:before {
+  display: inline-block;
+  text-align: center;
+  content: " ";
+  height: 100%;
+  vertical-align: middle;
+}
+
+.modal.modal-with-key-pad:before {
+  height: 80%;
+}
+
+@media screen and (orientation: landscape) {
+  .modal.modal-with-key-pad:before {
+    height: 100%;
+  }
+}
+
+/*.footer-wrapper {
+  position: fixed;
+  width: 100%;
+  bottom: 2px;
+}*/
+
+.main-view {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.logo-image {
+  /*max-height: 100px;*/
+}
+
+
+
+.recommendation-thumbnail {
+  /*height: 160px;
+  width: 140px;*/
+}
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+.carousel-control, .carousel-indicators {
+  display: none;
+}
+
+.carousel-indicators {
+  /*display: none;*/
+}
+
+.dialog-icon {
+  width: 64px;
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<itemInformation>
+	<result>%%Session.LastTransactionSuccessful%%</result>	<!-- valid only after checkout/checkin/renew request; not set for item information request -->
+	<barcode>%%Item.Id%%</barcode>
+	<title>%%Item.Title%% </title>
+	<dueDate>%%Item.DueDate%%</dueDate>
+	<feeType>%%Item.FeeType%%</feeType>
+	<currencyType>%%Item.CurrencyType%%</currencyType>
+	<feeAmount>%%Item.FeeAmount%%</feeAmount>	
+	<mediaType>%%Item.MediaType%%</mediaType>
+	<properties>%%Item.Properties%%</properties>
+	<screenMessage>%%Item.ScreenMessage%%</screenMessage>
+	<printLine>%%Item.PrintLine%%</printLine>
+	<holdQueueLength>%%Item.HoldQueueLength%%</holdQueueLength>
+	<owner>%%Item.Owner%%</owner>
+	<permanentLocation>%%Item.PermanentLocation%%</permanentLocation>
+	<currentLocation>%%%%Item.CurrentLocation%%</currentLocation>
+</itemInformation>

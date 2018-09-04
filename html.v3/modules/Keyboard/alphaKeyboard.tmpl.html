@@ -1,0 +1,245 @@
+<!-- Copyright(c)2017 EnvisionWare, Inc. - All Rights Reserved -->
+
+<div class="alpha-keyboard" ng-cloak>
+  <div ng-show="options.visible">
+    <div ng-show="(options.layout === 'QWERTY') && options.lowerCase">
+      <button class="letter" ng-mousedown="keyPress('q')">q</button>
+      <button class="letter" ng-mousedown="keyPress('w')">w</button>
+      <button class="letter" ng-mousedown="keyPress('e')">e</button>
+      <button class="letter" ng-mousedown="keyPress('r')">r</button>
+      <button class="letter" ng-mousedown="keyPress('t')">t</button>
+      <button class="letter" ng-mousedown="keyPress('y')">y</button>
+      <button class="letter" ng-mousedown="keyPress('u')">u</button>
+      <button class="letter" ng-mousedown="keyPress('i')">i</button>
+      <button class="letter" ng-mousedown="keyPress('o')">o</button>
+      <button class="letter" ng-mousedown="keyPress('p')">p</button>
+
+      <button class="letter clearl" ng-mousedown="keyPress('a')">a</button>
+      <button class="letter" ng-mousedown="keyPress('s')">s</button>
+      <button class="letter" ng-mousedown="keyPress('d')">d</button>
+      <button class="letter" ng-mousedown="keyPress('f')">f</button>
+      <button class="letter" ng-mousedown="keyPress('g')">g</button>
+      <button class="letter" ng-mousedown="keyPress('h')">h</button>
+      <button class="letter" ng-mousedown="keyPress('j')">j</button>
+      <button class="letter" ng-mousedown="keyPress('k')">k</button>
+      <button class="letter" ng-mousedown="keyPress('l')">l</button>
+      <button class="letter" ng-show="options.showHideButton" ng-mousedown="hide()"><img src="/assets/images/closeBtn.jpg" draggable="false" height="20" width="20" /></button>
+
+      <button class="letter clearl" ng-mousedown="keyPress('z')">z</button>
+      <button class="letter" ng-mousedown="keyPress('x')">x</button>
+      <button class="letter" ng-mousedown="keyPress('c')">c</button>
+      <button class="letter" ng-mousedown="keyPress('v')">v</button>
+      <button class="letter" ng-mousedown="keyPress('b')">b</button>
+      <button class="letter" ng-mousedown="keyPress('n')">n</button>
+      <button class="letter" ng-mousedown="keyPress('m')">m</button>
+      <button class="switch lastitem" ng-mousedown="toggleShift()" ng-bind-html="pageText.capsButton">CAPS</button>
+    </div>
+
+    <div ng-show="(options.layout === 'QWERTY') && !options.lowerCase">
+      <button class="letter" ng-mousedown="keyPress('Q')">Q</button>
+      <button class="letter" ng-mousedown="keyPress('W')">W</button>
+      <button class="letter" ng-mousedown="keyPress('E')">E</button>
+      <button class="letter" ng-mousedown="keyPress('R')">R</button>
+      <button class="letter" ng-mousedown="keyPress('T')">T</button>
+      <button class="letter" ng-mousedown="keyPress('Y')">Y</button>
+      <button class="letter" ng-mousedown="keyPress('U')">U</button>
+      <button class="letter" ng-mousedown="keyPress('I')">I</button>
+      <button class="letter" ng-mousedown="keyPress('O')">O</button>
+      <button class="letter" ng-mousedown="keyPress('P')">P</button>
+
+      <button class="letter clearl" ng-mousedown="keyPress('A')">A</button>
+      <button class="letter" ng-mousedown="keyPress('S')">S</button>
+      <button class="letter" ng-mousedown="keyPress('D')">D</button>
+      <button class="letter" ng-mousedown="keyPress('F')">F</button>
+      <button class="letter" ng-mousedown="keyPress('G')">G</button>
+      <button class="letter" ng-mousedown="keyPress('H')">H</button>
+      <button class="letter" ng-mousedown="keyPress('J')">J</button>
+      <button class="letter" ng-mousedown="keyPress('K')">K</button>
+      <button class="letter" ng-mousedown="keyPress('L')">L</button>
+      <button class="letter" ng-show="options.showHideButton" ng-mousedown="hide()"><img src="/assets/images/closeBtn.jpg" draggable="false" height="20" width="20" /></button>
+
+      <button class="letter clearl" ng-mousedown="keyPress('Z')">Z</button>
+      <button class="letter" ng-mousedown="keyPress('X')">X</button>
+      <button class="letter" ng-mousedown="keyPress('C')">C</button>
+      <button class="letter" ng-mousedown="keyPress('V')">V</button>
+      <button class="letter" ng-mousedown="keyPress('B')">B</button>
+      <button class="letter" ng-mousedown="keyPress('N')">N</button>
+      <button class="letter" ng-mousedown="keyPress('M')">M</button>
+      <button class="switch lastitem" ng-mousedown="toggleShift()" ng-bind-html="pageText.capsButton">CAPS</button>
+    </div>
+
+    <div ng-show="(options.layout === 'ALPHA') && options.lowerCase">
+      <button class="letter" ng-mousedown="keyPress('a')">a</button>
+      <button class="letter" ng-mousedown="keyPress('b')">b</button>
+      <button class="letter" ng-mousedown="keyPress('c')">c</button>
+      <button class="letter" ng-mousedown="keyPress('d')">d</button>
+      <button class="letter" ng-mousedown="keyPress('e')">e</button>
+      <button class="letter" ng-mousedown="keyPress('f')">f</button>
+      <button class="letter" ng-mousedown="keyPress('g')">g</button>
+      <button class="letter" ng-mousedown="keyPress('h')">h</button>
+      <button class="letter" ng-mousedown="keyPress('i')">i</button>
+      <button class="letter" ng-show="options.showHideButton" ng-mousedown="hide()"><img src="/assets/images/closeBtn.jpg" draggable="false" height="20" width="20" /></button>
+
+      <button class="letter clearl" ng-mousedown="keyPress('j')">j</button>
+      <button class="letter" ng-mousedown="keyPress('k')">k</button>
+      <button class="letter" ng-mousedown="keyPress('l')">l</button>
+      <button class="letter" ng-mousedown="keyPress('m')">m</button>
+      <button class="letter" ng-mousedown="keyPress('n')">n</button>
+      <button class="letter" ng-mousedown="keyPress('o')">o</button>
+      <button class="letter" ng-mousedown="keyPress('p')">p</button>
+      <button class="letter" ng-mousedown="keyPress('q')">q</button>
+      <button class="letter" ng-mousedown="keyPress('r')">r</button>
+
+      <button class="letter clearl" ng-mousedown="keyPress('s')">s</button>
+      <button class="letter" ng-mousedown="keyPress('t')">t</button>
+      <button class="letter" ng-mousedown="keyPress('u')">u</button>
+      <button class="letter" ng-mousedown="keyPress('v')">v</button>
+      <button class="letter" ng-mousedown="keyPress('w')">w</button>
+      <button class="letter" ng-mousedown="keyPress('x')">x</button>
+      <button class="letter" ng-mousedown="keyPress('y')">y</button>
+      <button class="letter" ng-mousedown="keyPress('z')">z</button>
+      <button class="switch lastitem" ng-mousedown="toggleShift()" ng-bind-html="pageText.capsButton">CAPS</button>
+    </div>
+
+    <div ng-show="(options.layout === 'ALPHA') && !options.lowerCase">
+      <button class="letter" ng-mousedown="keyPress('A')">A</button>
+      <button class="letter" ng-mousedown="keyPress('B')">B</button>
+      <button class="letter" ng-mousedown="keyPress('C')">C</button>
+      <button class="letter" ng-mousedown="keyPress('D')">D</button>
+      <button class="letter" ng-mousedown="keyPress('E')">E</button>
+      <button class="letter" ng-mousedown="keyPress('F')">F</button>
+      <button class="letter" ng-mousedown="keyPress('G')">G</button>
+      <button class="letter" ng-mousedown="keyPress('H')">H</button>
+      <button class="letter" ng-mousedown="keyPress('I')">I</button>
+      <button class="letter" ng-show="options.showHideButton" ng-mousedown="hide()"><img src="/assets/images/closeBtn.jpg" draggable="false" height="20" width="20" /></button>
+
+      <button class="letter clearl" ng-mousedown="keyPress('J')">J</button>
+      <button class="letter" ng-mousedown="keyPress('K')">K</button>
+      <button class="letter" ng-mousedown="keyPress('L')">L</button>
+      <button class="letter" ng-mousedown="keyPress('M')">M</button>
+      <button class="letter" ng-mousedown="keyPress('N')">N</button>
+      <button class="letter" ng-mousedown="keyPress('O')">O</button>
+      <button class="letter" ng-mousedown="keyPress('P')">P</button>
+      <button class="letter" ng-mousedown="keyPress('Q')">Q</button>
+      <button class="letter" ng-mousedown="keyPress('R')">R</button>
+
+      <button class="letter clearl" ng-mousedown="keyPress('S')">S</button>
+      <button class="letter" ng-mousedown="keyPress('T')">T</button>
+      <button class="letter" ng-mousedown="keyPress('U')">U</button>
+      <button class="letter" ng-mousedown="keyPress('V')">V</button>
+      <button class="letter" ng-mousedown="keyPress('W')">W</button>
+      <button class="letter" ng-mousedown="keyPress('X')">X</button>
+      <button class="letter" ng-mousedown="keyPress('Y')">Y</button>
+      <button class="letter" ng-mousedown="keyPress('Z')">Z</button>
+      <button class="switch lastitem" ng-mousedown="toggleShift()" ng-bind-html="pageText.capsButton">CAPS</button>
+    </div>
+
+    <div ng-show="(options.layout === 'EMAIL_QWERTY')">
+      <button class="switch" ng-mousedown="keyPress('.com')">.com</button>
+      <button class="switch" ng-mousedown="keyPress('.net')">.net</button>
+      <button class="switch" ng-mousedown="keyPress('.org')">.org</button>
+      <button class="switch" ng-mousedown="keyPress('.gov')">.gov</button>
+      <button class="switch"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</button> <!-- Spacer -->
+      <button class="letter" ng-mousedown="keyPress('@')">@</button>
+      <button class="letter" ng-mousedown="keyPress('.')">.</button>
+      <button class="switch" ng-mousedown="backspace()">&#9003;</button>
+
+      <button class="letter clearl" ng-mousedown="keyPress('1')">1</button>
+      <button class="letter" ng-mousedown="keyPress('2')">2</button>
+      <button class="letter" ng-mousedown="keyPress('3')">3</button>
+      <button class="letter" ng-mousedown="keyPress('4')">4</button>
+      <button class="letter" ng-mousedown="keyPress('5')">5</button>
+      <button class="letter" ng-mousedown="keyPress('6')">6</button>
+      <button class="letter" ng-mousedown="keyPress('7')">7</button>
+      <button class="letter" ng-mousedown="keyPress('8')">8</button>
+      <button class="letter" ng-mousedown="keyPress('9')">9</button>
+      <button class="letter" ng-mousedown="keyPress('0')">0</button>
+
+      <button class="letter clearl" ng-mousedown="keyPress('q')">q</button>
+      <button class="letter" ng-mousedown="keyPress('w')">w</button>
+      <button class="letter" ng-mousedown="keyPress('e')">e</button>
+      <button class="letter" ng-mousedown="keyPress('r')">r</button>
+      <button class="letter" ng-mousedown="keyPress('t')">t</button>
+      <button class="letter" ng-mousedown="keyPress('y')">y</button>
+      <button class="letter" ng-mousedown="keyPress('u')">u</button>
+      <button class="letter" ng-mousedown="keyPress('i')">i</button>
+      <button class="letter" ng-mousedown="keyPress('o')">o</button>
+      <button class="letter" ng-mousedown="keyPress('p')">p</button>
+
+      <button class="letter clearl" ng-mousedown="keyPress('a')">a</button>
+      <button class="letter" ng-mousedown="keyPress('s')">s</button>
+      <button class="letter" ng-mousedown="keyPress('d')">d</button>
+      <button class="letter" ng-mousedown="keyPress('f')">f</button>
+      <button class="letter" ng-mousedown="keyPress('g')">g</button>
+      <button class="letter" ng-mousedown="keyPress('h')">h</button>
+      <button class="letter" ng-mousedown="keyPress('j')">j</button>
+      <button class="letter" ng-mousedown="keyPress('k')">k</button>
+      <button class="letter" ng-mousedown="keyPress('l')">l</button>
+      <button class="letter" ng-mousedown="keyPress('+')">+</button>
+
+      <button class="letter clearl" ng-mousedown="keyPress('z')">z</button>
+      <button class="letter" ng-mousedown="keyPress('x')">x</button>
+      <button class="letter" ng-mousedown="keyPress('c')">c</button>
+      <button class="letter" ng-mousedown="keyPress('v')">v</button>
+      <button class="letter" ng-mousedown="keyPress('b')">b</button>
+      <button class="letter" ng-mousedown="keyPress('n')">n</button>
+      <button class="letter" ng-mousedown="keyPress('m')">m</button>
+      <button class="letter" ng-mousedown="keyPress('-')">-</button>
+      <button class="letter lastitem" ng-mousedown="keyPress('_')">_</button>
+    </div>
+
+    <div ng-show="(options.layout === 'EMAIL_ALPHA')">
+      <button class="switch" ng-mousedown="keyPress('.com')">.com</button>
+      <button class="switch" ng-mousedown="keyPress('.net')">.net</button>
+      <button class="switch" ng-mousedown="keyPress('.org')">.org</button>
+      <button class="switch" ng-mousedown="keyPress('.gov')">.gov</button>
+      <button class="switch"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</button> <!-- Spacer -->
+      <button class="letter" ng-mousedown="keyPress('@')">@</button>
+      <button class="letter" ng-mousedown="keyPress('.')">.</button>
+      <button class="switch" ng-mousedown="backspace()">&#9003;</button>
+
+      <button class="letter clearl" ng-mousedown="keyPress('1')">1</button>
+      <button class="letter" ng-mousedown="keyPress('2')">2</button>
+      <button class="letter" ng-mousedown="keyPress('3')">3</button>
+      <button class="letter" ng-mousedown="keyPress('4')">4</button>
+      <button class="letter" ng-mousedown="keyPress('5')">5</button>
+      <button class="letter" ng-mousedown="keyPress('6')">6</button>
+      <button class="letter" ng-mousedown="keyPress('7')">7</button>
+      <button class="letter" ng-mousedown="keyPress('8')">8</button>
+      <button class="letter" ng-mousedown="keyPress('9')">9</button>
+      <button class="letter" ng-mousedown="keyPress('0')">0</button>
+
+      <button class="letter clearl" ng-mousedown="keyPress('a')">a</button>
+      <button class="letter" ng-mousedown="keyPress('b')">b</button>
+      <button class="letter" ng-mousedown="keyPress('c')">c</button>
+      <button class="letter" ng-mousedown="keyPress('d')">d</button>
+      <button class="letter" ng-mousedown="keyPress('e')">e</button>
+      <button class="letter" ng-mousedown="keyPress('f')">f</button>
+      <button class="letter" ng-mousedown="keyPress('g')">g</button>
+      <button class="letter" ng-mousedown="keyPress('h')">h</button>
+      <button class="letter" ng-mousedown="keyPress('i')">i</button>
+      <button class="letter" ng-mousedown="keyPress('-')">-</button>
+
+      <button class="letter clearl" ng-mousedown="keyPress('j')">j</button>
+      <button class="letter" ng-mousedown="keyPress('k')">k</button>
+      <button class="letter" ng-mousedown="keyPress('l')">l</button>
+      <button class="letter" ng-mousedown="keyPress('m')">m</button>
+      <button class="letter" ng-mousedown="keyPress('n')">n</button>
+      <button class="letter" ng-mousedown="keyPress('o')">o</button>
+      <button class="letter" ng-mousedown="keyPress('p')">p</button>
+      <button class="letter" ng-mousedown="keyPress('q')">q</button>
+      <button class="letter" ng-mousedown="keyPress('r')">r</button>
+      <button class="letter" ng-mousedown="keyPress('_')">_</button>
+
+      <button class="letter clearl" ng-mousedown="keyPress('s')">s</button>
+      <button class="letter" ng-mousedown="keyPress('t')">t</button>
+      <button class="letter" ng-mousedown="keyPress('u')">u</button>
+      <button class="letter" ng-mousedown="keyPress('v')">v</button>
+      <button class="letter" ng-mousedown="keyPress('w')">w</button>
+      <button class="letter" ng-mousedown="keyPress('x')">x</button>
+      <button class="letter" ng-mousedown="keyPress('y')">y</button>
+      <button class="letter" ng-mousedown="keyPress('z')">z</button>
+      <button class="letter lastitem" ng-mousedown="keyPress('+')">+</button>
+    </div>
+  </div>
+</div>

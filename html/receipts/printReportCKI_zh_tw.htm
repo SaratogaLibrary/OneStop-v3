@@ -1,0 +1,44 @@
+﻿<html>
+	<head>
+	<title>還書箱 - 所有歸還館藏一覽</title>
+	<style type="text/css">
+	h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+		<center><h1>EnvisionWare Library</h1>
+		</center>
+		<center><h2>還書箱 - 所有歸還館藏一覽</h2>
+		</center>
+		<center><h2>%%Date.LocalText%%</h2></center>
+		<table>
+		<tr>
+			<th align=left><h3>題名</h3></th>
+			<th align=left><h3>條碼號</h3></th>
+			<th align=left<h3>還書提示</h3></th>
+			<th align=left<h3>目的舘址</h3></th>			
+		</tr>
+		$$Session.CheckedInItems{
+			<tr>
+				<td align=left><h4>%%Checkin.ItemTitle%%</h4></td>
+				<td align=left><h4>%%Checkin.ItemId%%</h4></td>
+				<td align=left><h4>%%Checkin.ItemAlertType%%</h4></td>
+				<td aligh=left><h4>%%Checkin.ItemDestinationLocation%%</h4></td>
+			</tr>
+		}$$
+		</table>
+		<hr>
+		<table>
+			<tr>
+				<td><h3>本批歸還圖書</h3></td>
+				<td><h3>%%Session.NumberOfItemsCheckedIn%%</h3></td>
+			</tr>
+		</table>
+		
+		<center><h4>第 %%Receipt.Page%% 之 %%Receipt.Pages%%頁</h4>
+		</center>
+	</body>
+</html>

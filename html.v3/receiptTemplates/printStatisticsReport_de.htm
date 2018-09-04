@@ -1,0 +1,25 @@
+﻿<html>
+	<head>
+		<title>EnvisionWare OneStop - Statistikbericht </title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="EXPIRES" content="Tue, 04 Dec 2007 00:00:01 GMT">
+		<link id="stylesheet" rel="STYLESHEET" href="./styles/onestop_style.css" type="text/css" media="screen" />
+		<link id="layout_stylesheet" rel="STYLESHEET" href="./styles/layout_1024.css" type="text/css" media="screen" />
+		<link id="print_stylesheet" rel="STYLESHEET" href="./styles/print.css" type="text/css" media="print" />
+	</head>
+	<body>
+		<h2 class="page_header">
+			Ausleihstatistikbericht<br/>
+		</h2>
+		<h3>
+			Von: %%CirculationStats.FromDate%%<br />
+			Bis: %%CirculationStats.ToDate%%<br />
+			Transaktionstyp:%%CirculationStats.TransactionTypeFilter%%<br />
+			Transaktionsstatus:%%CirculationStats.TransactionStatusFilter%%<br />
+			Medientyp:%%CirculationStats.MediaTypeFilter%%<br />
+		</h3>
+		<p>
+		%%CirculationStats.Results%%
+		</p>
+	</body>
+</html>

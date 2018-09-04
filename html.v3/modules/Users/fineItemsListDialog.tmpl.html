@@ -1,0 +1,28 @@
+<!-- Copyright(c)2017 EnvisionWare, Inc. - All Rights Reserved -->
+
+<div class="modal-header">
+  <h3 class="modal-title">{{pageHeader}}</h3>
+</div>
+
+<div class="modal-body fixed-height-modal-body">
+  <table class="table table-striped">
+    <thead>
+      <tr><th>{{pageText.titleColumnHeader}}</th><th>{{pageText.descriptionColumnHeader}}</th><th>{{pageText.amountColumnHeader}}</th></tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="fine in fines | filter:itemIsOnPage">
+        <td>{{fine.title || pageText.retrievingItem + ': ' + item.id}}</td>
+        <td>{{fine.description}}</td>
+        <td>{{fine.amount | currency}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="modal-footer">
+  <div class="col-sm-2 text-center"><button class="btn btn-default" ng-disabled="!range.canGoBack()" ng-mousedown="range.goBack()"><span class="fa fa-chevron-left"></span></button></div>
+  <div class="col-sm-4 text-center">{{range.getText()}}</div>
+  <div class="col-sm-2 text-center"><button class="btn btn-default" ng-disabled="!range.canGoForward()" ng-mousedown="range.goForward()"><span class="fa fa-chevron-right"></span></button></div>
+  <div class="col-sm-2"></div>
+  <div class="col-sm-2 text-center"><button class="btn btn-default" ng-mousedown="close()" ng-bind-text="pageText.closeButton">Close</button></div>
+</div>

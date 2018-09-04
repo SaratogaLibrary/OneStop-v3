@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EnvisionWare OneStop - Scan Items</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="EXPIRES" content="Thu, 20 Mar 2008 00:00:01 GMT">
+    <link rel="STYLESHEET" href="./styles/onestop_style.css" type="text/css" />
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/jquery.modal.css" type="text/css" media="screen" />
+    <link id="layout_stylesheet" rel="STYLESHEET" href="./styles/layout_1024.css" type="text/css" />
+    <link id="novelist_stylesheet" rel="STYLESHEET" href="./styles/novelist_1024.css" type="text/css" />
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.min.js"></script>
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.modal.js"></script>
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="./scripts/thirdparty/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/scripts/keypad.js"></script>
+    <script type="text/javascript" src="/scripts/languageUtilities.js"></script>
+    <script type="text/javascript" src="/scripts/formutilities.js"></script>
+    <script type="text/javascript" src="/scripts/receiptUtilities.js"></script>
+    <script type="text/javascript" src="/scripts/utilities.js"></script>
+    <script type="text/javascript" src="/scripts/circulationItems.js"></script>
+    <script type="text/javascript" src="/scripts/scanItems.js"></script>
+    <script type="text/javascript" src="/scripts/novelistPage.js"></script>
+  </head>
+  <body onload="initializeScanItems('scanItemsNovelist.htm')" onmousedown="resetTimerInBody()" onkeypress="resetTimerInBody()" onselectstart="return false" oncontextmenu="return isContextMenuAllowed()">
+    <div class="novelist_overlay">
+      <div class="n_data_pod">
+        <div class="n_data_pod_content">
+		<div class="n_data_pod_content_image"><!-- <img src="./images/book.jpg"> --><img id="recommended_bookjacket_url" src=""></div>
+          <div class="n_data_pod_text_content">
+            <div class="n_data_pod_content_title" id="recommended_title"><!--The Fellowship of the Ring--></div>
+            <div class="n_data_pod_content_subtitle" id="recommended_author"><!--J.R.R. Tolkien--></div>
+            <div class="n_data_pod_content_text" id="recommended_description"><!--In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, the Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell into the hands of Bilbo Baggins, as told in The Hobbit. In a sleepy village in the Shire, young Frodo Baggins finds himself faced with an immense task, as his elderly cousin Bilbo entrusts the Ring to his care. Frodo must leave his home and make a perilous journey across Middle-earth to the Cracks of Doom, there to destroy the Ring and foil the Dark Lord in his evil purpose.--></div>
+          </div>
+        </div>
+        <div class="n_data_pod_nav_bg">
+<!--          <div class="nav_button nav_button_border"><div class=" n_pod_button_text">Place Hold</div></div> -->
+          <div class="nav_button nav_button_border"><div class="n_pod_button_text" onclick="saveRecommendation()">Save</div></div>
+          <div class="nav_button nav_button_border"><div class="n_pod_button_text" onclick="hideRecommendationDetails()">Close</div></div>
+        </div>
+      </div>
+    </div>
+    <div id="main">
+      <div id="page_header_group"></div>
+      <div id="content">
+        <div id="circulation_instructions_container"><div class="h1" id="circulation_instructions_text">%%Text.txtScanItemsPage_Instructions%%</div>
+        </div>
+        <div id="entry_field_container">
+          <form name="scanItemForm" id="scanItemForm" onsubmit="scanEnteredItem(this.itemIdField);return false;">
+            <input class="entry_field" id="itemIdField" type="text" name="itemIdField" disabled="true" size="23" value="" onbeforedeactivate="return false">
+          </form>
+        </div>
+        <div id="circulation_content_group" class="circulation_content_group">
+          <div id="circulation_group" class="circulation_group">
+            <div id="circulation_list_group" class="circulation_list_group">
+              <div id="circulation_list_header_container">
+                <table id="circulation_list_header" class="circulation_list_header">
+                  <tr id="circulation_list_header_row">
+
+
+
+					</tr>
+                </table>
+              </div>
+              <div id="circulation_list_container" class="circulation_list_container">
+                <table id="circulation_list" class="circulation_list">
+                </table>
+              </div>
+              <div id="circulation_badges_group">
+                <div id="circulation_badges_table_container">
+                  <table class="circulation_badges_table">
+                    <tr>
+                      <td class="circulation_badge_cell">
+                        <div id="circulated_badge" class="base_badge">
+                          <div class="badge_icon_container">
+                            <img class="circulation_status_icon" src="/images/checked_out_status.png" />
+                          </div>
+                          <div class="badge_text">
+                            %%Text.txtScanItemsPage_CheckedOutBadgeLabel%%: <span id="numCheckedOut">0</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="circulation_badge_cell_separator"></td>
+                      <td class="circulation_badge_cell">
+                        <div id="not_circulated_badge" class="base_badge">
+                          <div class="badge_icon_container">
+                            <img class="circulation_status_icon" src="/images/not_checked_out_status.png" />
+                          </div>
+                          <div class="badge_text">
+                            %%Text.txtScanItemsPage_NotCheckedOutBadgeLabel%%: <span id="numNotCheckedOut">0</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="circulation_badge_cell_separator"></td>
+                      <td class="circulation_badge_cell">
+                        <div id="circulation_reposition_badge" class="base_badge">
+                          <div class="badge_icon_container">
+                            <img class="circulation_status_icon" src="/images/reposition_status.png" />
+                          </div>
+                          <div class="badge_text">
+                            %%Text.txtScanItemsPage_RepositionBadgeLabel%%: <span id="numReposition">0</span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+         </div>
+        <div id="circulation_splash_group" class="circulation_splash_group">
+          <div id="circulation_rfid_splash_animation_container">
+            <div id="circulation_rfid_splash_animation">
+              <video id="circulation_rfid_splash_animation_video"
+                    autoplay
+                    loop
+                    preload='auto'>
+                <source src="media/rfid_scan_item_animation.mp4" type='video/mp4'>
+              </video>
+              <div id="circulation_rfid_splash_animation_video_placeholder"></div>
+            </div>
+          </div>
+          <div id="circulation_barcode_splash_animation_container">
+            <div id="circulation_barcode_splash_animation">
+              <video id="circulation_barcode_splash_animation_video"
+                     autoplay
+                     loop
+                     preload='auto'>
+                <source src="media/barcode_scan_item_animation.mp4" type='video/mp4'>
+              </video>
+              <div id="circulation_barcode_splash_animation_video_placeholder"></div>
+            </div>
+          </div>
+        </div>
+        <div id="novelist_container">
+          <div id="n_recommend_container" class="n_title">Recommended for you</div>
+          <div class="n_inner_container">
+            <div class="n_books_container" id="novelist_recommendations">
+			<!--
+              <div class="n_text">Press any title for more info</div>
+              <a href="#">
+                <div class="n_book">
+                  <div class="n_book_image"><img src="./images/book.jpg"></div>
+                  <div class="n_book_title">The Fellowship of the Ring</div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="n_book">
+                  <div class="n_book_image"><img src="./images/book.jpg"></div>
+                  <div class="n_book_title">The Two Towers</div>
+                </div>
+              </a>
+              <a href="#">
+                <div class="n_book">
+                  <div class="n_book_image"><img src="./images/book.jpg"></div>
+                  <div class="n_book_title">The Return of The King</div>
+                </div>
+              </a>
+            </div>
+			-->
+          </div>
+        </div>
+      </div> <!-- content end -->
+      <div id="nav_buttons_group_container">
+        <div id="nav_buttons_group_background">
+          <div id="nav_buttons_group">
+            <div id="start_over_button_border" class="nav_button_border">
+              <button class="nav_button" id="start_over_button" onclick="goToStartOver();">
+                <div class="arrow_nav_button_icon_container">
+                  <img class="arrow_nav_button_icon" src="./images/left-arrow.png">
+                </div>
+                <div class="arrow_nav_button_text_container">
+                  <span class="arrow_nav_button_text">%%Text.txtScanItemsPage_StartOver%%</span>
+                </div>
+              </button>
+            </div>
+            <div id="help_button_border" class="nav_button_border">
+              <button class="nav_button" id="help_button" onclick="requestHelp('scanItems.htm');">
+                %%Text.txtCommon_Help%%
+              </button>
+            </div>
+            <div id="cancel_help_button_border" class="nav_button_border">
+              <button class="nav_button" id="cancel_help_button" onclick="cancelHelpRequest('scanItems.htm');">
+                %%Text.txtCommon_CancelHelp%%
+              </button>
+            </div>
+            <div id="change_language_button_border" class="nav_button_border">
+              <button class="nav_button" id="change_language_button" onclick="displayLanguageOptionsDialog();">
+                %%Text.txtCommon_ChangeLanguage%%
+              </button>
+            </div>
+            <div id="my_account_button_border" class="nav_button_border">
+              <button class="nav_button" id="my_account_button" onclick="window.location='/myAccount.htm'">
+                %%Text.txtScanItemsPage_MyAccount%%
+              </button>
+            </div>
+            <div id="finished_button_border" class="nav_button_border">
+              <button class="nav_button" id="finished_button" onclick="completeCirculation()">
+                <div class="arrow_nav_button_text_container">
+                  <span id="finished_button_text" class="arrow_nav_button_text">%%Text.txtScanItemsPage_Finished%%</span>
+                </div>
+                <div class="arrow_nav_button_icon_container">
+                  <img class="arrow_nav_button_icon" src="./images/right-arrow.png">
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="nav_buttons_footer">
+        </div>
+      </div>
+    </div>
+    <div id="language_buttons_group" class="modal fade">
+      <div id="language_buttons">
+      </div>
+    </div>
+    <div class="modal fade" id="please_wait_div">
+      <table class="please_wait_table" cellpadding="5" ID="Table1">
+        <tr>
+          <td><img class="please_wait_icon" src="./images/please_wait.png"></td>
+          <td><span id="please_wait_text">%%Text.txtScanItemsPage_PleaseWaitProcessing%%</span></td>
+        </tr>
+      </table>
+    </div>
+	
+	<!-- Confirm Checkout Fee Modal -->
+	<div class="modal fade" id="confirm_checkout_fee_div">
+		<table style="width:98%; margin:5px;" border="0" cellspacing="0" cellpadding="10">
+			<tr class="confirm_checkout_fee_highlighted_row"><td colspan="2" ><span id="confirm_checkout_fee_dialog_title">%%Text.txtScanItemsPage_CheckoutFeeNoticeTitle%%</span></td></tr>
+			<tr><td colspan="2" align="center">%%Text.txtScanItemsPage_CheckoutFeeNotice%%</td></tr>
+			<tr><td colspan="2" align="center"><span id="checkout_fee_item_title"></span></td></tr>
+			<tr><td colspan="2" align="center">%%Text.txtScanItemsPage_CheckoutFeeNoticePrompt%%</td></tr>
+			<tr class="confirm_checkout_fee_highlighted_row">
+			    <td align="right" vertical-align="center" width="50%" cellpadding="0"><div class="confirm_checkout_fee_button_border"><button class="confirm_checkout_fee_button" onclick="acceptFee();" data-dismiss="modal">%%Text.txtScanItemsPage_CheckoutFeeOk%%</button></div></td>
+				<td align="left"><div class="confirm_checkout_fee_button_border"><button class="confirm_checkout_fee_button" onclick="cancelAcceptFee();" data-dismiss="modal">%%Text.txtScanItemsPage_CheckoutFeeCancel%%</button></div></td>
+			</tr>
+		</table>
+		<span id="checkout_fee_item_id" style="visibility:hidden;"></span>
+	</div>
+
+	<div class="modal fade" id="show_saved_recommendation_div">
+		<table style="width:98%; margin:5px;" border="0" cellspacing="0" cellpadding="10">
+			<tr class="confirm_checkout_fee_highlighted_row"><td colspan="2" >&nbsp;</td></tr>
+			<tr><td colspan="2" align="center"><span id="saved_recommendation_result"></span></td></tr>
+			<tr class="confirm_checkout_fee_highlighted_row">
+			    <td align="center" vertical-align="center" width="50%" cellpadding="0"><div class="confirm_checkout_fee_button_border"><button class="confirm_checkout_fee_button" onclick="closeSavedRecommendation()" data-dismiss="modal">%%Text.txtScanItemsPage_CheckoutFeeOk%%</button></div></td>
+			</tr>
+		</table>
+	</div>
+
+
+	<!-- Acknowledge Circulation Error Modal -->
+		<!-- Note: styles are "borrowed" from confirm_checkout_fee modal -->
+	<div class="modal fade" id="checkout_error_div">
+		<table style="width:98%; margin:5px;" border="0" cellspacing="0" cellpadding="10">
+			<tr class="confirm_checkout_fee_highlighted_row"><td colspan="2" ><span id="confirm_checkout_fee_dialog_title">%%Text.txtScanItemsPage_AcknowledgeCirculationErrorNoticeTitle%%</span></td></tr>
+			<tr><td colspan="2" align="center">%%Text.txtScanItemsPage_AcknowledgeCirculationErrorNotice%%</td></tr>
+			<tr><td colspan="2" align="center"><span id="checkout_error_item_title"></span></td></tr>
+			<tr><td colspan="2" align="center"><span id="checkout_error_message"></span></td></tr>
+			<tr><td colspan="2" align="center">%%Text.txtScanItemsPage_AcknowledgeCirculationErrorNoticePrompt%%</td></tr>
+			<tr class="confirm_checkout_fee_highlighted_row">
+			    <td align="center" vertical-align="center" width="50%" cellpadding="0"><div class="confirm_checkout_fee_button_border"><button class="confirm_checkout_fee_button" onclick="acknowledgeCirculationError();" data-dismiss="modal">%%Text.txtScanItemsPage_AcknowledgeCirculationErrorOk%%</button></div></td>
+			</tr>
+		</table>
+		<span id="checkout_error_item_id" style="visibility:hidden;"></span>
+	</div>
+
+    <div id="scroll_buttons_group" class="scroll_buttons_group">
+      <div id="scroll_up_button_container">
+        <div id="scroll_up_button_border" class="scroll_button_border">
+          <button class="base_scroll_button" id="scroll_up_button" onMouseDown="scrollUpCirculationList();" onMouseUp="scrollUpCirculationList();"><img class="scroll_button_image" src="./images/up-arrow.png" /></button>
+        </div>
+      </div>
+      <div id="scroll_down_button_container">
+        <div id="scroll_down_button_border"  class="scroll_button_border">
+          <button class="base_scroll_button" id="scroll_down_button" onMouseDown="scrollDownCirculationList();" onMouseUp="scrollDownCirculationList();"><img class="scroll_button_image" src="./images/down-arrow.png" /></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<checkinList>
+  <itemCnt>%%Session.NumberOfItemsCheckedIn%%</itemCnt> <!-- required do not remove -->
+  <pendingCnt>%%Session.NumberOfItemsPendingSecurityAdjustment%%</pendingCnt> <!-- required do not remove -->
+  <errorCnt>%%Session.NumberOfErrors%%</errorCnt> <!-- required do not remove -->
+  <successful>
+    $$Session.CheckedInItems{<itemRecord>
+      <title>%%Checkin.ItemTitle%%</title>
+      <barcode>%%Checkin.ItemId%%</barcode>
+      <message>%%Checkin.ScreenMessage%%</message>
+    </itemRecord>}$$
+  </successful>
+  <pending>
+    $$Session.ItemsPendingSecurityAdjustment{<itemRecord>
+      <title>%%Checkin.ItemTitle%%</title>
+      <barcode>%%Checkin.ItemId%%</barcode>
+      <message>%%Checkin.ScreenMessage%%</message>
+    </itemRecord>}$$
+  </pending>
+  <errors>
+    $$Session.ErrorItems{<itemRecord>
+      <title>%%Checkin.ItemTitle%%</title>
+      <barcode>%%Checkin.ItemId%%</barcode>
+      <message>%%Checkin.ScreenMessage%%</message>
+    </itemRecord>}$$
+  </errors>
+</checkinList>

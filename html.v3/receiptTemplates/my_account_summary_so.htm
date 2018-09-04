@@ -1,0 +1,51 @@
+﻿<html>
+	<head>
+		<title>Macluumaadka Kooban ee Koontada OneStop</title>
+		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+		<center><h2>EnvisionWare</h2>
+		</center>
+		<center><h3>Maktabad</h3>
+		</center>
+		<hr>
+		<h4>Taariikhda: %%Date.LocalText%%</h4>
+		<h4>Waqtiga: %%Time.LocalText%%</h4>
+		<h4>Magaca: %%User.FullName%%</h4>
+		<h4>Lacagaha Ganaaxa/Qarashaadka Lagugu leeyahay: $%%User.FeeAmount%%</h4>
+		<hr>
+
+		<h4><b>Alaabta Labixiyay</b></h4>
+		$$MyAccount.ChargedItems{
+		<h4>
+			Magaca: %%Item.Title#35#%%<br>
+			Barcode: %%Item.Id%%<br>
+			Xiliga Kamadanbaysta ah: %%Item.DueDate%%<br>
+		</h4>
+		<p>
+		}$$
+
+		<h4><b>Waxyaabaha Waqtigoodii dhaafay</b></h4>
+		$$MyAccount.OverdueItems{
+		<h4>
+			Magaca: %%Item.Title#35#%%<br>
+			Barcode: %%Item.Id%%<br>
+			Xiliga Kamadanbaysta ah: %%Item.DueDate%%<br>
+		</h4>
+		<p>
+		}$$
+
+		<h4><b>Alaabta Laxanibay</b></h4>
+		$$MyAccount.HoldItems{
+		<h4>
+			Magaca: %%Item.Title%%<br>
+			Barcode: %%Item.Id%%<br>
+		</h4>
+		<p>
+		}$$
+	</body>
+</html>

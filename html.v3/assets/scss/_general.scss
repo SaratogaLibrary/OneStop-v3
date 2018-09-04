@@ -1,0 +1,29 @@
+html {
+	font-size:14px;
+}
+
+body {
+	font-family: 'Proxima-Nova', sans-serif !important;
+	background:#fff;
+}
+
+.container {
+	background:#fff;
+}
+
+a {
+	color:$primarycolor;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.main-view {
+	padding-bottom:2rem;
+}
+
+/* remove "x" from input fields: */
+input::-ms-clear {
+    display: none;
+}

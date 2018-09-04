@@ -1,0 +1,20 @@
+{
+  "code":"%%Error.Code%%",
+  "text":"%%Error.Text%%",
+  "item": {
+    "ok":"%%Session.LastTransactionSuccessful%%",
+    "transactionDate":"%%Item.TransactionDate%%",
+    "userId":"%%Session.UserId%%",
+    "id":"%%Item.Id%%",
+    "title":"%%Item.Title%%",
+    "dueDate":"%%Item.DueDate%%",
+    "feeType":"%%Item.FeeType%%",
+    "currencyType":"%%Item.CurrencyType%%",
+    "feeAmount":"%%Item.FeeAmount%%",
+    "mediaType":"%%Item.MediaType%%",
+    "mediaTypeCode":"%%Item.MediaTypeCode%%",
+    "properties":"%%Item.Properties%%",
+    "screenMessage":"%%Item.ScreenMessage%%",
+    "printLine":"%%Item.PrintLine%%"
+  }
+}

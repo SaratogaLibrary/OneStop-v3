@@ -1,0 +1,43 @@
+.accountgeneralinfo {
+	padding-bottom:1rem;
+}
+
+.accountgeneralinfo h3 {
+	margin-top:0 !important;
+}
+
+p.myaccountnumber {
+	font-size:2.8rem;
+}
+
+#myAccountTempl .panel {
+	background-color: #efefef;
+	color:#666;
+	height:145px;
+}
+
+#myAccountTempl .panel h4 {
+	margin:1rem 0;
+}
+
+#myAccountTempl .panel.clickable {
+	background-color: #fff;
+	color:#000;
+	box-shadow: 2px 2px 5px #ccc;
+}
+
+.fixed-height-modal-body {
+	height:43vh;
+}
+
+@media screen and (max-height: 1000px) {
+	.fixed-height-modal-body {
+		height:48vh;
+	}
+}
+
+@media screen and (min-height: 1300px) {
+	.fixed-height-modal-body {
+		height:33vh;
+	}
+}

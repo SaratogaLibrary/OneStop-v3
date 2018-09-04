@@ -1,0 +1,43 @@
+.timeout {
+	position: absolute;
+	left:20px;
+	width:12%;
+	padding:1%;
+	background:#efefef;
+	border-radius: 4px;
+}
+
+@media screen and (orientation: portrait) {
+	.timeout {
+		top:40%;
+	}
+}
+
+@media screen and (orientation: landscape) {
+	.timeout {
+		top:24%;
+	}
+}
+
+@media screen and (max-width: 1480px) {
+	.timeout {
+		width:15%;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.timeout {
+		width:17%;
+	}
+}
+
+
+.timeout p {
+	font-size: 1.28rem;
+	line-height: 1.48rem;
+}
+
+.timeout p span {
+	padding-top:10px;
+	font-size:1.8rem;
+}

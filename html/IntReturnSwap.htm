@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EnvisionWare OneStop - Intelligent Return Swap Bin Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="EXPIRES" content="Tues, 04 Dec 2007 00:00:01 GMT">
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/onestop_style.css" type="text/css" />
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/jquery.modal.css" type="text/css" media="screen" />
+    <link id="layout_stylesheet" rel="STYLESHEET" href="./styles/layout_1024.css" type="text/css" />
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.min.js"></script>
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.modal.js"></script>
+    <script type="text/javascript" src="./scripts/utilities.js"></script>
+    <script type="text/javascript" src="./scripts/languageUtilities.js"></script>
+    <script type="text/javascript" src="./scripts/IntReturnSwap.js"></script>
+  </head>
+  <body onload="initialize()" onselectstart="return false" oncontextmenu="return isContextMenuAllowed()">
+    <div id="main">
+      <div id="page_header_group"></div>
+      <div id="content">
+        <div id="irs_swap_shim">
+        </div>
+        <div id="irs_swap_content_group">
+          <div id="irs_swap_buttons_group">
+            <table id="irs_swap_buttons_table">
+              <tr>
+                <td class="irs_swap_header" width="50%" colspan="1">%%Text.txtIntReturnSwapBinPage_PrintReportFor%%</td>
+                <td class="irs_swap_header" width="50%" colspan="1">%%Text.txtIntReturnSwapBinPage_PrintSlipFor%%</td>
+              </tr>
+              <tr>
+                <td><br>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" colspan="1" width="50%">
+                  <div class="irs_swap_button_border">
+                    <button class="irs_swap_button" onclick='print("printReportHold",2)' id="PrintReportHold">%%Text.txtIntReturnSwapBinPage_RptHold%%</button>
+                  </div>
+                </td>
+                <td align="center" colspan="1" width="50%">
+                  <div class="irs_swap_button_border">
+                    <button class="irs_swap_button" onclick='print("printSlipHold",1)' id="printSlipHold">%%Text.txtIntReturnSwapBinPage_SlipHold%%</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><br>
+                </td>
+              </tr>
+              <tr class="display_line">
+                <td align="center" colspan="1" width="50%">
+                  <div class="irs_swap_button_border">
+                    <button class="irs_swap_button" onclick='print("printReportCKI",2)' id="printReportCKI">%%Text.txtIntReturnSwapBinPage_RptCKI%%</button>
+                  </div>
+                </td>
+                <td align="center" colspan="1" width="50%">
+                  <div class="irs_swap_button_border">
+                    <button class="irs_swap_button" onclick='print("printSlipCKI",1)' id="printSlipCKI">%%Text.txtIntReturnSwapBinPage_SlipCKI%%</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><br>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" colspan="1" width="50%">
+                  <div class="irs_swap_button_border">
+                    <button class="irs_swap_button" onclick='print("printReportTransit",2)' id="printReportTransit">%%Text.txtIntReturnSwapBinPage_RptTransit%%</button>
+                  </div>
+                </td>
+                <td align="center" colspan="1" width="50%">
+                  <div class="irs_swap_button_border">
+                    <button class="irs_swap_button" onclick='print("printSlipTransit",1)' id="printSlipTransit">%%Text.txtIntReturnSwapBinPage_SlipTransit%%</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><br>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" colspan="1" width="50%">
+                  <div class="irs_swap_button_border">
+                    <button class="irs_swap_button" onclick='print("printReportError",2)' id="printReportError">%%Text.txtIntReturnSwapBinPage_RptError%%</button>
+                  </div>
+                </td>
+                <td align="center" colspan="1" width="50%">
+                  <div class="irs_swap_button_border">
+                    <button class="irs_swap_button" onclick='print("printSlipError",1)' id="printSlipError">%%Text.txtIntReturnSwapBinPage_SlipError%%</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><br>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div id="nav_buttons_group_container">
+        <div id="nav_buttons_group_background">
+          <div id="nav_buttons_group">
+            <div id="help_button_border" class="nav_button_border"><button class="nav_button" id="help_button" onclick="requestHelp('IntReturnSwap.htm');">%%Text.txtCommon_Help%%</button></div>
+            <div id="cancel_help_button_border" class="nav_button_border"><button class="nav_button" id="cancel_help_button" onclick="cancelHelpRequest('IntReturnSwap.htm');">%%Text.txtCommon_CancelHelp%%</button></div>
+            <div id="change_language_button_border" class="nav_button_border"><button class="nav_button" id="change_language_button" onclick="displayLanguageOptionsDialog();">%%Text.txtCommon_ChangeLanguage%%</button></div>
+            <div class="nav_button_border"><button class="nav_button" id="resume_button" onclick="goToResumeIrs();">%%Text.txtIntReturnSwapBinPage_Resume%%</button></div>
+          </div>
+        </div>
+        <div id="nav_buttons_footer">
+        </div>
+      </div>
+    </div>
+    <div id="language_buttons_group" class="modal fade">
+      <div id="language_buttons">
+      </div>
+    </div>
+    <div class="modal fade" id="please_wait_div">
+      <table class="please_wait_table" cellpadding="5" ID="Table1">
+        <tr>
+          <td><img class="please_wait_icon" src="./images/please_wait.png"></td>
+          <td><span id="please_wait_text">%%Text.txtIntReturnSwapBinPage_PleaseWaitProcessing%%</span></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!-- Copyright(c)2017 EnvisionWare, Inc. - All Rights Reserved -->
+
+<div class="row" id="checkinTempl">
+	<div class="col-md-12 menumain">
+		<div class="row">
+			<div class="col-sm-12" ng-if="showItemIdField">
+				<form name="itemIdForm">
+					<input 	type="text"
+									id="item-id-field"
+									ng-model="item.id"
+									ng-model-options="itemIdField.modelOptions"
+									ng-blur="itemIdField.lostFocus($event)"
+									ng-keyup="itemIdField.keypress($event)"
+									autofocus />
+				</form>
+			</div>
+		</div>
+		<div class="row" ng-if="!processedItems.length" ng-cloak>
+			<div class="col-sm-12">
+				<h3 ng-bind-html="pageText.title">Check In Materials</h3>
+				<p class="instruction-text">{{instructions}}</p>
+			</div>
+			<div class="col-sm-12">
+				<img ng-src="{{animationPath}}" draggable="false" alt="Books" width="300" id="checkin-animation">
+			</div>
+		</div>
+
+		<div class="row" ng-if="processedItems.length" ng-cloak>
+			<div class="col-sm-12">
+				<div class="table-responsive">
+					<div id="scrollUp" ng-show="scrollButtonsVisible()" ng-mousedown="scrollUp()"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></div>
+					<div id="scrollDown" ng-show="scrollButtonsVisible()" ng-mousedown="scrollDown()"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i></div>
+					<table class="table" id="booklist">
+						<thead>
+							<tr ng-bind-html="processedItemsTable.generateHeaderRowContent()">
+								<!--
+								<th>Item Title</th>
+								<th>Item Id</th>
+								<th class="text-center">Status</th>
+							-->
+							</tr>
+						</thead>
+						<tbody id="scrollable-table-body">
+							<tr 	ng-repeat="entry in processedItems | orderBy:$index:true"
+										ng-class-odd="'odd'"
+										ng-class-even="'even'"
+										ng-bind-html="processedItemsTable.generateEntryRowContent(entry)">
+										<!--
+								<td>
+									<span ng-if="entry.item.title">{{entry.item.title}}</span>
+									<span ng-if="!entry.item.title">Title Not Available</span>
+									<span ng-if="entry.item.screenMessage && entry.status=='Error'">: {{entry.item.screenMessage}}</span>
+								</td>
+								<td>{{entry.item.id}}</td>
+								<td class="checkedoutstatus">
+									<i class="fa fa-check" aria-hidden="true" ng-if="entry.status=='Success'"></i>
+									<i class="fa fa-times" aria-hidden="true" ng-if="entry.status=='Error'"></i>
+									<i class="fa fa-lock" aria-hidden="true" ng-if="entry.status=='Pending'"></i>
+								</td>
+							-->
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<td colspan="3"></td>
+								<td id="checkin-summary">
+									<p ng-show="session.checkedInItems.length"><i class="fa fa-check" aria-hidden="true" ng-if="entry.status=='Success'"></i> <span ng-bind-html="pageText.checkedInLabel">Checked In:</span> {{session.checkedInItems.length}}</p>
+									<p ng-show="session.checkinErrorItems.length"><i class="fa fa-times" aria-hidden="true" ng-if="entry.status=='Error'"></i> <span ng-bind-html="pageText.notCheckedInLabel">Not Checked In:</span> {{session.checkinErrorItems.length}}</p>
+									<p ng-if="session.checkinItemsPendingSecurityAdjustment.length"><i class="fa fa-lock" aria-hidden="true" ng-if="entry.status=='Pending'"></i> <span ng-bind-html="pageText.repositionLabel">Reposition:</span> {{session.checkinItemsPendingSecurityAdjustment.length}}</p>
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="actionbuttonrow" ng-controller="ButtonRowController" ng-cloak>
+	  <p>
+	    <button
+	        class="btn btn-secondary active"
+	        ng-repeat="button in buttonRow.buttons"
+	        ng-mousedown="button.action()"
+	        ng-show="button.text && button.visible"
+	        ng-disabled="!button.enabled">{{button.text}}
+	    </button>
+	  </p>
+	</div>
+</div>

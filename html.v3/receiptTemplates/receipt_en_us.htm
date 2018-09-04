@@ -1,0 +1,79 @@
+﻿<html>
+	<head>
+		<title>OneStop Checkout Receipt</title>
+		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+^^Header{
+		<center><h2>EnvisionWare</h2></center>
+		<center><h3>Library</h3></center>
+		<hr>
+		<h4>Date: %%Date.LocalText%%</h4>
+		<h4>Time: %%Time.LocalText%%</h4>
+		<h4>Name: %%User.FullName%%</h4>
+		<h4>Fines/Fees Owed: $%%User.FeeAmount%%</h4>
+		<br>
+		<h4><b>Total Checked Out: %%Session.TotalItemsCirculated%%</b></h4>
+		<hr>
+}^^
+^^List{
+		<h4><b>Checked Out</b></h4>
+		$$Session.CheckedOutItems{
+		<h4>
+			Title: %%Checkout.ItemTitle%%<br>
+			Barcode: %%Checkout.ItemId%%<br>
+			Due Date: %%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^List{
+		<h4><b>Checked Out - Security Still Enabled</b></h4>
+		$$Session.ItemsPendingSecurityAdjustment{
+		<h4>
+			Title: %%Checkout.ItemTitle%%<br>
+			Barcode: %%Checkout.ItemId%%<br>
+			Due Date: %%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+		<hr>
+}^^
+
+^^List{
+		<h4><b>Not Checked Out</b></h4>
+		<h4><i>Note: Some information may not be available for all items listed.</i></h4>
+		$$Session.ErrorItems{
+		<h4>
+			Title: %%Checkout.ItemTitle%%<br>
+			Barcode: %%Checkout.ItemId%%<br>
+			Reason: %%Checkout.ScreenMessage%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^List{
+		<h4><b>Recommendations</b></h4>
+		$$Session.SavedRecommendations{
+		<h4>
+			Title: %%Recommendation.Title%%<br>
+			Author: %%Recommendation.Author%%<br>
+			ISBN: %%Recommendation.PrimaryIsbn%%<br>
+			Rating: %%Recommendation.Rating%%<br>
+			Description: %%Recommendation.Description%%<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^Footer{
+		<center><h4>Page %%Receipt.Page%% of %%Receipt.Pages%%</h4></center>
+}^^
+	</body>
+</html>

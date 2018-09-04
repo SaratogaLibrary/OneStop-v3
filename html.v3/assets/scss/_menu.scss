@@ -1,0 +1,442 @@
+ .menustart, .menumain, .menulogin, .menucheckout, .menucheckoutlist {
+ 	text-align: center;
+ }
+
+ .mainmenucontainercol {
+ 	padding-left:4rem;
+ }
+
+ @media screen and (orientation: portrait) {
+ 	.mainmenucontainercol {
+ 		padding-left:0;
+ 	}
+ }
+
+ @media screen and (orientation: landscape) {
+ 	#rssAndImageCallout {
+ 		padding-top:6rem;
+ 	}
+ }
+
+ .mainmenuwrapper {
+ 	margin:1rem auto 0 auto;
+ 	width:65%;
+ }
+
+ @media screen and (orientation: portrait) {
+ 	.mainmenuwrapper {
+	 	margin:6rem auto 0 auto;
+	 	width:85%;
+	 }
+ }
+
+ #enterUserId .animationAndActionButtons {
+ 	text-align: right;
+ }
+
+ @media screen and (orientation: portrait) {
+ 	#enterUserId .animationAndActionButtons {
+	 	text-align: center;
+	 }
+ }
+
+ a.menuitem {
+ 	display: block;
+ 	text-align: center;
+ 	font-size: 1.4rem;
+ 	line-height: 1.5rem;
+ 	padding:115px 10px 10px 10px;
+ 	text-transform: uppercase;
+ 	font-weight: normal;
+ 	-webkit-box-shadow:0 0 7px #aaa;
+ 	-moz-box-shadow: 0 0 7px #aaa;
+ 	box-shadow: 0 0 7px #aaa;
+ 	height:190px;
+ 	margin:0 0 15px 0;
+ 	background-position: center 22px;
+ 	background-repeat: no-repeat;
+ 	border-radius: 6px;
+ 	/*color:#fff;*/
+ }
+
+ @media screen and (orientation: portrait) {
+ 	a.menuitem {
+ 		margin:0 0 30px 0;
+ 	}
+ }
+
+ a.menuitem:hover {
+ 	-webkit-box-shadow:0 0 7px #333;
+ 	-moz-box-shadow: 0 0 7px #333;
+ 	box-shadow: 0 0 7px #333;
+ }
+
+ .mainmenuwrapper.eight-buttons-landscape .menuitem {
+ 	width:23%;
+ 	margin-right:2%;
+ 	float:left;
+ 	font-size:1.2rem;
+ }
+
+ .mainmenuwrapper.seven-buttons-landscape .menuitem {
+ 	width:23%;
+ 	margin-right:2%;
+ 	float:left;
+ 	font-size:1.2rem;
+ }
+
+ .mainmenuwrapper.seven-buttons-landscape > div:nth-child(5) .menuitem {
+ 	margin-left:12.5%;
+ }
+
+ .mainmenuwrapper.six-buttons-landscape .menuitem {
+ 	width:30%;
+ 	margin-right:3%;
+ 	float:left;
+ }
+
+ .mainmenuwrapper.five-buttons-landscape .menuitem {
+ 	width:30%;
+ 	margin-right:3%;
+ 	float:left;
+ }
+
+ .mainmenuwrapper.five-buttons-landscape > div:nth-child(4) .menuitem {
+ 	margin-left:16.6%;
+ }
+
+ .mainmenuwrapper.four-buttons-landscape .menuitem {
+ 	width:47%;
+ 	margin-right:2%;
+ 	float:left;
+ }
+
+ .mainmenuwrapper.three-buttons-landscape .menuitem {
+ 	width:47%;
+ 	margin-right:2%;
+ 	float:left;
+ }
+
+ .mainmenuwrapper.three-buttons-landscape > div:nth-child(3) .menuitem {
+ 	margin-left:23%;
+ }
+
+ .mainmenuwrapper.two-buttons-landscape .menuitem {
+ 	width:47%;
+ 	margin-right:2%;
+ 	float:left;
+ }
+
+ .mainmenuwrapper.one-button-landscape .menuitem {
+ 	width:40%;
+ 	margin-left:30%;
+ }
+
+ .mainmenuwrapper.eight-buttons-portrait .menuitem {
+ 	width:23%;
+ 	margin-right:2%;
+ 	float:left;
+ 	font-size:1.2rem;
+ }
+
+ .mainmenuwrapper.seven-buttons-portrait .menuitem {
+ 	width:23%;
+ 	margin-right:2%;
+ 	float:left;
+ 	font-size:1.2rem;
+ }
+
+ .mainmenuwrapper.seven-buttons-portrait > div:nth-child(5) .menuitem {
+ 	margin-left:12.5%;
+ }
+
+ .mainmenuwrapper.six-buttons-portrait .menuitem {
+ 	width:30%;
+ 	margin-right:3%;
+ 	float:left;
+ }
+
+ .mainmenuwrapper.five-buttons-portrait .menuitem {
+ 	width:30%;
+ 	margin-right:3%;
+ 	float:left;
+ }
+
+ .mainmenuwrapper.five-buttons-portrait > div:nth-child(4) .menuitem {
+ 	margin-left:16.6%;
+ }
+
+ .mainmenuwrapper.four-buttons-portrait .menuitem {
+ 	width:47%;
+ 	margin-right:2%;
+ 	float:left;
+ }
+
+ .mainmenuwrapper.three-buttons-portrait .menuitem {
+ 	width:47%;
+ 	margin-right:2%;
+ 	float:left;
+ }
+
+ .mainmenuwrapper.three-buttons-portrait > div:nth-child(3) .menuitem {
+ 	margin-left:23%;
+ }
+
+ .mainmenuwrapper.two-buttons-portrait .menuitem {
+ 	width:47%;
+ 	margin-right:2%;
+ 	float:left;
+ }
+
+ .mainmenuwrapper.one-button-portrait .menuitem {
+ 	width:40%;
+ 	margin-left:30%;
+ }
+
+ .menumain.topmargin {
+ 	margin-top:100px;
+ }
+
+ .instruction-text {
+ 	font-size:2.25rem;
+ 	font-weight:100;
+ 	line-height: 2.45rem;
+ 	margin-top:0.8rem;
+ 	margin-bottom:1.3rem;
+ 	color:#333;
+ 	text-align: center;
+ }
+
+ @media screen and (orientation: landscape) and (max-height: 900px ) {
+	.instruction-text {
+	 	font-size:2.0rem;
+	 	font-weight:100;
+	 	line-height: 2.15rem;
+	 	margin-top:0.4rem;
+	 	margin-bottom:0.7rem;
+	 	color:#333;
+	 	text-align: center;
+	 }
+ }
+
+ @media screen and (orientation: portrait) {
+ 	 .instruction-text {
+	 	margin-top:3.8rem;
+	 	margin-bottom:2.5rem;
+	 }
+ }
+
+ @media screen and (orientation: portrait) and (min-height: 1050px ) {
+    .menumain {
+	 	margin-top:52px;
+	}
+ }
+
+ .content-align-right {
+ 	text-align: right;
+ 	padding-right:3%;
+ }
+
+ .content-align-left {
+ 	text-align: left;
+ 	padding-left:3%;
+ }
+
+ .newclassic .menucheckoutlist {
+ 	margin-top:10rem;
+ }
+
+ .menustart h3, .menumain h3 {
+ 	font-size:1.5rem;
+ 	line-height: 1.7rem;
+ 	text-transform: uppercase;
+ 	margin:1.8rem 0 0.4rem 0;
+ }
+
+ .menulogin h3, .menucheckout h3, .menucheckoutlist h3 {
+ 	font-size:1.0rem;
+ 	line-height: 1.1rem;
+ 	text-transform: uppercase;
+ 	margin:1.8rem 0 0.4rem 0;
+ }
+
+ .menulogin p, .menucheckout p, .menucheckoutlist p {
+ 	font-size:1.2rem;
+ 	line-height: 1.4rem;
+ 	margin-bottom:2rem;
+ }
+
+ .menustart h2, .menumain h2 {
+ 	color:$primarycolor;
+ 	font-size:3.4rem;
+ 	line-height: 3.7rem;
+ 	margin:1.2rem 0;
+ 	font-weight: bold;
+ 	font-style: italic;
+ }
+
+ .menustart img:first-of-type, .menumain img:first-of-type, .menulogin img:first-of-type, .menucheckout img:first-of-type {
+ 	margin-bottom:2rem;
+ }
+
+ .menustart img:first-of-type, .menumain img:first-of-type, .menulogin img:first-of-type, .menucheckout img:first-of-type {
+ 	border-radius:8px;
+ }
+
+ .newclassic .menustart img:first-of-type, .newclassic .menumain img:first-of-type, .newclassic .menulogin img:first-of-type {
+ 	border-radius:0;
+ }
+
+ 
+
+ /*#checkout {
+ 	background-image:url(/assets/images/icons/check-out.png);
+ }
+
+ #checkin {
+ 	background-image:url(/assets/images/icons/check-in.png);
+ }
+
+ #releaseprint {
+ 	background-image:url(/assets/images/icons/printerW.png);
+ }
+
+ #makecopies {
+ 	background-image:url(/assets/images/icons/copierW.png);
+ }
+
+ #reservecomputer {
+ 	background-image:url(/assets/images/icons/computer.png);
+ }
+
+ #fines {
+ 	background-image:url(/assets/images/icons/fines.png);
+ }
+
+ #depositmoney {
+ 	background-image:url(/assets/images/icons/deposit-money.png);
+ }*/
+
+ #footerbuttons {
+ 	margin-top:4rem;
+ }
+
+ /*.scrolling-table-wrapper {
+ 	max-height: 400px;
+ 	overflow-y: scroll;
+ }*/
+
+.table-responsive {
+    /*max-height:270px;*/
+}
+
+.table-responsive tbody {
+	height:200px;
+	overflow-y: auto;
+	display: block;
+	width: calc( 100% - 1em );
+	-ms-overflow-style:none;
+	/*border:4px dotted red;*/
+}
+
+
+
+.table-responsive thead, .table-responsive tfoot, .table-responsive tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;/* even columns width , fix width of table too*/
+}
+.table-responsive thead, .table-responsive tfoot {
+    width: calc( 100% - 1em );/* scrollbar is average 1em/16px width, remove it from thead width */
+}
+/*.table-responsive table {
+    width:400px;
+}*/
+
+@media screen and (orientation: landscape) and (min-width: 1840px ) {
+	.table-responsive tbody {
+		height:300px;
+	}
+}
+
+@media screen and (orientation: portrait) {
+	.table-responsive {
+	    max-height:370px;
+	}
+}
+
+@media screen and (orientation: portrait) and (min-height: 1800px ) {
+	.table-responsive {
+	    max-height:605px;
+	}
+	.table-responsive tbody {
+		height:505px;
+	}
+}
+
+#scrollUp {
+	cursor:pointer;
+	font-size:2.3rem;
+	position:absolute;
+	right:20px;
+	top:-5px;
+}
+
+#scrollDown {
+	cursor:pointer;
+	font-size:2.3rem;
+	position:absolute;
+	right:20px;
+	bottom:-5px;
+}
+
+/*.table-responsive thead {
+	border:1px solid red;
+	position: absolute;
+	left:0;
+	right:15px;
+	top:0;
+	width:100%;
+}
+
+.table-responsive tfoot {
+	border:1px solid green;
+	position: absolute;
+	left:0;
+	right:15px;
+	bottom:0;
+}*/
+
+table#booklist {
+	margin-bottom:0;
+}
+
+ #booklist td {
+ 	text-align: left;
+ 	font-size:1.1rem;
+ 	padding:3px 8px;
+ }
+
+ #booklist tr.odd {
+ 	background:#ededed;
+ }
+
+ #booklist td.checkedoutstatus {
+ 	text-align: center;
+ }
+
+ #booklist td.checkedoutstatus i.fa-check {
+ 	color:green;
+ }
+
+ #booklist td.checkedoutstatus i.fa-times {
+ 	color:#a00;
+ }
+
+ #booklist td.checkedoutstatus i.fa-lock {
+ 	color:#666;
+ }
+
+ #startbutton {
+ 	font-size:2rem;
+ }

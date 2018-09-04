@@ -1,0 +1,53 @@
+﻿<html>
+	<head>
+		<title>OneStop My Account Summary</title>
+		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+
+		<center><h2>EnvisionWare</h2>
+		</center>
+		<center><h3>Biblioteca</h3>
+		</center>
+		<hr>
+		<h4>Fecha: %%Date.LocalText%%</h4>
+		<h4>Hora: %%Time.LocalText%%</h4>
+		<h4>Nombre: %%User.FullName%%</h4>
+		<h4>Multas o tarifas que debe: $%%User.FeeAmount%%</h4>
+		<hr>
+
+		<h4><b>Artículos Préstados</b></h4>
+		$$MyAccount.ChargedItems{
+		<h4>
+			Título: %%Item.Title#35#%%<br>
+			Código de barras: %%Item.Id%%<br>
+			Fecha vencimiento: %%Item.DueDate%%<br>
+		</h4>
+		<p>
+		}$$
+
+		<h4><b>Artículos con Fecha Expirada</b></h4>
+		$$MyAccount.OverdueItems{
+		<h4>
+			Título: %%Item.Title#35#%%<br>
+			Código de barras: %%Item.Id%%<br>
+			Fecha vencimiento: %%Item.DueDate%%<br>
+		</h4>
+		<p>
+		}$$
+
+		<h4><b>Artículos Apartados</b></h4>
+		$$MyAccount.HoldItems{
+		<h4>
+			Título: %%Item.Title%%<br>
+			Código de barras: %%Item.Id%%<br>
+		</h4>
+		<p>
+		}$$
+
+	</body>
+</html>

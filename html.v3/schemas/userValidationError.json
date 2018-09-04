@@ -1,0 +1,9 @@
+{
+  "code":"%%Error.Code%%",
+  "text":"%%Error.Text%%",
+  "user":{
+    "id":"%%User.Id%%",
+    "valid":"%%User.IsValid%%",
+    "validPassword":"%%User.IsValidPassword%%"
+  }
+}

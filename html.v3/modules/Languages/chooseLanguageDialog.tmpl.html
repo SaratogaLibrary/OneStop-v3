@@ -1,0 +1,19 @@
+<!-- Copyright(c)2017 EnvisionWare, Inc. - All Rights Reserved - All Rights Reserved -->
+
+<div class="modal-header">
+  <h3 class="modal-title" ng-bind-html="pageText.header">Select Language</h3>
+</div>
+
+<div class="modal-body">
+  <div class="row" id="languagechoices">
+    <div class="col-sm-6" ng-repeat="language in languages">
+      <button class="btn btn-secondary active" ng-mousedown="close(language)" ng-bind-html="language.name"></button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <div class="col-sm-12">
+    <button class="btn btn-default pull-right" ng-mousedown="cancel()" ng-bind-html="pageText.cancelButton">Cancel</button>
+  </div>
+</div>

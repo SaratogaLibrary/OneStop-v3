@@ -1,0 +1,37 @@
+<!-- Copyright(c)2017 EnvisionWare, Inc. - All Rights Reserved -->
+
+<div class="row">
+	<div class="col-md-12 menumain">
+		<div class="row">
+      <p 	class="alert alert-info"
+					ng-hide="has.unclaimedIlsOfflineAlert || has.unclaimedPrinterDownAlert || has.unclaimedHelpRequest"
+					ng-bind-html="pageText.noPendingAlerts">
+        There are no pending alerts for this device
+      </p>
+			<div class="col-sm-3" ng-mousedown="claimIlsOfflineAlert()" ng-if="has.unclaimedIlsOfflineAlert">
+				<a class="menuitem" id="claim-ils-offline-alert" href="" ng-bind-html="pageText.claimOfflineAlertButton">
+					Claim ILS
+					<br>Offline Alert
+				</a>
+			</div>
+      <div class="col-sm-3" ng-mousedown="claimPrinterDownAlert()" ng-if="has.unclaimedPrinterDownAlert">
+				<a class="menuitem" id="claim-printer-down-alert" href="" ng-bind-html="pageText.claimPrinterDownAlertButton">
+					Claim Printer
+					<br>Down Alert
+				</a>
+			</div>
+      <div class="col-sm-3" ng-mousedown="claimHelpRequest()" ng-if="has.unclaimedHelpRequest">
+				<a class="menuitem" id="claim-help-request" href="" ng-bind-html="pageText.claimHelpRequestButton">
+					Claim Help
+					<br>Request
+				</a>
+			</div>
+			<div class="col-sm-3" ng-mousedown="returnToStaffMenu()">
+				<a class="menuitem" id="return-to-staff-menu" href="" ng-bind-html="pageText.returnToStaffMenuButton">
+					Return To
+					<br>Staff Menu
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

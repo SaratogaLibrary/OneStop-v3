@@ -1,0 +1,97 @@
+﻿<html>
+	<head>
+		<title>वनस्टॉप चेकआउट रसीद</title>
+		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+^^Header{
+		<center><h2>EnvisionWare</h2>
+		</center>
+		<center><h3>पुस्तकालय</h3>
+		</center>
+		<hr>
+		<h4>तिथि: %%Date.LocalText%%</h4>
+		<h4>समय: %%Time.LocalText%%</h4>
+		<h4>नाम: %%User.FullName%%</h4>
+		<h4>जुर्माना / शुल्क देय: $%%User.FeeAmount%%</h4>
+		<br>
+		<h4><b>इस सत्र में चेकआउट की गई कुल चीज़ें %%Session.TotalItemsCirculated%%</b></h4>
+		<h4><b>आपको चेकआउट किये गये कुल आइटम: %%Session.TotalItemsOut%%</b></h4>
+		<hr>
+}^^
+^^List{
+		<h4><b>इस सत्र में चेकआउट किया गया</b></h4>
+		$$Session.CheckedOutItems{
+		<h4>
+			शीर्षक: %%Checkout.ItemTitle#35#%%<br>
+			बारकोड: %%Checkout.ItemId%%<br>
+			लौटाने की तिथि: %%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^List{
+		<h4><b>इस सत्र में चेकआउट किया गया - सिक्योरिटी अब भी सक्षम</b></h4>
+		$$Session.ItemsPendingSecurityAdjustment{
+		<h4>
+			शीर्षक: %%Checkout.ItemTitle%%<br>
+			बारकोड: %%Checkout.ItemId%%<br>
+			लौटाने की तिथि: %%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+		<hr>
+}^^
+
+^^List{
+		<h4><b>चेक आउट नहीं किया हुआ</b></h4>
+		<h4><i>नोट: हो सकता है कि सूचीबद्ध की गई सभी चीज़ों के लिए कुछ जानकारी उपलब्ध न हो।</i></h4>
+		$$Session.ErrorItems{
+		<h4>
+			शीर्षक: %%Checkout.ItemTitle%%<br>
+			बारकोड: %%Checkout.ItemId%%<br>
+			कारण: %%Checkout.ScreenMessage%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^List{
+		<h4><b>आपको चेकआउट किये गये अन्य आइटम</b></h4>
+		$$Session.ExistingItemsOut{
+		<h4>
+			शीर्षक: %%Item.Title%%<br>
+			बारकोड: %%Item.Id%%<br>
+			लौटाने की तिथि: %%Item.DueDate%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+		<hr>
+}^^
+
+^^List{
+		<h4><b>Recommendations</b></h4>
+		$$Session.SavedRecommendations{
+		<h4>
+			Title: %%Recommendation.Title%%<br>
+			Author: %%Recommendation.Author%%<br>
+			ISBN: %%Recommendation.PrimaryIsbn%%<br>
+			Rating: %%Recommendation.Rating%%<br>
+			Description: %%Recommendation.Description%%<br>
+		</h4>
+		<p>
+		}$$
+}^^
+
+^^Footer{
+			<hr>
+			<center><h4>पृष्ठ %%Receipt.Page%% का%%Receipt.Pages%%</h4>
+			</center>
+}^^
+	</body>
+</html>

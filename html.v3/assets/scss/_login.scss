@@ -1,0 +1,27 @@
+.offset-for-alpha-keyboard {
+	padding-left:0;
+}
+
+@media screen and (orientation: landscape) and (max-height: 910px ) {
+	.animationAndActionButtons > img {
+		width:250px;
+	}
+}
+
+@media screen and (max-width: 1610px ) {
+	.offset-for-alpha-keyboard {
+		padding-left:11%;
+	}
+}
+
+@media screen and (max-width: 1450px ) {
+	.offset-for-alpha-keyboard {
+		padding-left:17%;
+	}
+}
+
+@media screen and (max-width: 1310px ) {
+	.offset-for-alpha-keyboard {
+		padding-left:55%;
+	}
+}

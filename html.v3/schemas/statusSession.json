@@ -1,0 +1,15 @@
+{
+  "loggedIn":"%%Session.IsLoggedIn%%",
+  "defaultLanguageCode":"%%Session.DefaultLanguage%%",
+  "currentLanguageCode":"%%Session.CurrentLanguage%%",
+  "printerStatus":"%%Session.PrinterStatus%%",
+  "ilsOffline":"%%Session.ILSOffline%%",
+  "pendingAlerts":{
+    "ilsOffline":"%%Session.PendAlertIlsOffline%%",
+    "ilsOfflineClaimed":"%%Session.PendAlertClaimedIlsOffline%%",
+    "printerDown":"%%Session.PendAlertPrinterDown%%",
+    "printerDownClaimed":"%%Session.PendAlertClaimedPrinterDown%%",
+    "helpRequest":"%%Session.PendAlertRequestHelp%%",
+    "helpRequestClaimed":"%%Session.PendAlertClaimedRequestHelp%%"
+  }
+}

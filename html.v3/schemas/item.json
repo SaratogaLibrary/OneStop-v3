@@ -1,0 +1,20 @@
+{
+  "id":"%%Item.Id%%",
+  "title":"%%Item.Title%%",
+  "mediaType":"%%Item.MediaType%%",
+  "mediaTypeCode":"%%Item.MediaTypeCode%%",
+  "properties":"%%Item.Properties%%",
+  "dueDate":"%%Item.DueDate%%",
+  "feeType":"%%Item.FeeType%%",
+  "feeAmount":"%%Item.FeeAmount%%",
+  "currencyType":"%%Item.CurrencyType%%",
+  "permanentLocation":"%%Item.PermanentLocation%%",
+  "currentLocation":"%%Item.CurrentLocation%%",
+  "owner":"%%Item.Owner%%",
+  "holdQueueLength":"%%Item.HoldQueueLength%%",
+  "transactionDate":"%%Item.TransactionDate%%",
+  "recalledDate":"%%Item.RecalledDate%%",
+  "holdPickupDate":"%%Item.HoldPickupDate%%",
+  "screenMessage":"%%Item.ScreenMessage%%",
+  "printLine":"%%Item.PrintLine%%"
+}

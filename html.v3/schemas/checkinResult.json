@@ -1,0 +1,10 @@
+{
+  "ok": "%%Session.LastTransactionSuccessful%%",
+  "id": "%%Item.Id%%",
+  "title": "%%Item.Title%%",
+  "mediaType": "%%Item.MediaType%%",
+  "permanentLocation": "%%Item.PermanentLocation%%",
+  "properties": "%%Item.Properties%%",
+  "screenMessage": "%%Item.ScreenMessage%%",
+  "printLine": "%%Item.PrintLine%%"
+}

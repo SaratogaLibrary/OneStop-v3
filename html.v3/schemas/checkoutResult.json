@@ -1,0 +1,25 @@
+{
+  "ok":"%%Session.LastTransactionSuccessful%%",
+  "renewalOk":"",
+  "renewalText":"",
+  "magneticMedia":"",
+  "desensitize":"",
+  "transactionDate":"%%Item.TransactionDate%%",
+  "userId":"%%Session.UserId%%",
+  "id":"%%Item.Id%%",
+  "title":"%%Item.Title%%",
+  "dueDate":"%%Item.DueDate%%",
+  "feeType":"%%Item.FeeType%%",
+  "securityInhibit":"",
+  "currencyType":"%%Item.CurrencyType%%",
+  "feeAmount":"%%Item.FeeAmount%%",
+  "mediaType":"%%Item.MediaType%%",
+  "mediaTypeCode":"%%Item.MediaTypeCode%%",
+  "properties":"%%Item.Properties%%",
+  "feeTransactionId":"",
+  "screenMessage":"%%Item.ScreenMessage%%",
+  "printLine":"%%Item.PrintLine%%",
+  "rfSecurityReceipt": {
+    "status": "%%Session.RfSecurityReceiptStatus%%"
+  }
+}

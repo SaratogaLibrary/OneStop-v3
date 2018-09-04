@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EnvisionWare OneStop - Intelligent Return Main Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="EXPIRES" content="Tues, 04 Dec 2007 00:00:01 GMT">
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/onestop_style.css" type="text/css" />
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/jquery.modal.css" type="text/css" media="screen" />
+    <link id="layout_stylesheet" rel="STYLESHEET" href="./styles/layout_1024.css" type="text/css" />
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.min.js"></script>
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.modal.js"></script>
+    <script type="text/javascript" src="./scripts/utilities.js"></script>
+    <script type="text/javascript" src="./scripts/languageUtilities.js"></script>
+    <script type="text/javascript" src="./scripts/IntReturn.js"></script>
+  </head>
+  <body onload="initialize()" onselectstart="return false" oncontextmenu="return isContextMenuAllowed()">
+    <div id="main">
+      <div id="page_header_group"></div>
+      <div id="content">
+        <div id="irs_shim">
+        </div>
+        <div id="irs_content_group">
+          <div id="irs_summary_and_list_group">
+            <div id="irs_summary_table_container">
+              <table id="irs_summary_table" id="body_content">
+                <tr class="irs_summary_item">
+                  <td colspan="2">
+                    %%Text.txtIntReturnPage_Title%%&nbsp;
+                  </td>
+                </tr>
+                <tr class="irs_summary_item">
+                  <td align="right" width="50%">
+                    %%Text.txtIntReturnPage_NumOfCKI%%
+                  </td>
+                  <td align="left" valign="center" width="50%">
+                    <span id="numItemsCheckedIn">0</span>
+                  </td>
+                </tr>
+                <tr class="irs_summary_item">
+                  <td align="right" width="60%">
+                    %%Text.txtIntReturnPage_NumOfHolds%%
+                  </td>
+                  <td align="left" valign="center" width="40%">
+                    <span id="numHoldItemsCheckedIn">0</span>
+                  </td>
+                </tr>
+                <tr class="irs_summary_item">
+                  <td align="right" width="60%">
+                    %%Text.txtIntReturnPage_NumOfTransits%%
+                  </td>
+                  <td align="left" valign="center" width="40%">
+                    <span id="numTransitionItemsCheckedIn">0</span>
+                  </td>
+                </tr>
+                <tr class="irs_summary_item">
+                  <td align="right" width="60%">
+                    %%Text.txtIntReturnPage_NumOfErrors%%
+                  </td>
+                  <td align="left" valign="center" width="40%">
+                    <span id="numErrors">0</span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div id="irs_checkin_list_group">
+              <div id="irs_checkin_list_title_container">
+                Successful Checkins List
+              </div>
+              <div id="irs_checkin_list_container">
+                <form name="checkInItemListForm" id="checkInItemListForm" action="#">
+                  <p><textarea id="checkInItemListTable" rows="5" name="checkInItemListTable" readonly="readonly" cols="75"></textarea></p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="nav_buttons_group_container">
+        <div id="nav_buttons_group_background">
+          <div id="nav_buttons_group">
+            <div id="help_button_border" class="nav_button_border"><button class="nav_button" id="help_button" onclick="requestHelp('ViewStatistics.htm');">%%Text.txtCommon_Help%%</button></div>
+            <div id="cancel_help_button_border" class="nav_button_border"><button class="nav_button" id="cancel_help_button" onclick="cancelHelpRequest('ViewStatistics.htm');">%%Text.txtCommon_CancelHelp%%</button></div>
+            <div id="change_language_button_border" class="nav_button_border"><button class="nav_button" id="change_language_button" onclick="displayLanguageOptionsDialog();">%%Text.txtCommon_ChangeLanguage%%</button></div>
+            <div class="nav_button_border"><button class="nav_button" id="swap_bin_button" onclick="goToSwapBin();">%%Text.txtIntReturnPage_SwapBin%%</button></div>
+          </div>
+        </div>
+        <div id="nav_buttons_footer">
+        </div>
+      </div>
+    </div>
+    <div id="language_buttons_group" class="modal fade">
+      <div id="language_buttons">
+      </div>
+    </div>
+    <div class="modal fade" id="please_wait_div">
+      <table class="please_wait_table" cellpadding="5" ID="Table1">
+        <tr>
+          <td><img class="please_wait_icon" src="./images/please_wait.png"></td>
+          <td><span id="please_wait_text">%%Text.txtIntReturnPage_PleaseWaitProcessing%%</span></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

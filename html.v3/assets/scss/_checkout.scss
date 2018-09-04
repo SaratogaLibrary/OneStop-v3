@@ -1,0 +1,85 @@
+#checkout-summary p {
+	font-weight: bold;
+	text-align: center;
+}
+
+img#checkout-animation.with-media-case-controller {
+	width:450px;
+}
+
+@media screen and (orientation: landscape) and (max-height: 900px ) {
+	img#checkout-animation {
+		width:230px;
+	}
+	img#checkout-animation.with-media-case-controller {
+		width:375px;
+	}
+}
+
+#enterUserId .alpha-keyboard {
+	background:#fff;
+}
+
+#enterUserId .alpha-keyboard div {
+	float:right;
+}
+
+.media-case-controller-pad-instructions {
+	position:absolute;
+	top:2rem;
+	right:63%;
+	text-align:right;
+	font-size:1.85rem;
+	line-height: 1.95rem;
+}
+
+.media-case-controller-media-instructions {
+	position:absolute;
+	top:2rem;
+	left:63%;
+	text-align:left;
+	font-size:1.85rem;
+	line-height: 1.95rem;
+}
+
+@media screen and (orientation: landscape) and (max-width: 1602px ) {
+	.media-case-controller-pad-instructions {
+		right:67%;
+		font-size:1.8rem;
+		line-height: 1.9rem;
+	}
+
+	.media-case-controller-media-instructions {
+		left:67%;
+		font-size:1.8rem;
+		line-height: 1.9rem;
+	}
+}
+
+@media screen and (orientation: landscape) and (max-width: 1300px ) {
+	.media-case-controller-pad-instructions {
+		right:70%;
+		font-size:1.75rem;
+		line-height: 1.85rem;
+	}
+
+	.media-case-controller-media-instructions {
+		left:70%;
+		font-size:1.75rem;
+		line-height: 1.85rem;
+	}
+}
+
+@media screen and (orientation: portrait) {
+	.media-case-controller-pad-instructions {
+		right:73%;
+		font-size:1.6rem;
+		line-height: 1.8rem;
+	}
+
+	.media-case-controller-media-instructions {
+		left:73%;
+		font-size:1.6rem;
+		line-height: 1.8rem;
+	}
+}

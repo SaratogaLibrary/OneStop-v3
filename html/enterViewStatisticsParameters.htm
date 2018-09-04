@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EnvisionWare OneStop - View Statistics Parameter Entry Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="EXPIRES" content="Tues, 04 Dec 2007 00:00:01 GMT">
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/onestop_style.css" type="text/css" />
+    <link id="stylesheet" rel="STYLESHEET" href="./styles/jquery.modal.css" type="text/css" media="screen" />
+    <link id="layout_stylesheet" rel="STYLESHEET" href="./styles/layout_1024.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="./scripts/thirdparty/epoch/epoch_styles_ew.css" />
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.min.js"></script>
+    <script type="text/javascript" src="./scripts/thirdparty/jquery.modal.js"></script>
+    <script type="text/javascript" src="./scripts/formUtilities.js"></script>
+    <script type="text/javascript" src="./scripts/languageUtilities.js"></script>
+    <script type="text/javascript" src="./scripts/utilities.js"></script>
+    <script type="text/javascript" src="./scripts/thirdparty/epoch/epoch_classes_ew.js"></script>
+    <script type="text/javascript" src="./scripts/enterViewStatisticsParameters.js"></script>
+  </head>
+  <body onload="initialize()" onselectstart="return false" oncontextmenu="return isContextMenuAllowed()">
+    <div id="main">
+      <div id="page_header_group"></div>
+      <div id="content">
+        <div id="enter_view_stats_shim">
+        </div>
+        <div id="enter_view_stats_content_group">
+          <div id="enter_view_stats_instructions_container">
+            %%Text.txtEnterViewStatisticsParamsPage_Instructions%%
+          </div>
+          <div id="enter_view_stats_entry_group">
+            <table id="enter_view_stats_entry_group_table">
+              <tr>
+                <td class="center">
+                  <form action="/selfCheck" name="enterViewStatisticsForm" method="GET" onsubmit="if (validateDates()) return submitUserCredentials(true)" ID="enterViewStatisticsForm">
+                    <input type="hidden" name="action" value="viewStatistics" ID="action"> <input type="hidden" name="nextPage" value="/viewStatistics.htm" ID="nextPage">
+                    <input type="hidden" name="errorPage" value="/badStatisticsParameter.htm" ID="errorPage">
+                    <table ID="parameterTable">
+                      <tr>
+                        <td class="enter_view_stats_entry_label">%%Text.txtEnterViewStatisticsParamsPage_statusLabel%%</td>
+                        <td class="enter_view_stats_entry_field">
+                          <select name="transStatus" id="transStatus">
+                            <option value="OK" selected="selected">%%Text.txtEnterViewStatisticsParamsPage_statusSuccess%%</option>
+                            <option value="FAILED">%%Text.txtEnterViewStatisticsParamsPage_statusFailed%%</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="enter_view_stats_entry_label">%%Text.txtEnterViewStatisticsParamsPage_transTypeLabel%%</td>
+                        <td class="enter_view_stats_entry_field"><select name="transType" id="transType">
+                            <option value="all">%%Text.txtEnterViewStatisticsParamsPage_transTypeAll%%</option>
+                            <option value="CKO" selected="selected">%%Text.txtEnterViewStatisticsParamsPage_transTypeCheckout%%</option>
+                            <option value="CKI">%%Text.txtEnterViewStatisticsParamsPage_transTypeCheckin%%</option>
+                            <option value="REN">%%Text.txtEnterViewStatisticsParamsPage_transTypeRenewal%%</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="enter_view_stats_entry_label">%%Text.txtEnterViewStatisticsParamsPage_mediaTypeLabel%%</td>
+                        <td class="enter_view_stats_entry_field">
+                          <select name="mediaType" id="mediaType">
+                            <option value="all" selected="selected">%%Text.txtEnterViewStatisticsParamsPage_mediaTypeAll%%</option>
+                            <option value="0">%%Text.txtEnterViewStatisticsParamsPage_mediaType000%%</option>
+                            <option value="1">%%Text.txtEnterViewStatisticsParamsPage_mediaType001%%</option>
+                            <option value="2">%%Text.txtEnterViewStatisticsParamsPage_mediaType002%%</option>
+                            <option value="3">%%Text.txtEnterViewStatisticsParamsPage_mediaType003%%</option>
+                            <option value="4">%%Text.txtEnterViewStatisticsParamsPage_mediaType004%%</option>
+                            <option value="5">%%Text.txtEnterViewStatisticsParamsPage_mediaType005%%</option>
+                            <option value="6">%%Text.txtEnterViewStatisticsParamsPage_mediaType006%%</option>
+                            <option value="7">%%Text.txtEnterViewStatisticsParamsPage_mediaType007%%</option>
+                            <option value="8">%%Text.txtEnterViewStatisticsParamsPage_mediaType008%%</option>
+                            <option value="9">%%Text.txtEnterViewStatisticsParamsPage_mediaType009%%</option>
+                            <option value="10">%%Text.txtEnterViewStatisticsParamsPage_mediaType010%%</option>
+                          </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="enter_view_stats_entry_label">%%Text.txtEnterViewStatisticsParamsPage_fromDateLabel%%</td>
+                        <td class="enter_view_stats_entry_field">
+                          <input id="dateFrom" type="text" name="dateFrom" size="10"> <input type="hidden" id="isodateFrom" name="isoDateFrom" />
+                          <img class="calendar_icon" src='/images/calendar.jpg' onclick='fromCalendar.toggle()' />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="enter_view_stats_entry_label">%%Text.txtEnterViewStatisticsParamsPage_toDateLabel%%</td>
+                        <td class="enter_view_stats_entry_field">
+                          <input id="dateTo" type="text" name="dateTo" size="10"> <input type="hidden" id="isodateTo" name="isoDateTo" />
+                          <img class="calendar_icon" src='/images/calendar.jpg' onclick='toCalendar.toggle()' />
+                        </td>
+                      </tr>
+                    </table>
+                  </form>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div id="nav_buttons_group_container">
+        <div id="nav_buttons_group_background">
+          <div id="nav_buttons_group">
+            <div class="nav_button_border">
+              <button class="nav_button" id="start_over_button" onclick="goToStaffMenu();">
+                <div class="arrow_nav_button_icon_container">
+                  <img class="arrow_nav_button_icon" src="./images/left-arrow.png">
+                </div>
+                <div class="arrow_nav_button_text_container">
+                  <span class="arrow_nav_button_text">%%Text.txtEnterViewStatisticsParamsPage_StartOver%%</span>
+                </div>
+              </button>
+            </div>
+            <div id="help_button_border" class="nav_button_border">
+              <button class="nav_button" id="help_button" onclick="requestHelp('enterViewStatisticsParameters.htm');">
+                %%Text.txtCommon_Help%%
+              </button>
+            </div>
+            <div id="cancel_help_button_border" class="nav_button_border">
+              <button class="nav_button" id="cancel_help_button" onclick="cancelHelpRequest('enterViewStatisticsParameters.htm');">
+                %%Text.txtCommon_CancelHelp%%
+              </button>
+            </div>
+            <div id="change_language_button_border" class="nav_button_border">
+              <button class="nav_button" id="change_language_button" onclick="displayLanguageOptionsDialog();">
+                %%Text.txtCommon_ChangeLanguage%%
+              </button>
+            </div>
+            <div class="nav_button_border">
+              <button class="nav_button" id="next_page_button" onclick="goToResults();">
+                %%Text.txtEnterViewStatisticsParamsPage_Next%%
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="nav_buttons_footer">
+        </div>
+      </div>
+    </div>
+    <div id="language_buttons_group" class="modal fade">
+      <div id="language_buttons">
+      </div>
+    </div>
+    <div class="error_div" id="invalidDateDiv">
+      <table class="please_wait_table" cellpadding="5" ID="invalidDateID">
+        <tr>
+          <td><img class="error_icon" src="./images/error.png"></td>
+          <td><span id="invalidDateMsgID">%%Text.txtEnterViewStatistics_InvalidDateMessage%%</span></td>
+        </tr>
+        <tr>
+          <td colspan="2"><center><button class="stretch_button" id="okButton" onclick="enableParameterEntry(true);visibleElement('invalidDateDiv', false);">%%Text.txtInputStringPage_buttonOk%%</button></center>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="modal fade" id="please_wait_div">
+      <table class="please_wait_table" cellpadding="5" ID="Table1">
+        <tr>
+          <td><img class="please_wait_icon" src="./images/please_wait.png"></td>
+          <td><span id="please_wait_text">%%Text.txtEnterViewStatisticsParamsPage_PleaseWaitProcessing%%</span></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

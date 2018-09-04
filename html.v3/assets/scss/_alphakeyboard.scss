@@ -1,0 +1,44 @@
+.alpha-keyboard {
+	padding:4px 0;
+}
+
+.alpha-keyboard:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.alpha-keyboard button {
+	background: #dedede;
+    background: linear-gradient(#fefefe, #efefef);
+    border: 1px solid #666;
+    border-radius: 5px;
+    font-size: 24px;
+    margin-right:5px;
+    margin-bottom:5px;
+    float:left;
+}
+
+.alpha-keyboard button img {
+	margin-top:13px;
+}
+
+.alpha-keyboard button.letter {
+	width: 50px !important;
+    height: 52px;
+}
+
+.alpha-keyboard button.switch {
+	padding-right:10px;
+	padding-left:10px;
+    height: 52px;
+    clear:none;
+}
+
+.alpha-keyboard button.switch.clearl {
+	clear:left;
+}
+
+.alpha-keyboard button.clearl {
+	clear:left;
+}

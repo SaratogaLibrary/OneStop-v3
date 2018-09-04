@@ -1,0 +1,62 @@
+<!-- Copyright(c)2017 EnvisionWare, Inc. - All Rights Reserved -->
+
+<div class="row" id="enterUserId">
+	<div class="col-sm-12 menumain">
+		<div class="row">
+			<div class="col-sm-11 col-sm-offset-1">
+				<p class="instruction-text">{{instructions}}</p>
+			</div>
+
+			<div class="col-sm-7 col-sm-offset-1">
+				<div class="animationAndActionButtons">
+					<img ng-src="{{animationPath}}" draggable="false" width="300" ng-show="animationVisible">
+					<alpha-keyboard style="{z-index: 999;}" options="keyboard" ng-cloak></alpha-keyboard>
+					<div class="actionbuttonrow" ng-controller="ButtonRowController" ng-cloak>
+	          <p>
+	            <button
+	                class="btn btn-secondary active"
+	                ng-repeat="button in buttonRow.buttons"
+	                ng-mousedown="button.action()"
+	                ng-show="button.text && button.visible"
+	                ng-disabled="!button.enabled">{{button.text}}
+	            </button>
+	          </p>
+	        </div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<form name="loginForm" class="numpad-form numpad-form-enter-user-id">
+					<input 	class="numpad-field"
+									type="text"
+									id='user-id-field'
+									name="userId"
+									ng-model="login.userId"
+									ng-model-options="userIdField.modelOptions"
+									ng-blur="userIdField.lostFocus($event)"
+									ng-keyup="userIdField.keypress($event)"
+									ng-disabled="submitted"
+									required
+									autofocus />
+				</form>
+				<div class="keyboardcontainer keyboardcontainer-enter-user-id" ng-if="should.showKeypad">
+			    <div id="keyboard">
+		        <button class="letter" ng-mousedown="keyPadClick('1')">1</button>
+		        <button class="letter" ng-mousedown="keyPadClick('2')">2</button>
+		        <button class="letter" ng-mousedown="keyPadClick('3')">3</button>
+		        <button class="letter clearl" ng-mousedown="keyPadClick('4')">4</button>
+		        <button class="letter" ng-mousedown="keyPadClick('5')">5</button>
+		        <button class="letter" ng-mousedown="keyPadClick('6')">6</button>
+		        <button class="letter clearl" ng-mousedown="keyPadClick('7')">7</button>
+		        <button class="letter" ng-mousedown="keyPadClick('8')">8</button>
+		        <button class="letter" ng-mousedown="keyPadClick('9')">9</button>
+		        <button class="letter clearl" ng-mousedown="keyPadClick('-')">-</button>
+		        <button class="letter" ng-mousedown="keyPadClick('0')">0</button>
+		        <button class="letter" ng-mousedown="backspace()">&#9003;</button>
+		        <button class="switch clearl" ng-mousedown="toggleAlphaKeyboard()" ng-if="should.showAlphanumericKeyboard" ng-bind-html="pageText.keypadAToZButton">A-Z</button>
+		        <button class="bksp lastitem" ng-mousedown="clearInput()" ng-class="should.showAlphanumericKeyboard ? '' : 'full-width-clear'" ng-bind-html="pageText.keypadClearButton">CLEAR</button>
+			    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

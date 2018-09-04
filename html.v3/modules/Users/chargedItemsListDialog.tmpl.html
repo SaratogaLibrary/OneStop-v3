@@ -1,0 +1,35 @@
+<!-- Copyright(c)2017 EnvisionWare, Inc. - All Rights Reserved -->
+
+<div class="modal-header">
+  <h3 class="modal-title">{{pageHeader}}</h3>
+</div>
+
+<div class="modal-body fixed-height-modal-body">
+  <table class="table table-striped">
+    <thead>
+      <tr><th>{{pageText.titleColumnHeader}}</th><th>{{pageText.mediaTypeColumnHeader}}</th><th>{{pageText.dueDateColumnHeader}}</th><th>&nbsp;</th></tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in items | filter:itemIsOnPage">
+        <td><span ng-if="!item.hasBeenRetrieved">{{pageText.retrievingItem + ': ' + item.id}}</span><span ng-if="item.hasBeenRetrieved">{{item.title || pageText.titleNotAvailable + ': ' + item.id}}</span><span ng-if="item.failedToRenew && item.screenMessage"> {{item.screenMessage}}<span></td>
+        <td>{{item.mediaType}}</td>
+        <td>{{item.dueDate}}</td>
+        <td>
+          <span ng-if="should.allowRenew && item.hasBeenRetrieved && !item.hasBeenRenewed && !item.failedToRenew">
+            <button class="btn btn-default" ng-disabled="item.renewalIsPending" ng-mousedown="renew(item)" ng-bind-html="pageText.renewButton">Renew</button>
+          </span>
+          <span ng-if="item.hasBeenRenewed" class="text-success"><span class="fa fa-check"></span> <span ng-bind-html="pageText.renewed">Renewed</span></span>
+          <span ng-if="item.failedToRenew" class="text-danger"><span class="fa fa-times"></span> <span ng-bind-html="pageText.notRenewed">Not Renewed</span></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="modal-footer">
+  <div class="col-sm-2 text-center"><button class="btn btn-default" ng-disabled="!range.canGoBack()" ng-mousedown="range.goBack()"><span class="fa fa-chevron-left"></span></button></div>
+  <div class="col-sm-4 text-center">{{range.getText()}}</div>
+  <div class="col-sm-2 text-center"><button class="btn btn-default" ng-disabled="!range.canGoForward()" ng-mousedown="range.goForward()"><span class="fa fa-chevron-right"></span></button></div>
+  <div class="col-sm-2 text-center"><button class="btn btn-default" ng-if="canRenewAll()" ng-disabled="renewAllButtonDisabled" ng-mousedown="renewAll()" ng-bind-html="pageText.renewAllButton">Renew All</button></div>
+  <div class="col-sm-2 text-center"><button class="btn btn-default" ng-mousedown="close()" ng-bind-html="pageText.closeButton">Close</button></div>
+</div>

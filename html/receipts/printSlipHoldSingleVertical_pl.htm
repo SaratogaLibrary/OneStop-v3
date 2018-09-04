@@ -1,0 +1,46 @@
+﻿<html>
+	<head>
+		<title>Zwroty inteligentne - Odcinek zawieszenia</title>
+		<style type="text/css">
+	h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body width="100%">
+		<table width="100%">
+			<tr>
+				<td align="center"><h1>%%SUBSTR(Checkin.HoldPatronLastName,0,1)%%</h1></td>
+			</tr>
+			<tr>
+				<td align="center"><h1>%%SUBSTR(Checkin.HoldPatronLastName,1,1)%%</h1></td>
+			</tr>
+			<tr>
+				<td align="center"><h1>%%SUBSTR(Checkin.HoldPatronLastName,2,1)%%</h1></td>
+			</tr>
+			<tr>
+				<td align="center"><h1>***</h1></td>
+			</tr>
+			<tr>
+				<td align="center"><h1>%%SUBSTR(Checkin.HoldPatronFirstName,0,3)%%</h1></td>
+			</tr>
+			<tr>
+				<td align="center"><h1>-- --</h1></td>
+			</tr>
+			<tr>
+				<td align="center"><h3>%%Item.HoldPickupDate%%</h3></td>
+			</tr>
+			<tr>
+				<td align="center"><h3>%%Checkin.ItemId%%</h3></td>
+			</tr>
+			<tr>
+				<td align="center"><h3>%%Checkin.ItemTitle%%</h3></td>
+			</tr>
+			<tr>
+				<td align="center"><h3>%%Checkin.ItemDestinationLocation%%</h3></td>
+			</tr>
+		</table>
+		<hr>
+	</body>
+</html>

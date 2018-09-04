@@ -1,0 +1,49 @@
+﻿<html>
+	<head>
+	<title>Macluumaadka Alaabta Lasoo celiyay: Warbixinta Alaabta Laxanibay</title>
+	<style type="text/css">
+	h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+		<center><h1>EnvisionWare Library</h1>
+		</center>
+		<center><h2>Macluumaadka Alaabta Lasoo celiyay: Warbixinta Alaabta Laxanibay</h2>
+		</center>
+		<center><h2>%%Date.LocalText%%</h2></center>
+		<table>
+		<tr>
+			<th align=left><h3>Ciwaanka</h3></th>
+			<th align=left><h3>Barcode</h3></th>
+			<th align=left<h3>Ogaysiiska Alaabta soogashay</h3></th>
+			<th align=left<h3>ID ga Alaabta Xanibadan</h3></th>			
+			<th align=left<h3>Magaca Alaabta Xanibadan</h3></th>			
+			<th align=left<h3>Goobta Lagaynaayo</h3></th>			
+		</tr>
+		$$Session.HoldItems{
+			<tr>
+				<td align=left><h4>%%Checkin.ItemTitle%%</h4></td>
+				<td align=left><h4>%%Checkin.ItemId%%</h4></td>
+				<td align=left><h4>%%Checkin.ItemAlertType%%</h4></td>
+				<td align=left><h4>%%Checkin.HoldPatronId%%</h4></td>
+				<td align=left><h4>%%Checkin.HoldPatronName%%</h4></td>
+				<td align=left><h4>%%Checkin.ItemDestinationLocation%%</h4></td>
+				
+			</tr>
+		}$$
+		</table>
+		<hr>
+		<table>
+			<tr>
+				<td><h3>Alaabta Laxanibay Wareegaan</h3></td>
+				<td><h3>%%Session.NumberOfHoldItemsCheckedIn%%</h3></td>
+			</tr>
+		</table>
+		
+		<center><h4>Bogga %%Receipt.Page%% ee %%Receipt.Pages%%</h4>
+		</center>
+	</body>
+</html>

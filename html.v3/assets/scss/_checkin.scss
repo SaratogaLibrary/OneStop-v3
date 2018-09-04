@@ -1,0 +1,14 @@
+#checkin-summary p {
+	font-weight: bold;
+	text-align: center;
+}
+
+img#checkin-animation {
+	padding-bottom:50px;
+}
+
+@media screen and (orientation: landscape) and (max-height: 900px ) {
+	img#checkin-animation {
+		width:225px;
+	}
+}

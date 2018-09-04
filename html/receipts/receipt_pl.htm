@@ -1,0 +1,58 @@
+﻿<html>
+	<head>
+		<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=UTF-8">
+
+		<title>Pokwitowanie wypożyczenia OneStop</title>
+		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+	</style>
+	</head>
+	<body>
+^^Header{
+		<center><h2>EnvisionWare</h2></center>
+		<center><h3>Biblioteka</h3></center>
+		<hr>
+		<h4>Data: %%Date.LocalText%%</h4>
+		<h4>Godzina: %%Date.LocalText%%</h4>
+		<h4>Imię i nazwisko: %%User.FullName%%</h4>
+		<h4>Należne kary/opłaty: $%%User.FeeAmount%%</h4>
+		<br>
+		<h4><b>Łącznie wypożyczono: %%Session.TotalItemsCirculated%%</b></h4>
+		<hr>
+}^^ ^^List{
+		<h4><b>Wypożyczono</b></h4>
+		$$Session.CheckedOutItems{
+		<h4>
+			Tytuł: %%Checkout.ItemTitle%%<br> Kod kreskowy: %%Checkout.ItemId%%<br> Termin: %%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$ }^^
+
+^^List{
+		<h4><b>Wypożyczono - zabezpieczenie nadal włączone</b></h4>
+		$$Session.ItemsPendingSecurityAdjustment{
+		<h4>
+			Tytuł: %%Checkout.ItemTitle%%<br> Kod kreskowy: %%Checkout.ItemId%%<br> Termin: %%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$
+		<hr>
+}^^
+
+^^List{
+		<h4><b>Nie wypożyczono</b></h4>
+		<h4><i>Uwaga: Niektóre informacje mogą nie być dostępne dla wszystkich wszczególnionych pozycji.</i></h4>
+		$$Session.ErrorItems{
+		<h4>
+			Tytuł: %%Checkout.ItemTitle%%<br> Kod kreskowy: %%Checkout.ItemId%%<br> Przyczyna: %%Checkout.ScreenMessage%% &nbsp;<br>
+		</h4>
+		<p>
+		}$$ }^^
+
+^^Footer{
+		<center><h4>Strona %%Receipt.Page%% z %%Receipt.Pages%%</h4></center>
+}^^
+	</body>
+</html>

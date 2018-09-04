@@ -1,0 +1,32 @@
+﻿<html>
+	<head>
+		<title>Risiidka OneStop Checkin</title>
+		<style type="text/css">
+	h1 { font-size:16pt;font-family:"Verdana" }
+	h2 { font-size:14pt;font-family:"Verdana" }
+	h3 { font-size:10pt;font-family:"Verdana" }
+	h4 { font-size:8pt;font-family:"Verdana" }
+</style>
+	</head>
+	<body>
+		<center><h2>EnvisionWare</h2>
+		</center>
+		<center><h3>Maktabada</h3>
+		</center>
+		<hr>
+		<h4>Taariikhda: %%Date.LocalText%% Waqtiga: %%Time.LocalText%%</h4>
+		<h4>Alaabaha soosocda ayaa lasoo celiyaya:</h4>
+		<hr>
+		$$Session.CheckedInItems{
+		<h4>
+			Ciwaanka: %%Checkin.ItemTitle%%<br />
+			Barcode: %%Checkin.ItemId%%<br />
+			&nbsp;<br />
+		</h4>
+		<p></p>
+		}$$
+		<hr>
+		<center><h4>Bogga %%Receipt.Page%% ee %%Receipt.Pages%%</h4>
+		</center>
+	</body>
+</html>

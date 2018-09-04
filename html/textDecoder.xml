@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<LanguageText>
+	<txtCommon_Help>%%TEXT.txtCommon_Help%%</txtCommon_Help> 
+	<txtCommon_CancelHelp>%%TEXT.txtCommon_CancelHelp%%</txtCommon_CancelHelp> 
+
+	<txtStaffMenuPage_PrinterStatus>%%TEXT.txtStaffMenuPage_PrinterStatus%%</txtStaffMenuPage_PrinterStatus> 
+	<txtPrinterStatusPage_Normal>%%TEXT.txtPrinterStatusPage_Normal%%</txtPrinterStatusPage_Normal> 
+	<txtPrinterStatusPage_Paused>%%TEXT.txtPrinterStatusPage_Paused%%</txtPrinterStatusPage_Paused> 
+	<txtPrinterStatusPage_Error>%%TEXT.txtPrinterStatusPage_Error%%</txtPrinterStatusPage_Error> 
+	<txtPrinterStatusPage_Pending_Deletion>%%TEXT.txtPrinterStatusPage_Pending_Deletion%%</txtPrinterStatusPage_Pending_Deletion> 
+	<txtPrinterStatusPage_Paper_Jam>%%TEXT.txtPrinterStatusPage_Paper_Jam%%</txtPrinterStatusPage_Paper_Jam> 
+	<txtPrinterStatusPage_PaperOut>%%TEXT.txtPrinterStatusPage_PaperOut%%</txtPrinterStatusPage_PaperOut> 
+	<txtPrinterStatusPage_Manual_Feed>%%TEXT.txtPrinterStatusPage_Manual_Feed%%</txtPrinterStatusPage_Manual_Feed> 
+	<txtPrinterStatusPage_Paper_Problem>%%TEXT.txtPrinterStatusPage_Paper_Problem%%</txtPrinterStatusPage_Paper_Problem> 
+	<txtPrinterStatusPage_Offline>%%TEXT.txtPrinterStatusPage_Offline%%</txtPrinterStatusPage_Offline> 
+	<txtPrinterStatusPage_IO_Active>%%TEXT.txtPrinterStatusPage_IO_Active%%</txtPrinterStatusPage_IO_Active> 
+	<txtPrinterStatusPage_Busy>%%TEXT.txtPrinterStatusPage_Busy%%</txtPrinterStatusPage_Busy> 
+	<txtPrinterStatusPage_Printing>%%TEXT.txtPrinterStatusPage_Printing%%</txtPrinterStatusPage_Printing> 
+	<txtPrinterStatusPage_Output_Bin_Full>%%TEXT.txtPrinterStatusPage_Output_Bin_Full%%</txtPrinterStatusPage_Output_Bin_Full> 
+	<txtPrinterStatusPage_Not_Available>%%TEXT.txtPrinterStatusPage_Not_Available%%</txtPrinterStatusPage_Not_Available> 
+	<txtPrinterStatusPage_Waiting>%%TEXT.txtPrinterStatusPage_Waiting%%</txtPrinterStatusPage_Waiting> 
+	<txtPrinterStatusPage_Processing>%%TEXT.txtPrinterStatusPage_Processing%%</txtPrinterStatusPage_Processing> 
+	<txtPrinterStatusPage_Initializing>%%TEXT.txtPrinterStatusPage_Initializing%%</txtPrinterStatusPage_Initializing> 
+	<txtPrinterStatusPage_Warming_Up>%%TEXT.txtPrinterStatusPage_Warming_Up%%</txtPrinterStatusPage_Warming_Up> 
+	<txtPrinterStatusPage_Toner_Low>%%TEXT.txtPrinterStatusPage_Toner_Low%%</txtPrinterStatusPage_Toner_Low> 
+	<txtPrinterStatusPage_No_Toner>%%TEXT.txtPrinterStatusPage_No_Toner%%</txtPrinterStatusPage_No_Toner> 
+	<txtPrinterStatusPage_Page_Punt>%%TEXT.txtPrinterStatusPage_Page_Punt%%</txtPrinterStatusPage_Page_Punt> 
+	<txtPrinterStatusPage_User_Intervention>%%TEXT.txtPrinterStatusPage_User_Intervention%%</txtPrinterStatusPage_User_Intervention> 
+	<txtPrinterStatusPage_Out_Of_Memory>%%TEXT.txtPrinterStatusPage_Out_Of_Memory%%</txtPrinterStatusPage_Out_Of_Memory> 
+	<txtPrinterStatusPage_Door_Open>%%TEXT.txtPrinterStatusPage_Door_Open%%</txtPrinterStatusPage_Door_Open> 
+	<txtPrinterStatusPage_Server_Unknown>%%TEXT.txtPrinterStatusPage_Server_Unknown%%</txtPrinterStatusPage_Server_Unknown> 
+	<txtPrinterStatusPage_Power_Save>%%TEXT.txtPrinterStatusPage_Power_Save%%</txtPrinterStatusPage_Power_Save> 
+</LanguageText>

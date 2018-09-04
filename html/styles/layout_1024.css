@@ -1,0 +1,1585 @@
+BODY {
+  font-size: 11px;
+}
+
+.h1 {
+  font-size: 25px;
+}
+
+.h2 {
+  font-size: 19px;
+}
+
+.h3 {
+  font-size: 14px;
+}
+
+#main {
+  height: 741px;
+}
+
+#content {
+  height: 442px;
+}
+
+/*Header*/
+
+#page_header_group {
+  height: 224px;
+}
+
+#header_group {
+  height: 224px;
+}
+
+#library_logo {
+  width: 488px;
+  height: 224px;
+  top: 3px;
+  left: 3px;
+}
+
+#header_title_group {
+  width: 519px;
+}
+
+#header_tabs_group {
+  height: 22px;
+  width: 402px;
+}
+
+.header_tab_background {
+  height: 22px;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.header_tab_text {
+  font-size: 11px;
+  top: 3px;
+}
+
+#patron_name_tab_group {
+  width: 166px;
+  height: 22px;
+}
+
+#patron_name_text {
+  width: 166px;
+}
+
+#timer_tab_group {
+  right: 32px;
+  width: 144px;
+  height: 22px;
+}
+
+#page_title {
+  height: 58px;
+  font-size: 57px;
+}
+
+#portal_section_group {
+  width: 508px;
+  height: 142px;
+  left: 16px;
+}
+
+#program_schedule_header_text {
+  font-size: 14px;
+}
+
+.program_schedule_table {
+  width: 508px;
+  border-spacing: 4px;
+}
+
+TABLE.program_schedule_table td {
+  padding-right: 1px;
+}
+
+#program_schedule_items {
+  font-size: 12px;
+}
+
+.program_schedule_date_cell {
+  width: 128px;
+  max-width: 128px;
+}
+
+.program_schedule_time_cell {
+  width: 64px;
+  max-width: 64px;
+}
+
+.program_schedule_location_cell {
+  width: 80px;
+  max-width: 80px;
+}
+
+.program_schedule_description_cell {
+  width: 236px;
+  max-width: 236px;
+}
+
+#enter_user_id_shim {
+  height: 69px;
+}
+
+#enter_user_pin_shim {
+  height: 69px;
+}
+
+#enter_pin_group {
+  height: 370px;
+  width: 908px;
+}
+
+#enter_pin_instructions_group {
+  width: 638px;
+  height: 337px;
+  right: 4px;
+}
+
+#enter_card_number_header {
+  height: 41px;
+  top: 11px;
+  padding-right: 4px;
+}
+
+#barcode_scan_animation_container {
+  padding-left: 160px;
+  width: 414px;
+  height: 309px;
+}
+
+#barcode_scan_animation {
+}
+
+#barcode_scan_animation_video {
+  width: 414px;
+  height: 309px;
+}
+
+#enter_pin_keypad {
+  width: 265px;
+  height: 360px;
+  border-radius: 16px;
+}
+
+#keypad_text_field_container {
+  padding-top: 12px;
+}
+
+.keypad_text_field {
+  width: 240px;
+  height: 22px;
+  font-size: 16px;
+}
+
+#nav_buttons_group_container {
+  height: 75px;
+}
+
+#nav_buttons_group {
+  height: 60px;
+}
+
+#nav_buttons_footer {
+  height: 14px;
+}
+
+.nav_button_border {
+  top: 2px;
+  width: 164px;
+  height: 52px;
+  border-radius: 4px;
+  margin-right: 12px;
+}
+
+.nav_button {
+  width: 164px;
+  height: 52px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.arrow_nav_button_text_container {
+  width: 123px;
+  top: -1px;
+}
+
+.arrow_nav_button_text {
+  height: 52px;
+}
+
+.arrow_nav_button_icon_container {
+  width: 25px;
+  height: 52px;
+  line-height: 48px;
+}
+
+.arrow_nav_button_icon {
+  width: 25px;
+  height: 25px;
+}
+
+.keypad_button_text {
+  font-size: 38px;
+}
+
+.clear_keypad_button_text {
+  font-size: 22px;
+}
+
+.shift_button_text {
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.a_to_z_keypad_button_text {
+  font-size: 14px;
+}
+
+.medium_backspace_keypad_button_text {
+  font-size: 14px;
+}
+
+.large_backspace_keypad_button_text {
+  font-size: 22px;
+}
+
+.keypad_row {
+  height: 60px;
+  left: 9px;
+}
+
+.enter_pin_keypad_row {
+  width: 300px;
+}
+
+.keypad_button_border {
+  height: 48px;
+  margin-top: 12px;
+  border-radius: 6px;
+}
+
+.keypad_button {
+  height: 48px;
+  border-radius: 4px;
+}
+
+.short_keypad_button_border {
+  width: 72px;
+  margin-right: 12px;
+}
+
+.short_keypad_button {
+  width: 72px;
+}
+
+.medium_keypad_button_border {
+  width: 115px;
+  margin-right: 12px;
+}
+
+.medium_keypad_button {
+  width: 115px;
+}
+
+.large_keypad_button_border {
+  width: 244px;
+}
+
+.large_keypad_button {
+  width: 244px;
+}
+
+.short_keyboard_row {
+  width: 590px;
+  left: 8px;
+}
+
+.keyboard_row {
+  width: 860px;
+  left: 6px;
+}
+
+.short_keyboard_button_border {
+  width: 45px;
+  margin-right: 12px;
+}
+
+.short_keyboard_long_button_border {
+  width: 104px;
+  margin-right: 12px
+}
+
+.keyboard_button_border {
+  width: 72px;
+  margin-right: 12px;
+}
+
+.short_keyboard_button {
+  width: 45px;
+}
+
+.short_keyboard_long_button {
+  width: 104px;
+}
+
+.keyboard_button {
+  width: 72px;
+}
+
+.medium_keyboard_button_border {
+  width: 94px;
+  margin-right: 12px;
+}
+
+.medium_keyboard_button {
+  width: 94px;
+}
+
+.large_keyboard_button_border {
+  width: 158px;
+  margin-right: 12px;
+}
+
+.large_keyboard_button {
+  width: 158px;
+}
+
+.medium_keyboard_button_text {
+  font-size: 25px;
+}
+
+.large_keyboard_button_text {
+  font-size: 25px;
+}
+
+#keyboard_button_separator {
+  width: 170px;
+  height: 81px;
+}
+
+.keyboard_close_button_icon {
+  width: 14px;
+  height: 14px;
+}
+
+#alpha_keypad {
+  top: 455px;
+  left: 90px;
+  width: 595px;
+  height: 198px;
+  border-radius: 12px;
+}
+
+#language_buttons_group {
+  top: 412px;
+  left: 311px;
+  width: 404px;
+  border-radius: 9px;
+}
+
+#language_buttons {
+  width: 388px;
+  padding-top: 3px;
+}
+
+.language_button_container {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-left: 11px;
+  margin-right: 8px;
+}
+
+.language_button_border {
+  width: 173px;
+  height: 33px;
+  border-radius: 4px;
+}
+
+.language_button {
+  width: 173px;
+  height: 33px;
+  border-radius: 4px;
+}
+
+.language_button_icon_container {
+  width: 35px;
+  height: 22px;
+  padding-left: 3px;
+  padding-right: 8px;
+}
+
+.language_button_icon {
+  width: 33px;
+  height: 22px;
+}
+
+.language_button_text {
+  font-size: 14px;
+  padding-left: 8px;
+  top: 3px;
+}
+
+#please_wait_div {
+  top: 322px;
+  height: 150px;
+  width: 480px;
+  left: 271px;
+  border-radius: 12px;
+}
+
+TABLE.please_wait_table {
+  font-size: 17pt;
+}
+
+.please_wait_icon {
+  width: 56px;
+  height: 56px;
+}
+
+DIV.error_div {
+  top: 225px;
+  left: 112px;
+  width: 800px;
+}
+
+/*Enter Pin Page*/
+
+#enter_pin_number_header {
+  height: 41px;
+  top: 11px;
+  padding-right: 3px;
+}
+
+#enter_pin_number_prompts {
+  height: 292px;
+}
+
+#enter_pin_animation_container {
+  width: 291px;
+  height: 219px;
+}
+
+#enter_pin_animation {
+  padding-top: 10%;
+  width: 291px;
+  height: 219px;
+}
+
+#enter_pin_animation_video {
+  width: 290px;
+  height: 217px;
+}
+
+/*Main Menu Screen*/
+#main_menu_shim {
+  height: 15px;
+}
+
+#main_menu_content_group {
+  height: 427px;
+}
+
+#main_menu_buttons_group_background {
+  height: 382px;
+  width: 800px;
+  border-radius: 9px;
+}
+
+#main_menu_buttons_group {
+  width: 768px;
+  left: 56px;
+}
+
+.main_menu_nav_button_border {
+  width: 180px;
+  height: 168px;
+  border-radius: 9px;
+}
+
+.main_menu_nav_button {
+  width: 180px;
+  height: 168px;
+  border-radius: 9px;
+}
+
+.main_menu_nav_button_icon {
+  width: 112px;
+  height: 112px;
+}
+
+.main_menu_nav_button_text {
+  top: -4px;
+  font-size: 16px;
+  height: 15px;
+}
+
+.main_menu_button_container {
+  padding-right: 72px;
+  padding-top: 15px;
+}
+
+/*Check Out Screen*/
+
+.circulation_content_group {
+  height: 390px;
+}
+
+.circulation_content_group_extended {
+  height: 412px;
+}
+
+.circulation_group {
+  height: 371px;
+}
+
+.circulation_group_extended {
+  height: 393px;
+}
+
+.circulation_list_group {
+  height: 337px;
+  width: 1002px;
+}
+
+.circulation_list_group_extended {
+  height: 360px;
+}
+
+#circulation_instructions_container {
+  height: 30px;
+  width: 1010px;
+}
+
+.circulation_list_container {
+  height: 270px;
+}
+
+.circulation_list_container_extended {
+  height: 292px;
+}
+
+.circulation_list tr, .circulation_list td {
+  height: 22px;
+}
+
+#circulation_list_header_container {
+  border-top-left-radius: 11px;
+  border-top-right-radius: 11px;
+}
+
+.checkout_list_cell_text {
+  font-size: 14px;
+}
+
+TD.checkout_list_title_cell {
+  width: 488px;
+}
+
+.checkout_list_title_cell_text {
+  width: 488px;
+}
+
+TD.checkout_list_item_id_cell {
+  width: 176px;
+}
+
+.checkout_list_item_id_cell_text {
+  width: 176px;
+}
+
+TD.checkout_list_due_date_cell {
+  width: 178px;
+}
+
+.checkout_list_due_date_cell_text {
+  width: 178px;
+}
+
+#checkout_list_title_header {
+  width: 488px;
+}
+
+#checkout_list_item_id_header {
+  width: 176px;
+}
+
+#checkout_list_due_date_header {
+  width: 178px;
+}
+
+#checkout_list_status_header {
+  width: 160px;
+}
+
+#circulation_list_header_text {
+  font-size: 14px;
+}
+
+#circulation_badges_group {
+  height: 45px;
+  margin-top: 2px;
+  margin-left: 1px;
+  border-bottom-left-radius: 11px;
+  border-bottom-right-radius: 11px;
+}
+
+#circulation_badges_table_container {
+  top: 7px;
+  height: 28px;
+  width: 922px;
+}
+
+TABLE.circulation_badges_table {
+  width: 922px;
+}
+
+TD.circulation_badge_cell {
+  width: 184px;
+}
+
+TD.circulation_badge_cell_separator {
+  width: 180px;
+}
+
+.circulation_splash_group {
+  width: 1004px;
+  height: 390px;
+}
+
+.circulation_splash_group_extended {
+  height: 412px;
+}
+
+#circulation_rfid_splash_animation_video {
+  width: 532px;
+  height: 279px;
+}
+
+#circulation_rfid_splash_animation_container {
+  padding-top: 22px;
+  height: 326px;
+}
+
+#circulation_rfid_splash_animation {
+  width: 532px;
+  height: 279px;
+  left: 244px;
+}
+
+#circulation_barcode_splash_animation {
+  width: 436px;
+  height: 326px;
+  left: 293px;
+}
+
+#circulation_barcode_splash_animation_video {
+  width: 436px;
+  height: 326px;
+}
+
+/*Checkout Receipt Options*/
+
+#scan_items_next_shim {
+  height: 105px;
+}
+
+#scan_items_next_content_group {
+  height: 336px;
+}
+
+/*Common circulation screens items*/
+
+.entry_field {
+  font-size: 14pt;
+}
+
+#entry_field_container {
+  height: 22px;
+}
+
+.base_status {
+  width: 160px;
+}
+
+.base_badge {
+  height: 28px;
+  line-height: 30px;
+  font-size: 12px;
+  width: 184px;
+  border-radius: 4px;
+}
+
+.badge_icon_container {
+  top: 2px;
+  padding-left: 3px;
+  width: 24px;
+}
+
+.circulation_status_icon {
+  width: 22px;
+  height: 22px;
+}
+
+.badge_text {
+  width: 155px;
+}
+
+.scroll_buttons_group {
+  top: 481px;
+  left: 951px;
+  width: 52px;
+  height: 82px;
+}
+
+#scroll_up_button_container {
+  padding-bottom: 6px;
+  width: 52px;
+}
+
+#scroll_down_button_container {
+  width: 52px;
+}
+
+.scroll_button_border {
+  width: 52px;
+  height: 37px;
+  border-radius: 4px;
+}
+
+.base_scroll_button {
+  width: 52px;
+  height: 37px;
+  border-radius: 4px;
+}
+
+.scroll_button_image {
+  width: 36px;
+  height: 36px;
+}
+
+/*Check In Screen*/
+
+.checkin_list_cell_text {
+  font-size: 14px;
+}
+
+TD.checkin_list_title_cell {
+  width: 666px;
+}
+
+.checkin_list_title_cell_text {
+  width: 666px;
+}
+
+TD.checkin_list_item_id_cell {
+  width: 176px;
+}
+
+.checkin_list_item_id_cell_text {
+  width: 176px;
+}
+
+#checkin_list_title_header {
+  width: 666px;
+}
+
+#checkin_list_item_id_header {
+  width: 176px;
+}
+
+#checkin_list_status_header {
+  width: 176px;
+}
+
+/*all error pages*/
+#error_shim {
+  height: 52px;
+}
+
+#error_content {
+  height: 390px;
+}
+
+.error_group {
+  min-height: 142px;
+  width: 508px;
+  border-radius: 11px;
+}
+
+.checkout_error_group {
+  min-height: 240px;
+}
+
+.checkin_error_group {
+  min-height: 165px;
+}
+
+.bad_statistics_parameter_error_group {
+  min-height: 165px;
+}
+
+#error_icon_container {
+  padding-top: 15px;
+  padding-left: 19px;
+  width: 80px;
+}
+
+.error_icon {
+  width: 76px;
+  height: 76px;
+}
+
+#error_description_group {
+  padding-top: 15px;
+  width: 396px;
+  padding-left: 11px;
+}
+
+#error_description_header {
+  font-size: 19px;
+  padding-bottom: 7px;
+}
+
+#error_description_message {
+  padding-top: 7px;
+  padding-right: 8px;
+  font-size: 14px;
+}
+
+/*Checkin Receipt Options*/
+
+#checkin_next_shim {
+  height: 105px;
+}
+
+#checkin_next_content_group {
+  height: 336px;
+}
+
+/*my account page*/
+#my_account_shim {
+  height: 14px;
+}
+
+#my_account_content_group {
+  height: 428px;
+  width: 896px;
+}
+
+#my_account_content_group_background {
+  height: 397px;
+  border-radius: 9px;
+}
+
+#my_account_content_group_footer {
+  height: 8px;
+}
+
+#my_account_content_details_group {
+  height: 255px;
+  border-radius: 9px;
+  left: 7px;
+  top: 7px;
+  width: 880px;
+}
+
+#my_account_content_header {
+  height: 30px;
+  padding-top: 30px;
+}
+
+.my_account_content_header_text {
+  font-size: 18px;
+}
+
+#my_account_content_subheader {
+  padding-top: 15px;
+  height: 22px;
+}
+
+#my_account_patron_details {
+  height: 118px;
+  top: 7px;
+}
+
+#my_account_error_message {
+  height: 40px;
+  top: 7px;
+}
+
+#my_account_patron_details_table_container {
+  width: 280px;
+}
+
+.my_account_patron_details_table_header {
+  font-size: 16px;
+}
+
+.my_account_patron_details_table_text {
+  font-size: 16px;
+  max-width: 500px;
+}
+
+.my_account_content_button_border {
+  width: 184px;
+  height: 112px;
+  border-radius: 4px;
+}
+
+.my_account_content_button {
+  width: 184px;
+  height: 112px;
+  border-radius: 4px;
+}
+
+#my_account_content_buttons_group {
+  width: 896px;
+  height: 112px;
+  top: 15px;
+}
+
+#items_checked_out_button_container {
+  padding-left: 7px;
+  padding-right: 46px;
+}
+
+#overdue_items_button_container {
+  padding-right: 46px;
+}
+
+#hold_items_button_container {
+  padding-right: 46px;
+}
+
+.my_account_content_button_header {
+  top: -15px;
+  font-size: 12px;
+  height: 13px;
+}
+
+.my_account_content_button_value {
+  top: -3px;
+  font-size: 33px;
+  height: 37px;
+}
+
+.my_account_content_button_text {
+  top: 7px;
+  font-size: 12px;
+  height: 13px;
+}
+
+#all_items_detail_group {
+  left: 192px;
+  top: 273px;
+  width: 638px;
+  height: 460px;
+  border-radius: 11px;
+}
+
+#items_detail_list_groups {
+  border-radius: 11px;
+}
+
+.items_detail_group {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  width: 638px;
+  height: 398px;
+}
+
+.items_detail_header_container {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  top: 7px;
+  width: 624px;
+  height: 37px;
+}
+
+.items_detail_header_table {
+  width: 620px;
+}
+
+.items_detail_column {
+  height: 37px;
+}
+
+.items_detail_items_container {
+  top: 7px;
+  width: 620px;
+  height: 360px;
+}
+
+.items_detail_items_table {
+  width: 620px;
+}
+
+.items_detail_items_table_row {
+  height: 38px;
+}
+
+.charged_items_detail_first_column {
+  width: 19px;
+  padding-right: 3px;
+}
+
+.charged_items_detail_title_column {
+  width: 256px;
+}
+
+.charged_items_detail_media_type_column {
+  width: 118px;
+}
+
+.charged_items_detail_due_date_column {
+  width: 137px;
+}
+
+.charged_items_detail_renew_column {
+  width: 80px;
+}
+
+.hold_items_detail_first_column {
+  width: 19px;
+  padding-right: 3px;
+}
+
+.hold_items_detail_title_column {
+  width: 476px;
+}
+
+.hold_items_detail_media_type_column {
+  width: 118px;
+}
+
+.overdue_items_detail_first_column {
+  width: 19px;
+  padding-right: 3px;
+}
+
+.overdue_items_detail_title_column {
+  width: 339px;
+}
+
+.overdue_items_detail_media_type_column {
+  width: 118px;
+}
+
+.overdue_items_detail_due_date_column {
+  width: 136px;
+}
+
+#items_detail_buttons_group_background {
+  height: 52px;
+}
+
+#items_detail_buttons_group {
+  top: 7px;
+  height: 37px;
+  left: 2px;
+}
+
+#items_detail_previous_button_container {
+  width: 104px;
+  min-width: 104px;
+  height: 37px;
+}
+
+#items_detail_display_count_container {
+  width: 132px;
+  min-width: 132px;
+  height: 37px;
+}
+
+#items_detail_next_button_container {
+  width: 104px;
+  min-width: 104px;
+  height: 37px;
+}
+
+#renew_all_items_button_container {
+  padding-left: 12px;
+  width: 104px;
+  min-width: 104px;
+  height: 37px;
+}
+
+#close_items_detail_button_container {
+  padding-left: 3px;
+  width: 104px;
+  min-width: 104px;
+  height: 37px;
+}
+
+.items_detail_renew_button_border {
+  width: 78px;
+  height: 35px;
+  border-radius: 4px;
+}
+
+.items_detail_renew_button {
+  width: 78px;
+  height: 35px;
+  font-size: 9px;
+  border-radius: 4px;
+}
+
+.items_detail_nav_button_border {
+  width: 104px;
+  height: 37px;
+  border-radius: 4px;
+}
+
+.items_detail_nav_button {
+  width: 104px;
+  height: 37px;
+  font-size: 9px;
+  border-radius: 4px;
+}
+
+/*Enter Staff Pin Page*/
+
+#enter_staff_pin_shim {
+  height: 37px;
+}
+
+#enter_staff_pin_content_group {
+  height: 405px;
+}
+
+#enter_staff_pin_instructions_container {
+  height: 30px;
+}
+
+#enter_staff_pin_form_container {
+  height: 30px;
+  width: 1004px;
+}
+
+/*Staff Menu Page*/
+
+#staff_menu_shim {
+  height: 15px;
+}
+
+#staff_menu_content_group {
+  height: 427px;
+}
+
+#staff_menu_buttons_group_background {
+  height: 382px;
+  width: 800px;
+  border-radius: 9px;
+}
+
+#staff_menu_buttons_group {
+  height: 352px;
+  width: 768px;
+  left: 56px;
+}
+
+#printer_status_container {
+  height: 30px;
+  top: 6px;
+}
+
+.staff_menu_nav_button_border {
+  width: 180px;
+  height: 168px;
+  border-radius: 9px;
+}
+
+.staff_menu_nav_button {
+  width: 180px;
+  height: 168px;
+  border-radius: 9px;
+}
+
+.staff_menu_nav_button_icon {
+  width: 120px;
+  height: 112px;
+}
+
+.staff_menu_nav_button_text {
+  top: -3px;
+  font-size: 16px;
+  height: 15px;
+}
+
+.staff_menu_button_container {
+  padding-right: 72px;
+  padding-top: 15px;
+}
+
+/*Load Escrow Page*/
+
+#load_escrow_shim {
+  height: 45px;
+}
+
+#load_escrow_content_group {
+  height: 397px;
+}
+
+#load_escrow_instructions_title_container {
+  height: 30px;
+  width: 1004px;
+  font-size: 25px;
+}
+
+#load_escrow_instructions_group {
+  height: 60px;
+  width: 720px;
+  left: 240px;
+}
+
+#load_escrow_instructions_icon_container {
+  padding-right: 24px;
+  width: 40px;
+}
+
+#load_escrow_instructions_icon {
+  width: 40px;
+  height: 40px;
+}
+
+#load_escrow_instructions_text_container {
+  font-size: 19px;
+  width: 654px;
+}
+
+/*Reconcile Cash Page*/
+
+#reconcile_cash_shim {
+  height: 45px;
+}
+
+#reconcile_cash_content_group {
+  height: 397px;
+}
+
+#reconcile_cash_content_box {
+  height: 120px;
+  width: 720px;
+}
+
+#reconcile_cash_instructions_title_container {
+  height: 30px;
+  font-size: 25px;
+}
+
+#reconcile_cash_instructions_text_container {
+  height: 67px;
+  width: 720px;
+  font-size: 15px;
+}
+
+#reconcile_cash_form_container {
+  height: 22px;
+}
+
+/*View Statistics Search Page*/
+
+#enter_view_stats_shim {
+  height: 37px;
+}
+
+#enter_view_stats_content_group {
+  height: 405px;
+}
+
+#enter_view_stats_instructions_container {
+  height: 30px;
+  font-size: 25px;
+  padding-bottom: 6px;
+}
+
+#enter_view_stats_entry_group {
+  height: 180px;
+  width: 397px;
+  left: 312px;
+}
+
+.enter_view_stats_entry_label {
+  font-size: 14px;
+}
+
+.enter_view_stats_entry_field {
+  font-size: 14px;
+}
+
+.calendar_icon {
+  width: 36px;
+  height: 36px;
+}
+
+/*View Statistics Result Page*/
+
+#view_stats_shim {
+  height: 15px;
+}
+
+#view_stats_content_group {
+  height: 427px;
+}
+
+#view_stats_title_container {
+  height: 30px;
+  font-size: 25px;
+  padding-bottom: 6px;
+}
+
+#view_stats_summary_group {
+  height: 75px;
+  font-size: 12px;
+  left: 120px;
+  width: 640px;
+}
+
+#view_stats_report_content {
+  height: 292px;
+  font-size: 12px;
+}
+
+/*Process Pending Alerts Page*/
+
+#pend_alerts_shim {
+  height: 30px;
+}
+
+#pend_alerts_content_group {
+  height: 412px;
+}
+
+#pend_alerts_instructions_container {
+  height: 30px;
+  font-size: 25px;
+  padding-bottom: 6px;
+}
+
+#pend_alerts_buttons_group {
+  width: 364px;
+  height: 360px;
+}
+
+.pend_alerts_button_border {
+  border-radius: 4px;
+  width: 360px;
+  height: 37px;
+}
+
+.pend_alerts_button {
+  width: 360px;
+  height: 37px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+/*Intelligent Returns Page*/
+
+#irs_shim {
+  height: 37px;
+}
+
+#irs_content_group {
+  height: 405px;
+}
+
+#irs_summary_and_list_group {
+  height: 262px;
+  width: 624px;
+  left: 192px;
+  border-radius: 9px;
+}
+
+#irs_summary_table_container {
+  height: 150px;
+  width: 240px;
+  left: 256px;
+}
+
+#irs_checkin_list_group {
+  height: 93px;
+}
+
+#irs_checkin_list_title_container {
+  height: 15px;
+}
+
+#irs_checkin_list_container {
+  height: 168px;
+}
+
+.irs_summary_item {
+  font-size: 12px;
+}
+
+#irs_summary_table {
+  border-spacing: 6px;
+}
+
+/*Intelligent Returns Swap Bin Page*/
+
+#irs_swap_shim {
+  height: 37px;
+}
+
+#irs_swap_content_group {
+  height: 405px;
+}
+
+#irs_swap_buttons_group {
+  width: 480px;
+  height: 300px;
+  left: 264px;
+  border-radius: 9px;
+}
+
+#irs_swap_buttons_table {
+  height: 300px;
+  width: 480px;
+}
+
+.irs_swap_header {
+  font-size: 19px;
+}
+
+.irs_swap_button_border {
+  width: 200px;
+  height: 37px;
+  border-radius: 4px;
+}
+
+.irs_swap_button {
+  width: 200px;
+  height: 37px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+/*Receipt Options*/
+
+#receipt_options_content_group {
+  width: 508px;
+  height: 243px;
+  border-radius: 9px;
+}
+
+#receipt_options_icon_container_group {
+  width: 155px;
+  height: 208px;
+}
+
+#receipt_options_icon_container {
+  left: 3px;
+  top: 7px;
+  width: 72px;
+}
+
+#receipt_options_menu_group {
+  width: 197px;
+}
+
+#receipt_options_menu_header {
+  height: 65px;
+  padding-top: 7px;
+  font-size: 19px;
+}
+
+#receipt_options_buttons_group_container {
+  height: 171px;
+  width: 197px;
+}
+
+#receipt_options_buttons_group {
+  height: 157px;
+}
+
+.receipt_options_button_border {
+  width: 197px;
+  height: 33px;
+  border-radius: 4px;
+  margin-bottom: 7px;
+}
+
+.receipt_options_button {
+  width: 197px;
+  height: 33px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.receipt_options_icon {
+  width: 56px;
+  height: 56px;
+}
+
+/*Input String dialog*/
+
+#input_string_group {
+  height: 463px;
+}
+
+#input_email_address_group {
+  top: 250px;
+  left: 43px;
+  width: 936px;
+  height: 486px;
+  border-radius: 9px;
+}
+
+#input_string_title_container {
+  height: 30px;
+  padding-top: 7px;
+  padding-left: 7px;
+}
+
+#input_string_title {
+  font-size: 25px;
+}
+
+#input_string_form_container {
+  height: 22px;
+  padding-left: 7px;
+  padding-bottom: 15px;
+}
+
+#input_string_keyboard_container {
+  height: 330px;
+}
+
+#input_string_keyboard_container_background {
+  width: 860px;
+  height: 322px;
+  border-radius: 9px;
+}
+
+#confirm_checkout_fee_div {
+  top: 55%;
+  height: 225px;
+}
+
+.confirm_checkout_fee_button_border {
+  top: 2px;
+  width: 164px;
+  height: 42px;
+  border-radius: 4px;
+}
+
+.confirm_checkout_fee_button {
+  width: 164px;
+  height: 42px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.slimScrollDiv
+{
+  height: 310px !important;
+}
