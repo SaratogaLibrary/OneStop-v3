@@ -316,7 +316,7 @@ function( $rootScope,
       ButtonRowService.addButton(new ButtonRowButton({ text: 'Start Over', action: $scope.startOver }));
       startInactivityTimer();
     }
-    ButtonRowService.addButton(new ButtonRowButton({ text: 'Next »', action: $scope.submit, enabled: false }));
+    //ButtonRowService.addButton(new ButtonRowButton({ text: 'Next »', action: $scope.submit, enabled: false }));
 
     setPageText();
 

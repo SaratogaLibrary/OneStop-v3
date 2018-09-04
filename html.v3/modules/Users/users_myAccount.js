@@ -370,14 +370,14 @@ function( $scope,
         DialogService.showError($scope.pageText.blockedFromRenewingError);
       }
       $scope.checkingOut = ($location.search().startOver === 'checkout');
-      if ($scope.checkingOut) {
-        ButtonRowService.addButton(new ButtonRowButton({ text: $scope.pageText.backButton, action: $scope.goToCheckout }));
-        ButtonRowService.addButton(new ButtonRowButton({ text: $scope.pageText.printButton, action: $scope.print, visible: false, enabled: false }));
-      } else {
+//      if ($scope.checkingOut) {
+//        ButtonRowService.addButton(new ButtonRowButton({ text: $scope.pageText.backButton, action: $scope.goToCheckout }));
+//        ButtonRowService.addButton(new ButtonRowButton({ text: $scope.pageText.printButton, action: $scope.print, visible: false, enabled: false }));
+//      } else {
         ButtonRowService.addButton(new ButtonRowButton({ text: $scope.pageText.doneButton, action: $scope.startOver }));
         ButtonRowService.addButton(new ButtonRowButton({ text: $scope.pageText.printButton, action: $scope.print, visible: false, enabled: false }));
         ButtonRowService.addButton(new ButtonRowButton({ text:$scope.pageText.checkoutButton, action: $scope.goToCheckout }));
-      }
+//      }
     }
 
 
