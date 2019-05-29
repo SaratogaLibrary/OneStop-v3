@@ -4,14 +4,13 @@
 <div style="position: relative; overflow: hidden;" ng-if="login.allowed">
 	<div style="position: absolute; right: -100px; width: 50px;">
 		<form name="loginForm">
-			<input  type="text"
+			<input  type="password"
 							id='user-id-field'
 							name="userId"
 							ng-model="login.userId"
 							ng-model-options="login.inputField.modelOptions"
 							ng-blur="login.inputField.lostFocus($event)"
 							ng-keyup="login.inputField.keypress($event)"
-							ng-disabled="login.submitted"
 							autofocus />
 		</form>
 	</div>

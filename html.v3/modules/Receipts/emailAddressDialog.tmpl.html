@@ -17,6 +17,7 @@
               ng-model="email.address"
               ng-blur="emailAddressField.lostFocus($event)"
               ng-keydown="emailAddressField.keydown($event)"
+              ng-disabled="inputDisabled"
               autofocus
               autocomplete="off"
               required>

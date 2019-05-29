@@ -11,8 +11,9 @@ angular.module('ewOneStop-PageTimeout',
   '$rootScope',
   '$document',
   '$interval',
+  '$timeout',
   'StartService',
-function($rootScope, $document, $interval, StartService) {
+function($rootScope, $document, $interval, $timeout, StartService) {
   'use strict';
 
   var INTERVAL = 1000,
@@ -87,14 +88,18 @@ function($rootScope, $document, $interval, StartService) {
     if (isRunning()) {
       _timeRemaining -= INTERVAL;
       if (_timeRemaining <= 0) {
-        var callback = _cbFn;
+        var callback = _cbFn; // stopInactivityTimer sets _cbFn to undefined, so save a reference here
         stopInactivityTimer();
         $rootScope.$broadcast('inactivity.timeout', {});
-        if (callback) {
-          callback();
-        } else {
-          StartService.startOver();
-        }
+
+        // Schedule the callback to occur in an immediate function so Angular can clean up before it is called
+        $timeout(function() {
+          if (callback) {
+            callback();
+          } else {
+            StartService.startOver();
+          }
+        }, 0);
       }
     }
   };
@@ -147,7 +152,7 @@ function($scope, PageTimeoutService, LanguagesService) {
       timeRemainingHeader: LanguagesService.translate('PAGE_TIMEOUT_TIME_REMAINING_HEADER')
     };
   };
-  
+
   var init = function() {
     setPageText();
 

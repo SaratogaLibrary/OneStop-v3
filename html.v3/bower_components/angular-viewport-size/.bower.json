@@ -22,6 +22,6 @@
     "commit": "b07bc03f1c1d5361d304a6d8ae8a26c605d0f019"
   },
   "_source": "https://github.com/cozmy/angular-viewport-size.git",
-  "_target": "0.0.1",
+  "_target": "^0.0.1",
   "_originalSource": "angular-viewport-size"
 }

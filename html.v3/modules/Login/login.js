@@ -105,6 +105,7 @@ function( $location,
   '$location',
   '$route',
   '$interval',
+  '$timeout',
   '$q',
   'PreferencesService',
   'LanguagesService',
@@ -123,6 +124,7 @@ function( $rootScope,
           $location,
           $route,
           $interval,
+          $timeout,
           $q,
           PreferencesService,
           LanguagesService,
@@ -178,25 +180,28 @@ function( $rootScope,
     if (!$scope.submitted) {
       $scope.submitted = true;
 
-      // Cancel any input field updates that have not yet been processed
-			if ($scope.loginForm && $scope.loginForm.$rollbackViewValue) {
-				$scope.loginForm.$rollbackViewValue();
-			}
+      // Schedule the real processing to occur in an immediate callback so $scope.submitted is recnogized as having changed
+      $timeout(function() {
+        // Cancel any input field updates that have not yet been processed
+  			if ($scope.loginForm && $scope.loginForm.$rollbackViewValue) {
+  				$scope.loginForm.$rollbackViewValue();
+  			}
 
-      LoginService.login($location.search().target, $scope.login.userId)
-      .then(function() {
-        // The login service handles all of the success cases
-        // but we do need to turn off the RFID reader if it is running
-        $scope.disableRfid();
-      })
-      .catch(function(error) {
-        $scope.clearInput();
+        LoginService.login($location.search().target, $scope.login.userId)
+        .then(function() {
+          // The login service handles all of the success cases
+          // but we do need to turn off the RFID reader if it is running
+          $scope.disableRfid();
+        })
+        .catch(function(error) {
+          $scope.clearInput();
 
-        var errMsg = $scope.pageText.userNotFound;
-        errMsg += '<br/><br/>(' + error.text + ')<br/>';
-        $scope.showError(errMsg, $scope.pageText.userNotFoundHeader);
-        $scope.submitted = false;
-      });
+          var errMsg = $scope.pageText.userNotFound;
+          errMsg += '<br/><br/>(' + error.text + ')<br/>';
+          $scope.showError(errMsg, $scope.pageText.userNotFoundHeader);
+          $scope.submitted = false;
+        });
+      }, 0);
     }
   };
 
@@ -381,6 +386,7 @@ function( $rootScope,
 [
   '$scope',
   '$location',
+  '$timeout',
   'LoginService',
   'User',
   'LanguagesService',
@@ -394,6 +400,7 @@ function( $rootScope,
   'BooleanValue',
 function( $scope,
           $location,
+          $timeout,
           LoginService,
           User,
           LanguagesService,
@@ -453,43 +460,48 @@ function( $scope,
   };
 
   $scope.submit = function() {
-    $scope.submitted = true;
+    if (!$scope.submitted) {
+      $scope.submitted = true;
 
-    // Cancel any input field updates that have not yet been processed
-    if ($scope.loginForm && $scope.loginForm.$rollbackViewValue) {
-      $scope.loginForm.$rollbackViewValue();
-    }
-
-    LoginService.login($location.search().target, $scope.login.userId, $scope.login.pin)
-    .then(function() {
-      // LoginService handles all of the success cases
-    })
-    .catch(function(error) {
-      var next,
-          errMsg = error.text,
-          errHeader;
-      if (error.user && error.user.id) {
-        var user = new User(error.user);
-        next = function() {
-          if (user.isValid()) {
-            // Problem is with user's password
-            $scope.clearInput();
-          } else {
-            $scope.goBack();
-          }
-        };
-
-        if (user.isValid()) {
-          errHeader = $scope.pageText.invalidPinHeader;
-        } else {
-          errMsg = $scope.pageText.userNotFound;
-          errMsg += '<br/><br/>(' + error.text + ')<br/>';
-          errHeader = $scope.pageText.userNotFoundHeader;
+      // Schedule the real processing to occur in a callback so that $scope.submitted is recognized as having changed
+      $timeout(function() {
+        // Cancel any input field updates that have not yet been processed
+        if ($scope.loginForm && $scope.loginForm.$rollbackViewValue) {
+          $scope.loginForm.$rollbackViewValue();
         }
-      }
-      $scope.showError(errMsg, errHeader, next);
-      $scope.submitted = false;
-    });
+
+        LoginService.login($location.search().target, $scope.login.userId, $scope.login.pin)
+        .then(function() {
+          // LoginService handles all of the success cases
+        })
+        .catch(function(error) {
+          var next,
+              errMsg = error.text,
+              errHeader;
+          if (error.user && error.user.id) {
+            var user = new User(error.user);
+            next = function() {
+              if (user.isValid()) {
+                // Problem is with user's password
+                $scope.clearInput();
+              } else {
+                $scope.goBack();
+              }
+            };
+
+            if (user.isValid()) {
+              errHeader = $scope.pageText.invalidPinHeader;
+            } else {
+              errMsg = $scope.pageText.userNotFound;
+              errMsg += '<br/><br/>(' + error.text + ')<br/>';
+              errHeader = $scope.pageText.userNotFoundHeader;
+            }
+          }
+          $scope.showError(errMsg, errHeader, next);
+          $scope.submitted = false;
+        });
+      }, 0);
+    }
   };
 
   $scope.startOver = function() {

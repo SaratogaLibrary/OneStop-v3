@@ -171,7 +171,7 @@ function($scope, $uibModalInstance, LanguagesService, context) {
       noReceiptButton: LanguagesService.translate('RECEIPT_OPTIONS_NO_RECEIPT_BUTTON')
     };
   };
-  
+
   var init = function() {
     setPageText();
 
@@ -226,11 +226,17 @@ function($scope, $uibModalInstance, $timeout, PreferencesService, LanguagesServi
   };
 
   $scope.accept = function() {
-    $uibModalInstance.close($scope.email.address);
+    $scope.inputDisabled = true;
+    $timeout(function() {
+      $uibModalInstance.close($scope.email.address);
+    }, 0);
   };
 
   $scope.cancel = function(reason) {
-    $uibModalInstance.dismiss(reason || 'cancel');
+    $scope.inputDisabled = true;
+    $timeout(function() {
+      $uibModalInstance.dismiss(reason || 'cancel');
+    }, 0);
   };
 
   var setPageText = function() {

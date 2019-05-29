@@ -194,8 +194,8 @@ function($filter, $sce, LanguagesService, PreferencesService) {
       return '';
     } else {
       var contents = entry.item[column.propertyName] || '';
-      if (isTitleColumn(column)) {
-        contents = contents || LanguagesService.translate('PROCESSED_ITEMS_TITLE_NOT_AVAILABLE');
+      if (isTitleColumn(column) && !contents) {
+        contents = LanguagesService.translate('PROCESSED_ITEMS_TITLE_NOT_AVAILABLE');
         if (isError(entry.status) && entry.item.screenMessage) {
           var errorMessageColor = PreferencesService.get('ThemeImportantMessageColor'),
               errorStyle = '';

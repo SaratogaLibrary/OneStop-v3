@@ -35,6 +35,20 @@
     clear:none;
 }
 
+@media screen and (orientation: portrait) {
+	.alpha-keyboard button.letter {
+		width: 48px !important;
+	    height: 50px;
+	}
+
+	.alpha-keyboard button.switch {
+		padding-right:10px;
+		padding-left:10px;
+	    height: 50px;
+	    clear:none;
+	}
+}
+
 .alpha-keyboard button.switch.clearl {
 	clear:left;
 }
