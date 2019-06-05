@@ -1,51 +1,67 @@
 ﻿<html>
 	<head>
-		<title>OneStop My Account Summary</title>
+		<title>My Account Summary</title>
 		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
 	h2 { font-size:14pt;font-family:"Verdana" }
 	h3 { font-size:10pt;font-family:"Verdana" }
 	h4 { font-size:8pt;font-family:"Verdana" }
+	body {
+		font:9pt/11pt Arial;
+		width:90%;
+		margin:0 auto;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		-ms-word-break: break-all;
+		word-break: break-all;
+		word-break: break-word;
+		-ms-hyphens: auto;
+		-moz-hyphens: auto;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+	}
+	p.header { font:11pt "Times New Roman"; text-align:center; }
 	</style>
 	</head>
 	<body>
-		<center>
-			<h2>Account Summary</h2>
-			<h4>Saratoga Springs Public Library<br />(518) 584-7860 • www.sspl.org</h4>
-		</center>
+		<p class="header">
+			<center><h2>Account Summary</h2>
+			Saratoga Springs Public Library<br>
+			49 Henry Street<br>
+			Saratoga Springs, NY<br>
+			(518) 584-7860 • www.sspl.org</center>
+		</p>
+
 		<hr>
-		<h4>Date: %%Date.LocalText%%</h4>
-		<h4>Time: %%Time.LocalText%%</h4>
+
+		<b>Date:</b> %%Date.LocalText%%<br>
+		<b>Time:</b> %%Time.LocalText%%<br>
 		<!--<h4>Name: %%User.FullName%%</h4>-->
-		<h4>Fines/Fees Owed: $%%User.FeeAmount%%</h4>
+		<b>Fines / Fees Owed:</b> $%%User.FeeAmount%%<br>
 		<hr>
 
-		<h4><b>Checked Out Items</b></h4>
+		<br><b>Checked Out Items</b><br>
 		$$MyAccount.ChargedItems{
-		<h4>
-			Title: %%Item.Title#35#%%<br>
-			Barcode: %%Item.Id%%<br>
-			Due Date: %%Item.DueDate%%<br>
-		</h4>
-		<p>
+			<br><b>Title:</b> %%Item.Title#35#%%<br>
+			<b>Barcode:</b> %%Item.Id%%<br>
+			<b>Due Date:</b> %%Item.DueDate%%<br>
+		<br>
 		}$$
 
-		<h4><b>Overdue Items</b></h4>
+		<br><b>Overdue Items</b></br>
 		$$MyAccount.OverdueItems{
-		<h4>
-			Title: %%Item.Title#35#%%<br>
-			Barcode: %%Item.Id%%<br>
-			Due Date: %%Item.DueDate%%<br>
-		</h4>
-		<p>
+		<br>
+			<b>Title:</b> %%Item.Title#35#%%<br>
+			<b>Barcode:</b> %%Item.Id%%<br>
+			<b>Due Date:</b> %%Item.DueDate%%<br>
+		<br>
 		}$$
 
-		<h4><b>Items On Hold</b></h4>
+		<br><b>Items On Hold</b></br>
 		$$MyAccount.HoldItems{
-		<h4>
-			Title: %%Item.Title%%<br>
-			Barcode: %%Item.Id%%<br>
-		</h4>
-		<p>
+		<br>
+			<b>Title:</b> %%Item.Title%%<br>
+			<b>Barcode:</b> %%Item.Id%%<br>
+		<br>
 		}$$
 	</body>
 </html>

@@ -1,97 +1,103 @@
 ﻿<html>
 	<head>
-		<title>OneStop Checkout Receipt</title>
+		<title>Checkout Receipt</title>
 		<style type="text/css"> h1 { font-size:16pt;font-family:"Verdana" }
 	h2 { font-size:14pt;font-family:"Verdana" }
 	h3 { font-size:10pt;font-family:"Verdana" }
 	h4 { font-size:8pt;font-family:"Verdana" }
+	body {
+		font:9pt/11pt Arial;
+		width:90%;
+		margin:0 auto;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		-ms-word-break: break-all;
+		word-break: break-all;
+		word-break: break-word;
+		-ms-hyphens: auto;
+		-moz-hyphens: auto;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+	}
+	p.header { font:11pt "Times New Roman"; text-align:center; }
 	</style>
 	</head>
 	<body>
 ^^Header{
-		<center>
-			<h2>Checkout Receipt</h2>
-			<h4>Saratoga Springs Public Library<br />(518) 584-7860 • www.sspl.org</h4>
-		</center>
+		<p class="header">
+			<center><h2>Checkout Receipt</h2>
+			Saratoga Springs Public Library<br>
+			49 Henry Street<br>
+			Saratoga Springs, NY<br>
+			(518) 584-7860 • www.sspl.org</center>
+		</p>
+
 		<hr>
-		<h4>Date: %%Date.LocalText%%</h4>
-		<h4>Time: %%Time.LocalText%%</h4>
-		<!--<h4>Name: %%User.FullName%%</h4>-->
-		<h4>Fines/Fees Owed: $%%User.FeeAmount%%</h4>
-		<br>
-		<h4><b>Total Checked Out This Session: %%Session.TotalItemsCirculated%%</b></h4>
-		<h4><b>Total Items Checked Out To You: %%Session.TotalItemsOut%%</b></h4>
+
+		<b>Date:</b> %%Date.LocalText%%<br>
+		<b>Time:</b> %%Time.LocalText%%<br>
+		<b>Fines / Fees Owed:</b> $%%User.FeeAmount%%<br>
+		<b>Total Checked Out: %%Session.TotalItemsCirculated%%</b><br>
+		<b>Total Items Checked Out To You: %%Session.TotalItemsOut%%</b>
 		<hr>
 }^^
 ^^List{
-		<h4><b>Checked Out This Session</b></h4>
+		<br><b>Checked Out This Session</b><br>
 		$$Session.CheckedOutItems{
-		<h4>
-			Title: %%Checkout.ItemTitle#35#%%<br>
-			Barcode: %%Checkout.ItemId%%<br>
-			Due Date: %%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
-		</h4>
-		<p>
+			<br><b>Title:</b> %%Checkout.ItemTitle#35#%%<br>
+			<b>Barcode:</b> %%Checkout.ItemId%%<br>
+			<b>Due Date:</b> %%Checkout.ItemDueDate%% %%Checkout.RenewalText%%<br>
+		<br>
 		}$$
 }^^
 
 ^^List{
-		<h4><b>Checked Out This Session - Security Still Enabled</b></h4>
+		<br><b>Checked Out This Session - Security Still Enabled</b><br>
 		$$Session.ItemsPendingSecurityAdjustment{
-		<h4>
-			Title: %%Checkout.ItemTitle%%<br>
-			Barcode: %%Checkout.ItemId%%<br>
-			Due Date: %%Checkout.ItemDueDate%% %%Checkout.RenewalText%% &nbsp;<br>
-		</h4>
-		<p>
+			<br><b>Title:</b> %%Checkout.ItemTitle%%<br>
+			<b>Barcode:</b> %%Checkout.ItemId%%<br>
+			<b>Due Date:</b> %%Checkout.ItemDueDate%% %%Checkout.RenewalText%%<br>
+		<br>
 		}$$
 		<hr>
 }^^
 
 ^^List{
-		<h4><b>Not Checked Out</b></h4>
-		<h4><i>Note: Some information may not be available for all items listed.</i></h4>
+		<br><b>Not Checked Out</b><br>
+		<i><b>Note: Some information may not be available for all items listed.</b></i><br>
 		$$Session.ErrorItems{
-		<h4>
-			Title: %%Checkout.ItemTitle%%<br>
-			Barcode: %%Checkout.ItemId%%<br>
-			Reason: %%Checkout.ScreenMessage%% &nbsp;<br>
-		</h4>
-		<p>
+			<br><b>Title:</b> %%Checkout.ItemTitle%%<br>
+			<b>Barcode:</b> %%Checkout.ItemId%%<br>
+			<b>Reason:</b> %%Checkout.ScreenMessage%%<br>
+		<br>
 		}$$
 }^^
 
 ^^List{
-		<h4><b>Other Items Checked Out To You</b></h4>
+		<br><b>Other Items Checked Out To You</b><br>
 		$$Session.ExistingItemsOut{
-		<h4>
-			Title: %%Item.Title%%<br>
-			Barcode: %%Item.Id%%<br>
-			Due Date: %%Item.DueDate%% &nbsp;<br>
-		</h4>
-		<p>
+			<br><b>Title:</b> %%Item.Title%%<br>
+			<b>Barcode:</b> %%Item.Id%%<br>
+			<b>Due Date:</b> %%Item.DueDate%% &nbsp;<br>
+		<br>
 		}$$
-		<hr>
 }^^
 
 ^^List{
-		<h4><b>Recommendations</b></h4>
+		<hr>
+		<br><b>Recommendations</b><br>
 		$$Session.SavedRecommendations{
-		<h4>
-			Title: %%Recommendation.Title%%<br>
-			Author: %%Recommendation.Author%%<br>
-			ISBN: %%Recommendation.PrimaryIsbn%%<br>
-			Rating: %%Recommendation.Rating%%<br>
-			Description: %%Recommendation.Description%%<br>
-		</h4>
-		<p>
+			<br><b>Title:</b> %%Recommendation.Title%%<br>
+			<b>Author:</b> %%Recommendation.Author%%<br>
+			<b>ISBN:</b> %%Recommendation.PrimaryIsbn%%<br>
+			<b>Rating:</b> %%Recommendation.Rating%%<br>
+			<b>Description:</b> %%Recommendation.Description%%<br>
+		<br>
 		}$$
 }^^
 
 ^^Footer{
-			<hr>
-			<center><h4>Page %%Receipt.Page%% of %%Receipt.Pages%%</h4>
-			</center>
+			<!--<hr><center><h4>Page %%Receipt.Page%% of %%Receipt.Pages%%</h4></center>-->
 }^^
 	</body>
 </html>

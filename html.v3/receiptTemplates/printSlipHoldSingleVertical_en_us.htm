@@ -6,9 +6,31 @@
 	h2 { font-size:14pt;font-family:"Verdana" }
 	h3 { font-size:10pt;font-family:"Verdana" }
 	h4 { font-size:8pt;font-family:"Verdana" }
+	body {
+		font:9pt/11pt Arial;
+		width:90%;
+		margin:0 auto;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		-ms-word-break: break-all;
+		word-break: break-all;
+		word-break: break-word;
+		-ms-hyphens: auto;
+		-moz-hyphens: auto;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+	}
+	p.header { font:11pt "Times New Roman"; text-align:center; }
 	</style>
 	</head>
 	<body width="100%">
+		<p class="header">
+			<center><h2>Hold Slip</h2>
+			Saratoga Springs Public Library<br>
+			49 Henry Street<br>
+			Saratoga Springs, NY<br>
+			(518) 584-7860 • www.sspl.org</center>
+		</p>
 		<table width="100%">
 			<tr>
 				<td align="center"><h1>%%SUBSTR(Checkin.HoldPatronLastName,0,1).UCASE%%</h1></td>
